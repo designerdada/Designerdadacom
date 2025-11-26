@@ -19,8 +19,6 @@ import {
 } from '../components/ui/breadcrumb';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
-import imgImage1 from 'figma:asset/6ecdfba3f00b0a9cd14b86fd7e537539b9517b3b.png';
-
 function ArticleHeader({ title }: { title: string }) {
   return (
     <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
@@ -91,7 +89,7 @@ function Footer() {
   return (
     <div className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full">
       <div className="h-6 relative shrink-0 w-[91px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage1} />
+        <img alt="designerdada.com" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src="/assets/footer-signature.png" />
       </div>
       <div className="content-stretch flex gap-4 items-center relative shrink-0">
         <Link 
