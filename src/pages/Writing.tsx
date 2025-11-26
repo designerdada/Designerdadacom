@@ -63,13 +63,13 @@ export function Writing() {
         <meta property="og:title" content="Writing | Akash Bhadange" />
         <meta property="og:description" content="Raw thoughts on design, building products, and the startup journey by Akash Bhadange." />
         <meta property="og:url" content="https://designerdada.com/writing" />
-        <meta property="og:image" content="https://designerdada.com/media/og-images/og-writing.jpg" />
-        
+        <meta property="og:image" content="https://designerdada.com/assets/og-images/og-writing.jpg" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Writing | Akash Bhadange" />
         <meta name="twitter:description" content="Raw thoughts on design, building products, and the startup journey by Akash Bhadange." />
-        <meta name="twitter:image" content="https://designerdada.com/media/og-images/og-writing.jpg" />
+        <meta name="twitter:image" content="https://designerdada.com/assets/og-images/og-writing.jpg" />
       </Helmet>
       <div className="bg-[var(--background)] relative size-full min-h-screen" data-name="designerdada.com/writing">
         <div className="box-border content-stretch flex flex-col gap-[40px] items-center mx-auto px-[16px] py-[40px] w-full max-w-[544px]">

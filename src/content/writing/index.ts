@@ -4,258 +4,159 @@
 
 export const designIsTheMoat = `---
 title: Design Is The Moat
-description: Over the last few days, I've been "vibe coding" some ideas. Building quick prototypes without overthinking. What surprised me wasn't how fast I could move, but how easy it has become to build something that actually works.
+description: Design is no longer a layer you add at the end. It is the product. And it's the moat that will matter most.
 publishDate: 15.Nov.2025
-modifiedDate: 15.Nov.2025
+modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/media/og-images/design-is-the-moat.jpg
+ogImage: https://designerdada.com/assets/og-images/design-is-the-moat.jpg
 keywords: design, product design, AI, prototyping, startups
 ---
 
 Over the last few days, I've been "vibe coding" some ideas. Building quick prototypes without overthinking. What surprised me wasn't how fast I could move, but how easy it has become to build something that actually works. Thanks to AI, spinning up fully functional tools and products is no longer reserved for engineers with years of experience. It's now possible for someone like me, a designer with a decent grasp of CSS and layout to ship production-ready apps/tools.
 
-## The New Reality of Building
+This is a paradigm shift!
 
-This shift changes everything. When anyone can code, the barrier to entry drops to zero. The market floods with products that work well enough. Features that once took months can now be replicated in days. The technical moat disappears.
+AI has democratized building. You no longer need to be a 10x developer to launch a 10x product. The gap between an idea and a working prototype has collapsed. The tools are powerful, accessible, and fast. So naturally, we're entering a world where everyone will be able to build feature-rich products. Which means the bar is about to get much higher.
 
-### What This Means for Builders
+In this new world, code is not the moat. Design is.
 
-- Rapid prototyping has become accessible to everyone.
-- AI tools enable non-engineers to create functional products.
-- Designers can now ship production-ready applications with ease.
-- The process is faster and more intuitive than ever before.
+If everyone can build features, what makes your product stand out isn't how many buttons it has. It's how it feels to use them. The clarity, the craftsmanship, the small moments of delight - all of that is design. And not just visual design, but the experience as a whole. From onboarding to micro-interactions to performance, design is what will separate products that get ignored from those that get loved.
 
-### The Design Advantage
+> Code is becoming a commodity. Taste is not.
 
-But here's where design becomes the real differentiator. When everyone can build something functional, what makes people choose your product? It's the experience. The thoughtfulness. The way it feels. These are things AI can't easily replicate because they require taste, judgment, and a deep understanding of human behavior.
+That's why design is the real moat. Not the kind you fake with a pretty landing page, but the kind that's baked into the product from the first click to the last detail. Design-led products are not just easier to use. They're harder to copy. Because fortunately or unfortunately, you can't fake taste.
 
-1. Understanding user psychology and behavior patterns
-2. Creating emotional connections through thoughtful interactions
-3. Making complex things feel simple and intuitive
-4. Building trust through consistent, polished experiences
+This is where designers gain a massive advantage. Not only can they now build, they can build beautifully. With taste, empathy, and attention to the human side of software.
 
----
-
-> Design is no longer just about making things pretty. It's about creating an experience so good that people choose your product even when alternatives exist.
-
-## Building with Intention
-
-The best products aren't just well-designed interfaces. They're well-designed systems that consider every touchpoint, every interaction, every moment of friction. They understand that design isn't decoration—it's the architecture of experience.
-
-As AI makes building easier, design thinking becomes more valuable. Not just visual design, but product design. Service design. Experience design. The kind of design that asks "should we build this?" before "how do we build this?"
-
-### The Path Forward
-
-So if you're a designer who can code (or a coder learning design), you're in the perfect position. You can move fast *and* create something people actually want to use. You understand both the "what's possible" and the "what feels right."
-
-The future belongs to builders who understand that in a world where anyone can make something that works, the real competitive advantage is making something that people **love**.
-`;
-
-export const gettingStarted = `---
-title: Getting Started with Design Systems
-description: A comprehensive guide to building and maintaining design systems that scale.
-publishDate: 25.Oct.2025
-author: Akash Bhadange
----
-
-# Getting Started with Design Systems
-
-Design systems are the backbone of consistent, scalable digital products. They help teams work more efficiently and create better user experiences.
-
-## What is a Design System?
-
-A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
-
-## Getting Started
-
-Here are the key steps to building your first design system:
-
-- Define your design principles
-- Create a color palette and typography scale
-- Build component library
-- Document everything
-- Iterate and improve
-
-## Best Practices
-
-Start small and iterate. Don't try to build everything at once. Focus on the components you use most frequently and expand from there.
+The future belongs to those who can ship, but more importantly, to those who can ship well-designed things. And in this new builder economy, design isn't just a skill. It's a moat.
 `;
 
 export const growthWithoutHacks = `---
 title: Growth Without Hacks
-description: Real growth isn't about tricks or shortcuts. It's about building something people genuinely want and making it easy for them to tell others about it. Here's how to grow sustainably.
+description: What really drives startup growth. Marketing isn't about shiny tools or growth hacks. It's about understanding people, solving their problems, and showing up consistently.
 publishDate: 05.Nov.2025
-modifiedDate: 05.Nov.2025
+modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/og-images/growth-without-hacks.jpg
+ogImage: https://designerdada.com/assets/og-images/growth-without-hacks.jpg
 keywords: growth, marketing, startups, product development
 ---
 
-Real growth isn't about tricks or shortcuts. It's about building something people genuinely want and making it easy for them to tell others about it.
+We applied to YC once with the idea of Peerlist. Obviously did not get in. But that didn't stop us from applying Paul Graham's principles while building and growing Peerlist.
 
-## The Problem with Growth Hacking
+I don't need to explain how great PG's writing is—it's like the startup world's bible.
+But do you know why it feels so relatable?
+Because it's simple. And it's actionable. Every time I read it, I think, "Wait… I can actually do this!"
 
-Growth hacking sounds sexy. Quick wins. Explosive growth. Viral loops. But here's the reality: most growth hacks don't work long-term. They're band-aids on a product that doesn't quite work yet.
+As Peerlist is growing and entering a new phase, I've been thinking a lot about "marketing." But to be honest, I'm not sure you can fully call it just marketing. It feels more like the way you operate your startup. The way you talk to users, the way you build, the way you grow.
 
-### Why Hacks Fail
+After reading PG's essays again, I realized—we're already doing many of the things he talks about. That gave me a huge sense of validation and confidence to keep going.
 
-- They prioritize metrics over user value
-- They create unsustainable expectations
-- They attract the wrong users
-- They burn out your team
+Because yes, sometimes I do get distracted by shiny tactics—SEO hacks, paid ads, marketing funnels, etc.
 
-## The Alternative: Product-Led Growth
+But when you look at what actually makes startups successful, it's not tricks or hacks. It's simple. It's human. It's about building something people really want and staying close to your users.
 
-Instead of chasing hacks, focus on making your product so good that people naturally want to share it. This is harder but more sustainable.
+Here are a few principles I've picked up from Paul Graham's writing and YC's way of building startups:
 
-### What Makes People Share?
+## Make a Few People Extremely Happy
+In the early days of a startup, your goal is not to acquire thousands of users. Your goal is to make just a few people completely love your product.
 
-1. **The product solves a real problem** - Not a problem you invented, but one they actively feel
-2. **It's delightfully easy to use** - No friction, no confusion, just works
-3. **It makes them look good** - Sharing it makes them seem smart or helpful
-4. **It saves them time or money** - Tangible value they can point to
+When you have 10 users who can't live without what you've built, you're onto something real. These people become your evangelists. They give you thoughtful feedback, tell their friends, and sometimes even become your first paying customers or contributors.
 
----
+Most startups fail not because they didn't get some users, but because they never got anyone who truly care. Aim for love, not lukewarm interest.
 
-> The best growth strategy is to build something people love and get out of their way.
+> "It's better to have 100 people who love you than 1,000 who sort of like you."
 
-## Build Distribution Into the Product
+## Talk to Your Users. Really Talk to Them.
+This one cannot be overstated: talk to your users. Not through forms or feedback widgets, actually talk to them. Schedule a 15-minute call. Message them directly. Ask them what's working, what's frustrating, and what they wish your product could do better.
 
-Think about how people discover and share your product naturally. Don't force it, enable it.
+These conversations will unlock insights that no analytics tool or A/B test can reveal. You'll learn how users describe your product in their own words. You'll see which parts of your product confuse them. You'll discover tiny frustrations that no metric would have ever exposed.
 
-### Examples of Natural Distribution
+## Start Small, Go Deep
+One of the most common early-stage startup mistakes is trying to appeal to everyone. The logic seems sound: a bigger market means a bigger opportunity, right?
 
-When you build with [Peerlist](https://peerlist.io), your profile is public and shareable. We didn't need to add sharing buttons—people wanted to share because it made them look good. The product *is* the distribution channel.
+But in reality, when you build for "everyone," you end up building something that resonates with no one. That is exactly why we solely focusing on "people in tech".
 
-The same with AutoSend. Every email sent includes subtle branding, but only if the sender wants it. It's opt-in, not forced. People keep it because they're proud of the product.
+When you focus on solving one group's problems really well, your product becomes sharper, more useful, and more loved. From there, you can expand outward.
 
-## Focus on Retention, Not Acquisition
+Airbnb didn't start by targeting the global travel market. They started by helping people find a place to stay during conferences. Stripe didn't start with "all payments"—they started with developers.
 
-New users mean nothing if they don't stick around. A product with 100 weekly active users who love it beats 10,000 one-time visitors who bounce.
+## Customer Support Is Marketing
+Most people view customer support as a backend function. But in a startup, great support is one of your strongest marketing channels.
 
-### Retention Metrics That Matter
+Why? Because early users remember how you made them feel. When you respond quickly, fix bugs promptly, or go out of your way to help, even for a single user, they'll remember it. And they'll talk about it.
 
-- Are people coming back?
-- Are they using it more over time?
-- Would they miss it if it was gone?
-- Are they recommending it to others?
+It builds trust. It builds loyalty. And it creates stories worth sharing.
 
-If the answer to these is "no," you don't have a distribution problem. You have a product problem.
+When a startup replies within minutes and solves your problem on a Sunday afternoon, it stands out. That's marketing.
 
-## The Compound Effect
+## Measure What Matters
+In the early stage, it's tempting to track everything: impressions, click-through rates, likes, followers, time on page. But most of these numbers don't matter if the fundamentals are broken.
 
-Sustainable growth feels slow at first. You're not going viral. You're not on the front page of everywhere. But you're building something real.
+What really matters? Usually just a handful of metrics: activation (are new users experiencing the core value?), retention (are they coming back?), and referrals (are they telling others?).
 
-**Month 1**: 10 users who love your product  
-**Month 2**: 25 users (10 stayed + 15 new)  
-**Month 3**: 60 users (25 stayed + 35 new)  
-**Month 6**: 500 users  
-**Month 12**: 5,000 users  
+In last few months, we solely focused on retention. Because if people aren't coming back, nothing else matters.
 
-This compounds. And unlike growth hacks, it keeps going.
+## Grow Through Systems, Not Hacks
+The internet loves the idea of "growth hacks". Shortcuts that magically skyrocket your users. But those spikes rarely last. I have experienced that!
 
-### Building for the Long Term
+Instead, real growth comes from building systems: talking to users every day, shipping small improvements regularly, refining your messaging, iterating on onboarding, and making the product better week after week.
 
-The unsexy truth about growth:
+It's slower, but far more sustainable. And over time, this compounding effort becomes your competitive advantage.
 
-1. Build something people want
-2. Make it easy to use
-3. Help people get value quickly
-4. Listen to feedback and iterate
-5. Be patient
+## Learn From People Who Say No
+When someone doesn't sign up, doesn't return, or outright says "this isn't for me", don't ignore it. Ask them why.
 
-There's no magic formula. No secret hack. Just consistent, focused work on making your product better every day.
+Most people won't give feedback unless you ask. But when you do, you often hear the truth: maybe your onboarding was confusing, your messaging didn't make sense, or your product didn't solve a real pain.
+
+Every "no" is an opportunity to learn, refine, and improve your product or positioning. The people who leave often teach you more than the ones who stay.
+
+> Your most valuable feedback often comes from your harshest critics, not your biggest fans.
 
 ---
 
-## When to Think About Growth
+Marketing isn't about shiny tools or growth hacks. It's about understanding people, solving their problems, and showing up consistently.
 
-Only after you have retention. If people aren't coming back, nothing else matters. Fix that first.
+So if you're building something today, don't ask: *How do I get more users?
+Ask: How do I make the next 10 users love what I'm building?*
 
-Once people are sticking around, once they're telling friends, *then* you can think about growth tactics. But even then, keep it simple:
+That's the real marketing strategy.
 
-- Write about what you're building
-- Show up where your users hang out
-- Make it easy to share
-- Celebrate your community
-
-The best marketing is a product people want to talk about. Everything else is noise.
+Highly recommend to read Paul Graham's [Startups in 13 Sentences](https://www.paulgraham.com/13sentences.html).
 `;
 
 export const makeSomethingYouWant = `---
 title: Make Something YOU Want
 description: The best products come from personal frustration. When you build something you actually need, you understand the problem deeply, you know what's missing, and you have the motivation to make it great.
 publishDate: 01.Nov.2025
-modifiedDate: 01.Nov.2025
+modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/og-images/make-something-you-want.jpg
+ogImage: https://designerdada.com/assets/og-images/make-something-you-want.jpg
 keywords: product development, startups, entrepreneurship, design
 ---
 
-The best products come from personal frustration. When you build something you actually need, you understand the problem deeply, you know what's missing, and you have the motivation to make it great.
+We are builders. We always wants to build something. We have unlimited ideas. Which creates confusion. Confusion to the level that we end up building nothing!
 
-## Build for Yourself First
+Happens to every one of us where we can't decide on what to build. Maybe as a startup idea or even a simple side project.
 
-Too many founders start with "what can I build that will make money?" instead of "what problem am I facing that needs solving?" The second question leads to better products because you're your own first user. You can test, iterate, and validate immediately.
+I see a lot of posts on Peerlist as well, where people ask for ideas. My simple answer is always - build something you would use every day. This statement is not mine by the way. I read it, and it stuck with me.
 
-### Why This Matters
+Solve a simple problem for yourself. Be your own first user. It helps!
 
-- You understand the pain point intimately
-- You can validate solutions instantly
-- Your motivation stays high even when things get hard
-- You know what "good enough" actually means
+There are so many **[side projects](https://peerlist.io/launchpad)** launching on Peerlist every week. Most of the top projects are simple ideas with great execution solving a personal problem of that developer or designer. These side projects are the most loved ones. Because they are relatable.
 
-## The Power of Scratching Your Own Itch
+When you build something for yourself, you are motivated to make it the best it can be. You know exactly what you need and what works for you. This personal touch makes your project more genuine and useful. Others who face the same problem will see the value in your solution.
 
-When I started building [Peerlist](https://peerlist.io), it was because I was frustrated with existing portfolio platforms. They didn't capture what I needed as a designer and builder. So I made something that worked for me. Turns out, thousands of others had the same frustration.
+Think about the tools and apps you use daily. Many of them started as small projects to solve a problem the creator faced. Gmail was created because the developers were frustrated with existing email services. Slack was built to solve communication issues within a team. These solutions were born out of necessity and grew into something much bigger.
 
-> The most successful products often start as solutions to the founder's own problems. You're not guessing what users want—you ARE the user.
+By building something you would use, you create a strong foundation. Your passion and need drive you to keep improving it. You will find joy in using what you've built, and this satisfaction will fuel your drive to keep going.
 
-### Finding Your Itch
+So, the next time you're stuck on what to build, look inward. What problem do you face every day? What tool or service would make your life easier? Start there. Build it for yourself, and let others benefit from your solution.
 
-Pay attention to your daily frustrations. The things you wish existed. The tools that almost work but not quite. The processes that take too long. These are opportunities hiding in plain sight.
+In the end, the best projects come from a place of genuine need and personal experience. Build something you would use, and you'll find that others will want to use it too. Your simple, relatable solution might just become the next big thing.
 
-1. Notice what frustrates you repeatedly
-2. Ask if others share this problem
-3. Build the smallest thing that solves it
-4. Use it yourself and improve it
+Lastly - Here's Jack Dorsey on why building something for yourself can be better than trying to solve a problem.
 
----
-
-## But What If I'm Not the Target Market?
-
-This is a valid concern. You *can* build great products for users different from yourself. But it's harder. You need more research, more validation, more empathy work. And you're more likely to lose motivation when things get tough.
-
-Starting with your own needs doesn't mean you can't expand to other users later. It just means you have a strong foundation to build from. A clear north star that keeps you honest about what matters.
-
-### The Test
-
-Ask yourself: Would I use this even if nobody else did? If the answer is yes, you're onto something. If no, you might be building for the wrong reasons.
-
-The best products start small and personal. They solve real problems for real people—starting with you. Everything else is just noise.`;
-
-export const minimalism = `---
-title: The Art of Minimalism in Digital Design
-description: Exploring how less can be more when creating digital experiences.
-publishDate: 10.Nov.2025
-author: Akash Bhadange
----
-
-Minimalism in digital design is about removing the unnecessary to focus on what truly matters. It's not about making things sparse—it's about being intentional.
-
-## Less is More
-
-Every element in your design should serve a purpose. If it doesn't add value, it's taking away from the experience.
-
-## Principles of Minimal Design
-
-- Clear hierarchy and typography
-- Generous white space
-- Limited color palette
-- Purposeful imagery
-- Intuitive navigation
-
-The goal is to create designs that are effortless to use and beautiful to look at.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tA6MB1y1DDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 `;
 
 export const stopFictionalCaseStudies = `---
@@ -263,41 +164,32 @@ title: Stop Writing Fictional Case Studies
 description: Dear product designers, stop writing fictional case studies and start collaborating with developers on side projects to build credible proof-of-work.
 publishDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/media/og-images/stop-fictional-case-studies.jpg
+ogImage: https://designerdada.com/assets/og-images/stop-fictional-case-studies.jpg
 keywords: product design, portfolio, case studies, collaboration, career advice
 ---
-
-Dear product designers, stop writing "fictional" case studies and start collaborating with developers on side projects to build credible proof-of-work.
-
 I have been noticing a growing trend in designers spending a lot of time working on fictional case studies. Where they come up with an imaginary solution, for some imaginary problem. It's useless, mostly!
 
 If you want to be a UI designer, go ahead and do that. No issues. But if you're training yourself to be a product designer—continue reading.
-
-## The Current Job Market Reality
-
 We all know how difficult the job market is right now. Layoff news coming in from all sides. Early stage companies are hiring, but very conservatively. And if it's a designer role, you need to be more than extraordinary to make a cut because of the cut-throat competition. Especially for the entry level roles.
 
 I am writing this piece of advice for the newcomers. The ones who are looking for their first design job. Folks, you are competing with designers with 2-4 years of experience. And your fictional case studies won't help to "stand out".
-
 This essay is not about how to design your portfolio, it's very specific about your proof-of-work as a product designer.
 
-## So, What Will Help You to Be Exceptional?
+So, **what** will help you to be exceptional?
 
-**Work on real problems, build real solutions for real users!**
+Work on real problems, build real solutions for real users!
 
-Now you will ask how?
+Now you will ask **how**?
 
-Many developers launch their side projects on [Peerlist](https://peerlist.io/projects?ref=designgiri.com). Many of them need help with design. (Sorry devs, but you really do!)
+Many developers launch their [side projects on Peerlist](https://peerlist.io/projects?ref=designgiri.com). Many of them need help with design. (Sorry devs, but you really do!)
 
-Connect with them. Convince them. Show them how your designs make their project super useful. Collaborate with them. This is important. **Collaborate.**
+Connect with them. Convince them. Show them how your designs make their project super useful. Collaborate with them. This is important. Collaborate.
 
-## Now the Most Important Question — WHY?
+Now the most important question — **WHY**?
 
 Well, they are building something which will be used by real people. Not millions, but hundreds for sure. Help them validate the problem. Help them design the solution. Help them improve the aesthetics. Collaborate with them!
 
 Trust me, these developers will help you become a better designer. They will teach you what "technical constraints" are and tell you the real meaning of "edge cases".
-
-## Document Your Learnings
 
 Now document your learnings after collaborating on this side project. Present it as a case study. It's your proof-of-work which is highly credible! Your design is functional in an actual browser or an app. Not just a screenshot in a fancy free mockup.
 
@@ -305,28 +197,23 @@ Imagine you're sitting in an interview and discussing all your learnings while b
 
 As a hiring manager, I will "hard relate" to these stories. Because you are not only talking only about the outcome but the actual impact of your design.
 
-## Take Action
-
 Just find a developer who is working on a side project or share that you're open to collaboration. You just need one or two such projects on your portfolio. I am sure a design manager will be interested in chatting with you.
 
-**Because you will stand out!**
+Because you will stand out!
 
 All the best!
 
 ---
 
 If you have read till here, I have 2 asks from you —
-
 - Share this with your designer peers.
-- Also read [portfolio advice](https://hvpandya.com/portfolio-advice?ref=designgiri.com) by [Hardik Pandya](https://peerlist.io/hardikpandya?ref=designgiri.com). It's a good one.
+- Also read [portfolio advice](https://hvpandya.com/portfolio-advice?ref=designgiri.com)by[Hardik Pandya](https://peerlist.io/hardikpandya?ref=designgiri.com). It's a good one.
 `;
 
 // Map of all articles
 export const allMDXContent: Record<string, string> = {
   'design-is-the-moat': designIsTheMoat,
-  'getting-started': gettingStarted,
   'growth-without-hacks': growthWithoutHacks,
   'make-something-you-want': makeSomethingYouWant,
-  'minimalism': minimalism,
   'stop-fictional-case-studies': stopFictionalCaseStudies,
 };
