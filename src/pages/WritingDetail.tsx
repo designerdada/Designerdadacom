@@ -98,17 +98,11 @@ function Footer() {
         >
           Writing
         </Link>
-        <Link 
-          to="/favorites" 
+        <Link
+          to="/favorites"
           className="font-normal leading-[1.4] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-[14px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
         >
           Favorites
-        </Link>
-        <Link 
-          to="/press" 
-          className="font-normal leading-[1.4] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-[14px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
-        >
-          Press
         </Link>
         <Tooltip content={theme === 'dark' ? 'Delight' : 'Go Dark'}>
           <button

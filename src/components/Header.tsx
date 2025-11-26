@@ -5,7 +5,7 @@ import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
 
 interface HeaderProps {
-  activePage?: 'writing' | 'favorites' | 'press';
+  activePage?: 'writing' | 'favorites';
 }
 
 export function Header({ activePage }: HeaderProps = {}) {
@@ -45,23 +45,14 @@ export function Header({ activePage }: HeaderProps = {}) {
         >
           Writing
         </Link>
-        <Link 
-          to="/favorites" 
+        <Link
+          to="/favorites"
           className={`font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
             activePage === 'favorites' ? 'text-[var(--foreground)] underline decoration-[var(--muted)]' : 'text-gray-500 hover:text-[var(--foreground)]'
           }`}
           aria-current={activePage === 'favorites' ? 'page' : undefined}
         >
           Favorites
-        </Link>
-        <Link 
-          to="/press" 
-          className={`font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
-            activePage === 'press' ? 'text-[var(--foreground)] underline decoration-[var(--muted)]' : 'text-gray-500 hover:text-[var(--foreground)]'
-          }`}
-          aria-current={activePage === 'press' ? 'page' : undefined}
-        >
-          Press
         </Link>
         <Tooltip content={theme === 'dark' ? 'Delight' : 'Go Dark'}>
           <button

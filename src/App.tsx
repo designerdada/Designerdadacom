@@ -83,7 +83,6 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/writing" element={<Writing />} />
         <Route path="/writing/:id" element={<WritingDetail />} />
-        <Route path="/press" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </Router>
