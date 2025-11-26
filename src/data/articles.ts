@@ -16,11 +16,6 @@ export const articles: Article[] = [
     date: '15.Nov.2025'
   },
   {
-    id: 'minimalism',
-    title: 'Minimalism',
-    date: '10.Nov.2025'
-  },
-  {
     id: 'growth-without-hacks',
     title: 'Growth Without Hacks',
     date: '05.Nov.2025'
@@ -29,11 +24,6 @@ export const articles: Article[] = [
     id: 'make-something-you-want',
     title: 'Make Something You Want',
     date: '01.Nov.2025'
-  },
-  {
-    id: 'getting-started',
-    title: 'Getting Started',
-    date: '25.Oct.2025'
   }
 ];
 

@@ -51,36 +51,6 @@ So if you're a designer who can code (or a coder learning design), you're in the
 The future belongs to builders who understand that in a world where anyone can make something that works, the real competitive advantage is making something that people **love**.
 `;
 
-export const gettingStarted = `---
-title: Getting Started with Design Systems
-description: A comprehensive guide to building and maintaining design systems that scale.
-publishDate: 25.Oct.2025
-author: Akash Bhadange
----
-
-# Getting Started with Design Systems
-
-Design systems are the backbone of consistent, scalable digital products. They help teams work more efficiently and create better user experiences.
-
-## What is a Design System?
-
-A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
-
-## Getting Started
-
-Here are the key steps to building your first design system:
-
-- Define your design principles
-- Create a color palette and typography scale
-- Build component library
-- Document everything
-- Iterate and improve
-
-## Best Practices
-
-Start small and iterate. Don't try to build everything at once. Focus on the components you use most frequently and expand from there.
-`;
-
 export const growthWithoutHacks = `---
 title: Growth Without Hacks
 description: Real growth isn't about tricks or shortcuts. It's about building something people genuinely want and making it easy for them to tell others about it. Here's how to grow sustainably.
@@ -234,30 +204,6 @@ Ask yourself: Would I use this even if nobody else did? If the answer is yes, yo
 
 The best products start small and personal. They solve real problems for real people—starting with you. Everything else is just noise.`;
 
-export const minimalism = `---
-title: The Art of Minimalism in Digital Design
-description: Exploring how less can be more when creating digital experiences.
-publishDate: 10.Nov.2025
-author: Akash Bhadange
----
-
-Minimalism in digital design is about removing the unnecessary to focus on what truly matters. It's not about making things sparse—it's about being intentional.
-
-## Less is More
-
-Every element in your design should serve a purpose. If it doesn't add value, it's taking away from the experience.
-
-## Principles of Minimal Design
-
-- Clear hierarchy and typography
-- Generous white space
-- Limited color palette
-- Purposeful imagery
-- Intuitive navigation
-
-The goal is to create designs that are effortless to use and beautiful to look at.
-`;
-
 export const stopFictionalCaseStudies = `---
 title: Stop Writing Fictional Case Studies
 description: Dear product designers, stop writing fictional case studies and start collaborating with developers on side projects to build credible proof-of-work.
@@ -312,9 +258,7 @@ If you have read till here, I have 2 asks from you —
 // Map of all articles
 export const allMDXContent: Record<string, string> = {
   'design-is-the-moat': designIsTheMoat,
-  'getting-started': gettingStarted,
   'growth-without-hacks': growthWithoutHacks,
   'make-something-you-want': makeSomethingYouWant,
-  'minimalism': minimalism,
   'stop-fictional-case-studies': stopFictionalCaseStudies,
 };
