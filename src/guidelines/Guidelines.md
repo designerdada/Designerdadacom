@@ -16,3 +16,12 @@ For example:
 * Never manually edit `/content/writing/index.ts` - it's auto-generated
 * To add new articles: create the `.mdx` file and add entry to `/data/articles.ts`
 * Run `npm run generate-mdx` to rebuild the content index
+
+## Documentation
+
+* Keep documentation minimal and consolidated
+* All instructions are in `/README.md` - do not create additional documentation files
+* Only create new .md files if explicitly requested by the user
+
+ Some of the base components you are using may have styling(eg. gap/typography) baked in as defaults.
+So make sure you explicitly set any styling information from the guidelines in the generated react to override the defaults.
