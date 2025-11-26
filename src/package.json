@@ -1,0 +1,16 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate-mdx": "node scripts/generate-mdx-index.js",
+    "test-mdx": "node scripts/test-mdx-generation.js",
+    "prebuild": "npm run generate-mdx",
+    "dev": "npm run generate-mdx && vite",
+    "build": "npm run generate-mdx && vite build",
+    "preview": "vite preview"
+  },
+  "description": "Personal website with MDX-powered blog",
+  "author": "Akash Bhadange"
+}

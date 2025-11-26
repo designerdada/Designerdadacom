@@ -1,0 +1,40 @@
+export interface Article {
+  id: string;
+  title: string;
+  date: string;
+}
+
+export const articles: Article[] = [
+  {
+    id: 'design-is-the-moat',
+    title: 'Design Is The Moat',
+    date: '15.Nov.2025'
+  },
+  {
+    id: 'minimalism',
+    title: 'Minimalism',
+    date: '10.Nov.2025'
+  },
+  {
+    id: 'growth-without-hacks',
+    title: 'Growth Without Hacks',
+    date: '05.Nov.2025'
+  },
+  {
+    id: 'make-something-you-want',
+    title: 'Make Something You Want',
+    date: '01.Nov.2025'
+  },
+  {
+    id: 'getting-started',
+    title: 'Getting Started',
+    date: '25.Oct.2025'
+  }
+];
+
+// Sort articles by date (newest first)
+export const sortedArticles = [...articles].sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
