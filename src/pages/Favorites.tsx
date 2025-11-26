@@ -248,13 +248,13 @@ export function Favorites() {
         <meta property="og:title" content="Favorites | Akash Bhadange" />
         <meta property="og:description" content="A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention." />
         <meta property="og:url" content="https://designerdada.com/favorites" />
-        <meta property="og:image" content="https://designerdada.com/media/og-images/og-favorites.jpg" />
-        
+        <meta property="og:image" content="https://designerdada.com/assets/og-images/og-favorites.jpg" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Favorites | Akash Bhadange" />
         <meta name="twitter:description" content="A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention." />
-        <meta name="twitter:image" content="https://designerdada.com/media/og-images/og-favorites.jpg" />
+        <meta name="twitter:image" content="https://designerdada.com/assets/og-images/og-favorites.jpg" />
       </Helmet>
       <div className="bg-[var(--background)] relative size-full min-h-screen">
       <div className="box-border content-stretch flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-[544px]">
