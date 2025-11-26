@@ -19,7 +19,6 @@ import {
 } from '../components/ui/breadcrumb';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
-import imgAkashDpIndigo1 from 'figma:asset/d473e31c6d7da66b93f4778079bb0bf21a691da4.png';
 import imgImage1 from 'figma:asset/6ecdfba3f00b0a9cd14b86fd7e537539b9517b3b.png';
 
 function ArticleHeader({ title }: { title: string }) {
@@ -230,10 +229,10 @@ export function WritingDetail() {
                 <BreadcrumbLink asChild>
                   <Link to="/" className="flex gap-2 items-center">
                     <div className="relative rounded-full shrink-0 size-6">
-                      <img 
-                        alt="Akash Bhadange" 
-                        className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full" 
-                        src={imgAkashDpIndigo1} 
+                      <img
+                        alt="Akash Bhadange"
+                        className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full"
+                        src="/assets/profile.png"
                       />
                     </div>
                     <span className="leading-[1.4] text-[14px]">Akash Bhadange</span>
