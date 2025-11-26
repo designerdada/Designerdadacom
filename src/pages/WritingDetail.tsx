@@ -19,7 +19,6 @@ import {
 } from '../components/ui/breadcrumb';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
-
 function ArticleHeader({ title }: { title: string }) {
   return (
     <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
