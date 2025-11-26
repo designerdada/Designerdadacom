@@ -6,6 +6,11 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: 'stop-fictional-case-studies',
+    title: 'Stop Writing Fictional Case Studies',
+    date: '26.Nov.2025'
+  },
+  {
     id: 'design-is-the-moat',
     title: 'Design Is The Moat',
     date: '15.Nov.2025'
