@@ -9,12 +9,14 @@ import { Helmet } from 'react-helmet';
 type Category = 'All' | 'Products' | 'People' | 'Sites';
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
+  const strokeColor = isHovered ? 'var(--foreground)' : '#64748B';
+
   return (
     <div className="relative shrink-0 size-4">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
         <g>
-          <path d="M11.3333 11.3333L14 14" stroke={isHovered ? "#0d0d0d" : "#64748B"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-          <path d="M12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333Z" stroke={isHovered ? "#0d0d0d" : "#64748B"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          <path d="M11.3333 11.3333L14 14" stroke={strokeColor} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          <path d="M12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333Z" stroke={strokeColor} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
         </g>
       </svg>
     </div>
