@@ -65,6 +65,10 @@
       },
       "scripts": {
           "dev": "vite",
-          "build": "vite build"
+          "build": "npm run generate && vite build",
+          "generate": "npm run generate:mdx && npm run generate:sitemap && npm run generate:llms",
+          "generate:mdx": "node src/scripts/generate-mdx-index.js",
+          "generate:sitemap": "node src/scripts/generate-sitemap.js",
+          "generate:llms": "node src/scripts/generate-llms-txt.js"
       }
   }
