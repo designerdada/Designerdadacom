@@ -8,7 +8,7 @@ export function Footer() {
         <img
           alt="designerdada.com"
           className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full"
-          src="/assets/logo.png"
+          src="/assets/footer-signature.png"
         />
       </div>
 
