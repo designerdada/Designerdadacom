@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { sortedArticles } from '../data/articles';
 import { useTheme } from '../hooks/useTheme';
 import { Tooltip } from '../components/Tooltip';
-import { MailingList } from '../components/MailingList';
+// import { MailingList } from '../components/MailingList';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Helmet } from 'react-helmet';
@@ -78,7 +78,7 @@ export function Writing() {
             I write whenever inspiration strikes, which means I'm pretty irregular about it. These are my raw thoughts on design, building products, and the startup journey. Some are polished, others are more stream-of-consciousness, but they all capture what I was thinking about at the time.
           </p>
           <ArticleList />
-          <MailingList />
+          {/* <MailingList /> */}
           <ColorDots />
           <Footer />
         </div>

@@ -8,14 +8,14 @@ import { articleContents } from '../data/articleContent';
 import { markdownComponents, resetFirstParagraph } from '../components/MarkdownComponents';
 import { useTheme } from '../hooks/useTheme';
 import { Tooltip } from '../components/Tooltip';
-import { MailingList } from '../components/MailingList';
-import { 
-  Breadcrumb, 
-  BreadcrumbList, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
-  BreadcrumbPage, 
-  BreadcrumbSeparator 
+// import { MailingList } from '../components/MailingList';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator
 } from '../components/ui/breadcrumb';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
@@ -262,8 +262,8 @@ export function WritingDetail() {
           <ColorDots />
           <ReadMore currentSlug={id} />
           <ColorDots />
-          <MailingList />
-          <ColorDots />
+          {/* <MailingList /> */}
+          {/* <ColorDots /> */}
           <Footer />
         </div>
       </div>
