@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "generate-mdx": "node scripts/generate-mdx-index.js",
     "test-mdx": "node scripts/test-mdx-generation.js",
@@ -19,7 +22,9 @@
     "react-router-dom": "^6.26.0",
     "react-helmet": "^6.1.0",
     "lucide-react": "^0.400.0",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -27,6 +32,9 @@
     "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.3.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
   }
 }
