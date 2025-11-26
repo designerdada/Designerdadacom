@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-The dev server automatically generates the content index from MDX files and starts the development server.
+The dev server automatically generates the content index from MDX files and starts the development server at `http://localhost:5173`.
 
 ### Production Build
 
