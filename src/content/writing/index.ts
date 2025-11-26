@@ -8,7 +8,7 @@ description: Design is no longer a layer you add at the end. It is the product. 
 publishDate: 15.Nov.2025
 modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/media/og-images/design-is-the-moat.jpg
+ogImage: https://designerdada.com/assets/og-images/design-is-the-moat.jpg
 keywords: design, product design, AI, prototyping, startups
 ---
 
@@ -37,7 +37,7 @@ description: What really drives startup growth. Marketing isn't about shiny tool
 publishDate: 05.Nov.2025
 modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/og-images/growth-without-hacks.jpg
+ogImage: https://designerdada.com/assets/og-images/growth-without-hacks.jpg
 keywords: growth, marketing, startups, product development
 ---
 
@@ -130,7 +130,7 @@ description: The best products come from personal frustration. When you build so
 publishDate: 01.Nov.2025
 modifiedDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/og-images/make-something-you-want.jpg
+ogImage: https://designerdada.com/assets/og-images/make-something-you-want.jpg
 keywords: product development, startups, entrepreneurship, design
 ---
 
@@ -164,7 +164,7 @@ title: Stop Writing Fictional Case Studies
 description: Dear product designers, stop writing fictional case studies and start collaborating with developers on side projects to build credible proof-of-work.
 publishDate: 26.Nov.2025
 author: Akash Bhadange
-ogImage: https://designerdada.com/media/og-images/stop-fictional-case-studies.jpg
+ogImage: https://designerdada.com/assets/og-images/stop-fictional-case-studies.jpg
 keywords: product design, portfolio, case studies, collaboration, career advice
 ---
 I have been noticing a growing trend in designers spending a lot of time working on fictional case studies. Where they come up with an imaginary solution, for some imaginary problem. It's useless, mostly!

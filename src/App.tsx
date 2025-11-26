@@ -24,15 +24,15 @@ export default function App() {
         <meta property="og:description" content="Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend." />
         <meta property="og:site_name" content="designerdada.com" />
         <meta property="og:url" content="https://designerdada.com" />
-        <meta property="og:image" content="https://designerdada.com/media/og-images/og-home.jpg" />
-        
+        <meta property="og:image" content="https://designerdada.com/assets/og-images/og-home.jpg" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@designerdada" />
         <meta name="twitter:site" content="@designerdada" />
         <meta name="twitter:title" content="Akash Bhadange aka @designerdada" />
         <meta name="twitter:description" content="Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend." />
-        <meta name="twitter:image" content="https://designerdada.com/media/og-images/og-home.jpg" />
+        <meta name="twitter:image" content="https://designerdada.com/assets/og-images/og-home.jpg" />
         
         {/* Theme color */}
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
