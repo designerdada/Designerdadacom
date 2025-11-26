@@ -7,11 +7,12 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "fix-imports": "node scripts/fix-imports.js",
     "generate-mdx": "node scripts/generate-mdx-index.js",
     "test-mdx": "node scripts/test-mdx-generation.js",
-    "prebuild": "npm run generate-mdx",
-    "dev": "npm run generate-mdx && vite",
-    "build": "npm run generate-mdx && vite build",
+    "prebuild": "npm run fix-imports && npm run generate-mdx",
+    "dev": "npm run fix-imports && npm run generate-mdx && vite",
+    "build": "npm run fix-imports && npm run generate-mdx && vite build",
     "preview": "vite preview"
   },
   "description": "Personal website with MDX-powered blog",
