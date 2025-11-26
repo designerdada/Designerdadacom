@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
-import imgImage1 from "figma:asset/6ecdfba3f00b0a9cd14b86fd7e537539b9517b3b.png";
 
 export function Footer() {
   return (
     <div className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full">
       {/* Logo Image */}
       <div className="h-6 relative shrink-0 w-[91px]">
-        <img 
-          alt="designerdada.com" 
-          className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" 
-          src={imgImage1} 
+        <img
+          alt="designerdada.com"
+          className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full"
+          src="/assets/logo.png"
         />
       </div>
 
