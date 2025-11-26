@@ -3,7 +3,6 @@ import { useTheme } from '../hooks/useTheme';
 import { Tooltip } from './Tooltip';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
-import imgAkashDpIndigo1 from "figma:asset/d473e31c6d7da66b93f4778079bb0bf21a691da4.png";
 
 interface HeaderProps {
   activePage?: 'writing' | 'favorites' | 'press';
@@ -17,10 +16,10 @@ export function Header({ activePage }: HeaderProps = {}) {
       {/* Profile Image */}
       <Link to="/" className="content-stretch flex h-10 items-center justify-start relative shrink-0 w-full" aria-label="Go to home">
         <div className="relative rounded-full shrink-0 size-10">
-          <img 
-            alt="Akash Bhadange profile picture" 
-            className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full" 
-            src={imgAkashDpIndigo1}
+          <img
+            alt="Akash Bhadange profile picture"
+            className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full"
+            src="/assets/profile.png"
             loading="eager"
           />
         </div>
