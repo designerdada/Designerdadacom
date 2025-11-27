@@ -60,7 +60,7 @@ export function Home() {
             </a>
             <span> and </span>
             <a
-              href="https://autosend.io"
+              href="https://autosend.com"
               target="_blank"
               rel="noopener noreferrer"
               className="[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors"
@@ -82,7 +82,7 @@ export function Home() {
           <p className="leading-[1.4] animate-in animate-delay-3">
             <span>When I'm not designing, I love shooting street </span>
             <a
-              href="https://instagram.com/designerdada"
+              href="https://retrolens.me"
               target="_blank"
               rel="noopener noreferrer"
               className="[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors"
