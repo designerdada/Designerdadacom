@@ -65,6 +65,20 @@ export const favorites: Favorite[] = [
     category: 'Product'
   },
   {
+    id: 'granola',
+    name: 'Granola',
+    description: 'My companion in all sales calls',
+    url: 'https://www.granola.ai/',
+    category: 'Product'
+  },
+  {
+    id: 'superlist',
+    name: 'Superlist',
+    description: 'Beautiful note taking and todo app',
+    url: 'https://www.superlist.com/',
+    category: 'Product'
+  },
+  {
     id: 'dieter-rams',
     name: 'Dieter Rams',
     description: 'My source of inspiration',
