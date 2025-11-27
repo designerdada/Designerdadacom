@@ -73,14 +73,22 @@ export function Writing() {
       </Helmet>
       <div className="bg-[var(--background)] relative size-full min-h-screen" data-name="designerdada.com/writing">
         <div className="box-border content-stretch flex flex-col gap-[40px] items-center mx-auto px-[16px] py-[40px] w-full max-w-[544px]">
-          <Header activePage="writing" />
-          <p className="leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full">
+          <div className="animate-in w-full">
+            <Header activePage="writing" />
+          </div>
+          <p className="leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full animate-in animate-delay-1">
             I write whenever inspiration strikes, which means I'm pretty irregular about it. These are my raw thoughts on design, building products, and the startup journey. Some are polished, others are more stream-of-consciousness, but they all capture what I was thinking about at the time.
           </p>
-          <ArticleList />
+          <div className="animate-in animate-delay-2 w-full">
+            <ArticleList />
+          </div>
           {/* <MailingList /> */}
-          <ColorDots />
-          <Footer />
+          <div className="animate-in animate-delay-3">
+            <ColorDots />
+          </div>
+          <div className="animate-in animate-delay-4 w-full">
+            <Footer />
+          </div>
         </div>
       </div>
     </>
