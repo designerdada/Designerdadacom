@@ -146,7 +146,7 @@ export const A = ({ href, children }: LinkProps) => (
 
 // Strong/Bold
 export const Strong = ({ children }: ComponentProps) => (
-  <strong className="font-medium">{children}</strong>
+  <strong className="font-semibold">{children}</strong>
 );
 
 // Em/Italic

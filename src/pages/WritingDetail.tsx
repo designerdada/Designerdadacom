@@ -263,13 +263,13 @@ export function WritingDetail() {
             </ReactMarkdown>
           </div>
 
-          <div className="animate-in animate-delay-3">
+          <div className="animate-in animate-delay-3 w-full">
             <ColorDots />
           </div>
           <div className="animate-in animate-delay-4 w-full">
             <ReadMore currentSlug={id} />
           </div>
-          <div className="animate-in animate-delay-5">
+          <div className="animate-in animate-delay-5 w-full">
             <ColorDots />
           </div>
           {/* <MailingList /> */}
