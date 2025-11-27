@@ -186,11 +186,11 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
           rel={`noopener noreferrer${favorite.nofollow === false ? '' : ' nofollow'}`}
           className="content-stretch flex gap-4 items-center relative shrink-0 w-full hover:opacity-70 transition-opacity group"
         >
-          <div className="basis-0 content-stretch flex gap-2 grow items-center min-h-px min-w-px relative shrink-0">
+          <div className="basis-0 content-stretch flex gap-4 grow items-center min-h-px min-w-px relative shrink-0">
             <div className="relative shrink-0 size-5">
-              <img 
+              <img
                 alt={`${favorite.name} favicon`}
-                className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" 
+                className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full"
                 src={getFaviconUrl(favorite.url)}
               />
             </div>
