@@ -30,6 +30,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll; /* Always show vertical scrollbar to prevent layout shift */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,7 +41,6 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
-  scrollbar-gutter: stable;
 }
 
 ::selection {
