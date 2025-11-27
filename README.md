@@ -1,13 +1,14 @@
-# Personal Website
+# Personal Website of Akash Bhadange
 
 A minimal, SEO-optimized personal website built with React, TypeScript, Vite, and Tailwind CSS.
+
+[Demo](https://designerdada.com)
 
 ## Features
 
 - ✨ Minimal, centered single-column layout (544px max width)
 - 🌙 Dark mode support with system preference detection
 - 📝 MDX-powered blog with automatic content indexing
-- 🎨 Source Serif 4 typography
 - 🔍 SEO-optimized with Open Graph, Twitter Cards, and JSON-LD
 - 📱 Fully responsive design
 - ⚡ Fast builds with Vite
@@ -145,24 +146,10 @@ The build output will be in the `/dist` directory.
 - Canonical URLs for all pages
 - Dynamic meta tags per page/article
 
-## Dark Mode
-
-Dark mode is implemented using CSS variables and a custom hook. It:
-- Respects system preferences on first visit
-- Persists user preference in localStorage
-- Provides smooth transitions between modes
-
-## Browser Support
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- ES6+ JavaScript support required
-
 ## License
 
 Open source - feel free to use as a template for your own site!
 
 ## Credits
 
-Built by Akash Bhadange ([@designerdada](https://twitter.com/designerdada))
-
-Design imported from Figma and built with Figma Make.
+Built by Akash Bhadange ([@designerdada](https://designerdada.com))
