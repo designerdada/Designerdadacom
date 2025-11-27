@@ -269,7 +269,7 @@ export function Favorites() {
         <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full animate-in animate-delay-1">
           I love discovering great things, whether it's a beautifully designed product, an inspiring person, or a website I keep coming back to. This is my collection of those gems I find on the internet and in the real world. Everything here has caught my attention and stuck with me for one reason or another.
         </p>
-        <div className="animate-in animate-delay-2 w-full">
+        <div className="animate-in animate-delay-2 w-full relative z-50">
           <SearchAndFilters
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -277,7 +277,7 @@ export function Favorites() {
             setSelectedCategory={setSelectedCategory}
           />
         </div>
-        <div className="animate-in animate-delay-3 w-full">
+        <div className="animate-in animate-delay-3 w-full relative z-10">
           <FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} />
         </div>
         <div className="animate-in animate-delay-4">
