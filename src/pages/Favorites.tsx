@@ -194,15 +194,17 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
                 src={getFaviconUrl(favorite.url)}
               />
             </div>
-            <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4">
-              {favorite.name}
-            </p>
-            <p className="leading-[1.4] not-italic relative shrink-0 text-[12px] text-justify text-nowrap text-slate-500 whitespace-pre">
-              /
-            </p>
-            <p className="[white-space-collapse:collapse] basis-0 grow leading-[1.4] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-[14px] text-justify text-nowrap">
-              {favorite.description}
-            </p>
+            <div className="basis-0 content-stretch flex gap-2 grow items-center min-h-px min-w-px relative shrink-0">
+              <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4">
+                {favorite.name}
+              </p>
+              <p className="leading-[1.4] not-italic relative shrink-0 text-[12px] text-justify text-nowrap text-slate-500 whitespace-pre">
+                /
+              </p>
+              <p className="[white-space-collapse:collapse] basis-0 grow leading-[1.4] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-[14px] text-justify text-nowrap">
+                {favorite.description}
+              </p>
+            </div>
           </div>
           <p className="leading-[1.5] not-italic relative shrink-0 text-[14px] text-nowrap text-slate-500 whitespace-pre">
             {getDomain(favorite.url)}
