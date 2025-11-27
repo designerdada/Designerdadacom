@@ -80,7 +80,7 @@ function SearchAndFilters({
       </div>
       
       {/* Filter Dropdown */}
-      <div className="relative" ref={dropdownRef}>
+      <div className="relative z-50" ref={dropdownRef}>
         <button
           onClick={() => setShowDropdown(!showDropdown)}
           className="content-stretch flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity"
@@ -177,7 +177,7 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
   }
 
   return (
-    <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full isolate">
       {filteredFavorites.map((favorite) => (
         <a
           key={favorite.id}
@@ -269,7 +269,7 @@ export function Favorites() {
         <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full animate-in animate-delay-1">
           I love discovering great things, whether it's a beautifully designed product, an inspiring person, or a website I keep coming back to. This is my collection of those gems I find on the internet and in the real world. Everything here has caught my attention and stuck with me for one reason or another.
         </p>
-        <div className="animate-in animate-delay-2 w-full">
+        <div className="animate-in animate-delay-2 w-full relative z-50">
           <SearchAndFilters
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -277,7 +277,7 @@ export function Favorites() {
             setSelectedCategory={setSelectedCategory}
           />
         </div>
-        <div className="animate-in animate-delay-3 w-full">
+        <div className="animate-in animate-delay-3 w-full relative z-10">
           <FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} />
         </div>
         <div className="animate-in animate-delay-4">
