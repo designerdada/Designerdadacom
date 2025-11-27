@@ -80,7 +80,7 @@ function SearchAndFilters({
       </div>
       
       {/* Filter Dropdown */}
-      <div className="relative" ref={dropdownRef}>
+      <div className="relative z-50" ref={dropdownRef}>
         <button
           onClick={() => setShowDropdown(!showDropdown)}
           className="content-stretch flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity"
