@@ -261,19 +261,29 @@ export function Favorites() {
       </Helmet>
       <div className="bg-[var(--background)] relative size-full min-h-screen">
       <div className="box-border content-stretch flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-[544px]">
-        <Header activePage="favorites" />
-        <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full">
+        <div className="animate-in w-full">
+          <Header activePage="favorites" />
+        </div>
+        <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full animate-in animate-delay-1">
           I love discovering great things, whether it's a beautifully designed product, an inspiring person, or a website I keep coming back to. This is my collection of those gems I find on the internet and in the real world. Everything here has caught my attention and stuck with me for one reason or another.
         </p>
-        <SearchAndFilters 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-        <FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} />
-        <ColorDots />
-        <Footer />
+        <div className="animate-in animate-delay-2 w-full">
+          <SearchAndFilters
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </div>
+        <div className="animate-in animate-delay-3 w-full">
+          <FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} />
+        </div>
+        <div className="animate-in animate-delay-4">
+          <ColorDots />
+        </div>
+        <div className="animate-in animate-delay-5 w-full">
+          <Footer />
+        </div>
       </div>
     </div>
     </>

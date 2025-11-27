@@ -215,56 +215,68 @@ export function WritingDetail() {
       <div className="bg-[var(--background)] relative size-full min-h-screen">
         <div className="box-border content-stretch flex flex-col gap-6 items-start mx-auto px-4 py-10 w-full max-w-[544px]">
           {/* Breadcrumb */}
-          <Breadcrumb>
-            <BreadcrumbList className="gap-2">
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/" className="flex gap-2 items-center">
-                    <div className="relative rounded-full shrink-0 size-6">
-                      <img
-                        alt="Akash Bhadange"
-                        className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full"
-                        src="/assets/profile.png"
-                      />
-                    </div>
-                    <span className="leading-[1.4] text-[14px]">Akash Bhadange</span>
-                  </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <span className="leading-[1.4] text-[12px] text-gray-500">/</span>
-              </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/writing" className="leading-[1.4] text-[14px]">Writing</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <span className="leading-[1.4] text-[12px] text-gray-500">/</span>
-              </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <BreadcrumbPage className="leading-[1.4] text-[14px]">{articleData.metadata.title}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-          
-          <ArticleHeader 
-            title={articleData.metadata.title} 
-          />
-          
+          <div className="animate-in w-full">
+            <Breadcrumb>
+              <BreadcrumbList className="gap-2">
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/" className="flex gap-2 items-center">
+                      <div className="relative rounded-full shrink-0 size-6">
+                        <img
+                          alt="Akash Bhadange"
+                          className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-full size-full"
+                          src="/assets/profile.png"
+                        />
+                      </div>
+                      <span className="leading-[1.4] text-[14px]">Akash Bhadange</span>
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator>
+                  <span className="leading-[1.4] text-[12px] text-gray-500">/</span>
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/writing" className="leading-[1.4] text-[14px]">Writing</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator>
+                  <span className="leading-[1.4] text-[12px] text-gray-500">/</span>
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="leading-[1.4] text-[14px]">{articleData.metadata.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+
+          <div className="animate-in animate-delay-1 w-full">
+            <ArticleHeader
+              title={articleData.metadata.title}
+            />
+          </div>
+
           {/* Article Content */}
-          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full animate-in animate-delay-2">
             <ReactMarkdown components={markdownComponents}>
               {articleData.content}
             </ReactMarkdown>
           </div>
 
-          <ColorDots />
-          <ReadMore currentSlug={id} />
-          <ColorDots />
+          <div className="animate-in animate-delay-3">
+            <ColorDots />
+          </div>
+          <div className="animate-in animate-delay-4 w-full">
+            <ReadMore currentSlug={id} />
+          </div>
+          <div className="animate-in animate-delay-5">
+            <ColorDots />
+          </div>
           {/* <MailingList /> */}
           {/* <ColorDots /> */}
-          <Footer />
+          <div className="animate-in animate-delay-6 w-full">
+            <Footer />
+          </div>
         </div>
       </div>
     </>
