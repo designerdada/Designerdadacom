@@ -95,7 +95,7 @@ function SearchAndFilters({
         </button>
         
         {showDropdown && (
-          <div className="absolute right-0 top-full mt-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 z-10 min-w-[120px]" role="menu">
+          <div className="absolute right-0 top-full mt-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 z-50 min-w-[120px]" role="menu">
             {categories.map((category) => (
               <button
                 key={category}
