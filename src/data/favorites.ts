@@ -95,7 +95,7 @@ export const favorites: Favorite[] = [
   {
     id: 'gavin-nelson',
     name: 'Gavin Nelson',
-    description: 'Designer ay Linear',
+    description: 'Designer at Linear',
     url: 'https://nelson.co/',
     category: 'People'
   },
