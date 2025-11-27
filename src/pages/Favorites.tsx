@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer';
 import { ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
-type Category = 'All' | 'Products' | 'People' | 'Sites';
+type Category = 'All' | 'Products' | 'People' | 'Sites' | 'Fonts';
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
   const strokeColor = isHovered ? 'var(--foreground)' : '#64748B';
@@ -38,7 +38,7 @@ function SearchAndFilters({
   const [isInputHovered, setIsInputHovered] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const categories: Category[] = ['All', 'Products', 'People', 'Sites'];
+  const categories: Category[] = ['All', 'Products', 'People', 'Sites', 'Fonts'];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -130,7 +130,8 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
       const categoryMap = {
         'Products': 'Product',
         'People': 'People',
-        'Sites': 'Site'
+        'Sites': 'Site',
+        'Fonts': 'Font'
       };
       filtered = filtered.filter(fav => fav.category === categoryMap[selectedCategory as keyof typeof categoryMap]);
     }
