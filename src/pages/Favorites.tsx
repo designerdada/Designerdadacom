@@ -177,7 +177,7 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
   }
 
   return (
-    <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full isolate">
       {filteredFavorites.map((favorite) => (
         <a
           key={favorite.id}
