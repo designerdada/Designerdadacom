@@ -24,6 +24,40 @@ I write about design, building products, and the startup journey. When not desig
 
 ## Articles
 
+### Buy a Domain
+
+URL: https://designerdada.com/writing/buy-a-domain
+Published: 02.Dec.2025
+Description: The first thing you should do when starting a project is buy a domain. Not set up your tech stack. Not design your logo. Buy a domain. Here's why.
+
+The first thing you should do when starting a project is buy a domain. Not set up your tech stack. Not design your logo. Buy a domain.
+
+This sounds trivial. It costs $12 a year. But most people don't do it. They tell themselves they'll do it later, after they validate the idea. They use a subdomain or some free hosting URL. And this tiny decision ends up costing them.
+
+**When you buy a domain, something changes.** The project becomes real in a way it wasn't before. You've spent money, however small. You've committed to a name. You can't pretend anymore that this is just an idea you're toying with. This psychological shift matters. Ideas are cheap. Domains force you to take the next step. Once you own yourproject.com, you have to build something to put there. The domain sits in your account, quietly demanding that you do something with it.
+
+You can't name things well under pressure. When you're rushing to launch, you pick whatever domain is available. Usually something with hyphens or random letters tacked on. Or worse, you launch with a temporary name and promise yourself you'll rebrand later. But rebranding is painful. You lose SEO. You confuse users. You have to update links everywhere. Better to spend an afternoon finding the right name now than spend months dealing with a name you settled for.
+
+Buy the domain early and live with the name for a while. You'll know if it's right. And if it's not, you can change it before anyone knows the project exists.
+
+You can't buy a domain without deciding what you're building. The name has to mean something. Is this a product? A service? A portfolio? The act of choosing forces you to think clearly about what this project actually is. Vague ideas stay vague until you have to describe them in a URL. "A platform for connecting creative professionals" becomes creativeconnect.com or networkforartists.com, and suddenly you realize you need to pick a lane. This is good. Clarity early saves time later.
+
+No one takes myproject.webflow.io seriously. It signals you're not serious. It says this might disappear tomorrow, so why should anyone invest time in it? A real domain costs almost nothing but signals commitment. It tells people this isn't just a weekend experiment. You care enough to spend $12 and figure out DNS. That's a low bar, but most people don't clear it.
+
+This matters even more for portfolios. If you're a developer or designer showing your work, yourname.github.io doesn't compete with yourname.com. One looks professional. The other looks like homework.
+
+Platforms change their rules. They raise prices. They shut down. When your project lives on someone else's domain, you're renting, not owning. **A domain is yours.** You can move it between hosts. You can redirect it anywhere. You can keep it for decades if you want. This permanence has value that compounds over time. Ten years from now, the links people shared to your site still work. The portfolio you sent to clients in 2025 still resolves. You own your corner of the internet.
+
+The reason people don't buy domains early is that it feels premature. You don't have a product yet. You're not sure about the name. Maybe the whole idea won't work out. But that's exactly why you should do it now. When stakes are low, decisions are easier. You're not attached to anything yet. You can experiment with names. And if the project dies, you're out $12. The cost of waiting is higher.
+
+Good projects start with a domain. Not because the domain itself matters that much, but because buying it means you're starting. You're committing. You're making the idea real enough to name.
+
+> So when you get that next idea, don't open your code editor first. Don't sketch wireframes. Open your domain registrar and find a name. Buy it. Then build something worth putting there.
+
+The domain comes first. Everything else follows.
+
+---
+
 ### Design Is The Moat
 
 URL: https://designerdada.com/writing/design-is-the-moat
@@ -218,7 +252,7 @@ All the best!
 
 If you have read till here, I have 2 asks from you —
 - Share this with your designer peers.
-- Also read [portfolio advice](https://hvpandya.com/portfolio-advice?ref=designgiri.com)by[Hardik Pandya](https://peerlist.io/hardikpandya?ref=designgiri.com). It's a good one.
+- Also read [portfolio advice](https://hvpandya.com/portfolio-advice?ref=designgiri.com) by [Hardik Pandya](https://peerlist.io/hardikpandya?ref=designgiri.com). It's a good one.
 
 ---
 
