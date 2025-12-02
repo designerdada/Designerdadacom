@@ -6,6 +6,11 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: 'buy-a-domain',
+    title: 'Buy a Domain',
+    date: '02.Dec.2024'
+  },
+  {
     id: 'stop-fictional-case-studies',
     title: 'Stop Writing Fictional Case Studies',
     date: '26.Nov.2025'
