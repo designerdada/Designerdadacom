@@ -5,7 +5,7 @@
 export const buyADomain = `---
 title: Buy a Domain
 description: The first thing you should do when starting a project is buy a domain. Not set up your tech stack. Not design your logo. Buy a domain. Here's why.
-publishDate: 02.Dec.2024
+publishDate: 02.Dec.2025
 author: Akash Bhadange
 ogImage: https://designerdada.com/assets/og-images/buy-a-domain.jpg
 keywords: domain, buy domain, starting a project, web development, entrepreneurship

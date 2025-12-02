@@ -8,7 +8,7 @@ export const articles: Article[] = [
   {
     id: 'buy-a-domain',
     title: 'Buy a Domain',
-    date: '02.Dec.2024'
+    date: '02.Dec.2025'
   },
   {
     id: 'stop-fictional-case-studies',
