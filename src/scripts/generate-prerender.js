@@ -62,33 +62,33 @@ function injectMetaTags(html, metadata) {
   // Update title
   $('title').text(`${metadata.title} | Akash Bhadange`);
 
-  // Add basic meta tags
+  // Add basic meta tags with data-react-helmet attribute to prevent duplicates
   $('head').append(`
-    <meta name="description" content="${metadata.description}" />
-    <meta name="author" content="${metadata.author || 'Akash Bhadange'}" />
-    ${metadata.keywords ? `<meta name="keywords" content="${metadata.keywords}" />` : ''}
-    <link rel="canonical" href="${metadata.canonicalUrl}" />
+    <meta name="description" content="${metadata.description}" data-react-helmet="true" />
+    <meta name="author" content="${metadata.author || 'Akash Bhadange'}" data-react-helmet="true" />
+    ${metadata.keywords ? `<meta name="keywords" content="${metadata.keywords}" data-react-helmet="true" />` : ''}
+    <link rel="canonical" href="${metadata.canonicalUrl}" data-react-helmet="true" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="${metadata.title}" />
-    <meta property="og:description" content="${metadata.description}" />
-    <meta property="og:url" content="${metadata.canonicalUrl}" />
-    <meta property="og:site_name" content="Akash Bhadange" />
-    <meta property="og:image" content="${metadata.ogImage}" />
+    <meta property="og:type" content="article" data-react-helmet="true" />
+    <meta property="og:title" content="${metadata.title}" data-react-helmet="true" />
+    <meta property="og:description" content="${metadata.description}" data-react-helmet="true" />
+    <meta property="og:url" content="${metadata.canonicalUrl}" data-react-helmet="true" />
+    <meta property="og:site_name" content="Akash Bhadange" data-react-helmet="true" />
+    <meta property="og:image" content="${metadata.ogImage}" data-react-helmet="true" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@designerdada" />
-    <meta name="twitter:creator" content="@designerdada" />
-    <meta name="twitter:title" content="${metadata.title}" />
-    <meta name="twitter:description" content="${metadata.description}" />
-    <meta name="twitter:image" content="${metadata.ogImage}" />
+    <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+    <meta name="twitter:site" content="@designerdada" data-react-helmet="true" />
+    <meta name="twitter:creator" content="@designerdada" data-react-helmet="true" />
+    <meta name="twitter:title" content="${metadata.title}" data-react-helmet="true" />
+    <meta name="twitter:description" content="${metadata.description}" data-react-helmet="true" />
+    <meta name="twitter:image" content="${metadata.ogImage}" data-react-helmet="true" />
 
     <!-- Article specific -->
-    <meta property="article:published_time" content="${metadata.publishDate}" />
-    <meta property="article:modified_time" content="${metadata.modifiedDate || metadata.publishDate}" />
-    <meta property="article:author" content="${metadata.author || 'Akash Bhadange'}" />
+    <meta property="article:published_time" content="${metadata.publishDate}" data-react-helmet="true" />
+    <meta property="article:modified_time" content="${metadata.modifiedDate || metadata.publishDate}" data-react-helmet="true" />
+    <meta property="article:author" content="${metadata.author || 'Akash Bhadange'}" data-react-helmet="true" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -204,23 +204,25 @@ function prerenderStaticPages() {
 
       // Add/update meta tags
       if ($('meta[name="description"]').length) {
-        $('meta[name="description"]').attr('content', page.description);
+        $('meta[name="description"]').attr('content', page.description).attr('data-react-helmet', 'true');
       } else {
-        $('head').append(`<meta name="description" content="${page.description}" />`);
+        $('head').append(`<meta name="description" content="${page.description}" data-react-helmet="true" />`);
       }
 
-      // Add Open Graph tags
+      // Add canonical and Open Graph tags with data-react-helmet to prevent duplicates
       $('head').append(`
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="${page.title}" />
-        <meta property="og:description" content="${page.description}" />
-        <meta property="og:url" content="https://designerdada.com/${page.path}" />
-        <meta property="og:image" content="${page.ogImage}" />
+        <link rel="canonical" href="https://designerdada.com/${page.path}" data-react-helmet="true" />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="${page.title}" />
-        <meta name="twitter:description" content="${page.description}" />
-        <meta name="twitter:image" content="${page.ogImage}" />
+        <meta property="og:type" content="website" data-react-helmet="true" />
+        <meta property="og:title" content="${page.title}" data-react-helmet="true" />
+        <meta property="og:description" content="${page.description}" data-react-helmet="true" />
+        <meta property="og:url" content="https://designerdada.com/${page.path}" data-react-helmet="true" />
+        <meta property="og:image" content="${page.ogImage}" data-react-helmet="true" />
+
+        <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+        <meta name="twitter:title" content="${page.title}" data-react-helmet="true" />
+        <meta name="twitter:description" content="${page.description}" data-react-helmet="true" />
+        <meta name="twitter:image" content="${page.ogImage}" data-react-helmet="true" />
       `);
 
       const html = $.html();
