@@ -209,8 +209,10 @@ function prerenderStaticPages() {
         $('head').append(`<meta name="description" content="${page.description}" />`);
       }
 
-      // Add Open Graph tags
+      // Add canonical and Open Graph tags
       $('head').append(`
+        <link rel="canonical" href="https://designerdada.com/${page.path}" />
+
         <meta property="og:type" content="website" />
         <meta property="og:title" content="${page.title}" />
         <meta property="og:description" content="${page.description}" />
