@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as cheerio from 'cheerio';
+import { marked } from 'marked';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,8 +46,15 @@ function parseFrontmatter(mdxContent) {
   return frontmatter;
 }
 
-// Inject meta tags into HTML
-function injectMetaTags(html, metadata) {
+// Extract markdown content (without frontmatter)
+function extractMarkdownContent(mdxContent) {
+  const frontmatterRegex = /^---\n[\s\S]*?\n---\n/;
+  const content = mdxContent.replace(frontmatterRegex, '').trim();
+  return content;
+}
+
+// Inject meta tags and article content into HTML
+function injectMetaTags(html, metadata, articleContent = null) {
   const $ = cheerio.load(html);
 
   // Remove existing meta tags that we'll replace
@@ -119,6 +127,31 @@ function injectMetaTags(html, metadata) {
     </script>
   `);
 
+  // Inject article content into body if provided
+  if (articleContent) {
+    // Convert markdown to HTML
+    const htmlContent = marked.parse(articleContent);
+
+    // Wrap content in semantic HTML structure for LLMs
+    const wrappedContent = `
+      <div id="root">
+        <article style="max-width: 65ch; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333;">
+          <header>
+            <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">${metadata.title}</h1>
+            <p style="color: #666; font-size: 0.9rem;">By ${metadata.author || 'Akash Bhadange'} • ${metadata.publishDate}</p>
+          </header>
+          <main style="margin-top: 2rem;">
+            ${htmlContent}
+          </main>
+        </article>
+        <!-- React will hydrate this container -->
+      </div>
+    `;
+
+    // Replace the empty root div with our content
+    $('#root').replaceWith(wrappedContent);
+  }
+
   return $.html();
 }
 
@@ -137,6 +170,7 @@ function prerenderArticles() {
 
       const mdxContent = fs.readFileSync(mdxPath, 'utf-8');
       const frontmatter = parseFrontmatter(mdxContent);
+      const markdownContent = extractMarkdownContent(mdxContent);
 
       // Prepare metadata
       const metadata = {
@@ -150,8 +184,8 @@ function prerenderArticles() {
         canonicalUrl: `https://designerdada.com/writing/${articleId}`
       };
 
-      // Generate HTML with injected meta tags
-      const htmlWithMeta = injectMetaTags(baseHtml, metadata);
+      // Generate HTML with injected meta tags and article content
+      const htmlWithMeta = injectMetaTags(baseHtml, metadata, markdownContent);
 
       // Create directory structure: build/writing/article-slug/index.html
       const articleDir = path.join(buildDir, 'writing', articleId);
@@ -261,3 +295,4 @@ console.log(`✅ Successfully prerendered ${count}/${articleIds.length} articles
 
 console.log('🎉 Prerendering complete!');
 console.log('💡 All pages now have SEO-friendly meta tags for social media crawlers.');
+console.log('🤖 Articles are now readable by LLMs and search engines without JavaScript!');
