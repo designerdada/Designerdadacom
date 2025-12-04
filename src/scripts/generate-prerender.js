@@ -133,8 +133,9 @@ function injectMetaTags(html, metadata, articleContent = null) {
     const htmlContent = marked.parse(articleContent);
 
     // Wrap content in semantic HTML structure for LLMs
+    // Add data-prerendered attribute to indicate this content is already rendered
     const wrappedContent = `
-      <div id="root">
+      <div id="root" data-prerendered="true">
         <article style="max-width: 65ch; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333;">
           <header>
             <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">${metadata.title}</h1>

@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
@@ -135,6 +135,17 @@ function Footer() {
 
 export function WritingDetail() {
   const { id } = useParams<{ id: string }>();
+  const [isPrerendered, setIsPrerendered] = useState(false);
+
+  // Check if content is prerendered (to skip animations on hydration)
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root?.hasAttribute('data-prerendered')) {
+      setIsPrerendered(true);
+      // Remove attribute so subsequent navigations work normally
+      root.removeAttribute('data-prerendered');
+    }
+  }, []);
 
   // Reset drop cap tracker when component mounts or id changes
   useEffect(() => {
@@ -150,6 +161,9 @@ export function WritingDetail() {
   const ogImage = articleData.metadata.ogImage || 'https://designerdada.com/media/og-images/og-default.jpg';
   const publishDate = articleData.metadata.publishDate;
   const modifiedDate = articleData.metadata.modifiedDate || publishDate;
+
+  // Skip animations if content is prerendered to avoid flicker
+  const animateClass = (delay?: string) => isPrerendered ? '' : `animate-in ${delay || ''}`;
 
   // JSON-LD structured data for Article
   const articleJsonLd = {
@@ -215,7 +229,7 @@ export function WritingDetail() {
       <div className="bg-[var(--background)] relative size-full min-h-screen">
         <div className="box-border content-stretch flex flex-col gap-6 items-start mx-auto px-4 py-10 w-full max-w-[544px]">
           {/* Breadcrumb */}
-          <div className="animate-in w-full">
+          <div className={`${animateClass()} w-full`}>
             <Breadcrumb>
               <BreadcrumbList className="gap-2">
                 <BreadcrumbItem>
@@ -250,31 +264,31 @@ export function WritingDetail() {
             </Breadcrumb>
           </div>
 
-          <div className="animate-in animate-delay-1 w-full">
+          <div className={`${animateClass('animate-delay-1')} w-full`}>
             <ArticleHeader
               title={articleData.metadata.title}
             />
           </div>
 
           {/* Article Content */}
-          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full animate-in animate-delay-2">
+          <div className={`content-stretch flex flex-col items-start relative shrink-0 w-full ${animateClass('animate-delay-2')}`}>
             <ReactMarkdown components={markdownComponents}>
               {articleData.content}
             </ReactMarkdown>
           </div>
 
-          <div className="animate-in animate-delay-3 w-full">
+          <div className={`${animateClass('animate-delay-3')} w-full`}>
             <ColorDots />
           </div>
-          <div className="animate-in animate-delay-4 w-full">
+          <div className={`${animateClass('animate-delay-4')} w-full`}>
             <ReadMore currentSlug={id} />
           </div>
-          <div className="animate-in animate-delay-5 w-full">
+          <div className={`${animateClass('animate-delay-5')} w-full`}>
             <ColorDots />
           </div>
           {/* <MailingList /> */}
           {/* <ColorDots /> */}
-          <div className="animate-in animate-delay-6 w-full">
+          <div className={`${animateClass('animate-delay-6')} w-full`}>
             <Footer />
           </div>
         </div>
