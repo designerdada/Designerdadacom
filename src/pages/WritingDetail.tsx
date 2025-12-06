@@ -162,6 +162,14 @@ export function WritingDetail() {
   const { id } = useParams<{ id: string }>();
   const [isPrerendered, setIsPrerendered] = useState(false);
 
+  // Reset drop cap tracker BEFORE rendering (must be called before render, not in useEffect)
+  resetFirstParagraph();
+
+  // Scroll to top when article changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   // Check if content is prerendered (to skip animations on hydration)
   useEffect(() => {
     const root = document.getElementById('root');
@@ -171,11 +179,6 @@ export function WritingDetail() {
       root.removeAttribute('data-prerendered');
     }
   }, []);
-
-  // Reset drop cap tracker when component mounts or id changes
-  useEffect(() => {
-    resetFirstParagraph();
-  }, [id]);
 
   if (!id || !articleContents[id]) {
     return <Navigate to="/writing" replace />;
