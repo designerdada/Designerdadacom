@@ -7,6 +7,12 @@ import { marked } from 'marked';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Configure marked to not escape HTML (allow iframes, etc.)
+marked.setOptions({
+  mangle: false,
+  headerIds: false
+});
+
 // Read articles from articles.ts
 const articlesPath = path.join(__dirname, '../data/articles.ts');
 const articlesContent = fs.readFileSync(articlesPath, 'utf-8');

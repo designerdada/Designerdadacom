@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import { sortedArticles } from '../data/articles';
 import { articleContents } from '../data/articleContent';
 import { markdownComponents, resetFirstParagraph } from '../components/MarkdownComponents';
@@ -19,6 +21,29 @@ import {
 } from '../components/ui/breadcrumb';
 import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
+
+// Custom sanitize schema that allows YouTube iframes
+const customSchema = {
+  ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames || []), 'iframe'],
+  attributes: {
+    ...defaultSchema.attributes,
+    iframe: [
+      'src',
+      'width',
+      'height',
+      'frameborder',
+      'allow',
+      'allowfullscreen',
+      'title',
+      ['className', 'class']
+    ]
+  },
+  protocols: {
+    ...defaultSchema.protocols,
+    src: [...(defaultSchema.protocols?.src || []), 'https']
+  }
+};
 function ArticleHeader({ title }: { title: string }) {
   return (
     <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
@@ -272,7 +297,10 @@ export function WritingDetail() {
 
           {/* Article Content */}
           <div className={`content-stretch flex flex-col items-start relative shrink-0 w-full ${animateClass('animate-delay-2')}`}>
-            <ReactMarkdown components={markdownComponents}>
+            <ReactMarkdown
+              components={markdownComponents}
+              rehypePlugins={[rehypeRaw, [rehypeSanitize, customSchema]]}
+            >
               {articleData.content}
             </ReactMarkdown>
           </div>
