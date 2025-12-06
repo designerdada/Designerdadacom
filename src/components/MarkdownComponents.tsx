@@ -57,7 +57,7 @@ export const P = ({ children }: ParagraphProps) => {
         const rest = child.slice(1);
         return (
           <>
-            <span className="float-left text-4xl leading-none font-medium mr-1 text-[var(--foreground)]">
+            <span className="float-left text-5xl leading-none font-medium mr-1 -mt-1 text-[var(--foreground)]">
               {firstLetter}
             </span>
             {rest}
