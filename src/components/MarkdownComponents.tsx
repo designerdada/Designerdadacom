@@ -57,7 +57,7 @@ export const P = ({ children }: ParagraphProps) => {
         const rest = child.slice(1);
         return (
           <>
-            <span className="float-left text-4xl leading-none font-medium mr-1 text-[var(--foreground)]">
+            <span className="float-left text-5xl leading-none font-medium mr-1 -mt-1 text-[var(--foreground)]">
               {firstLetter}
             </span>
             {rest}
@@ -182,6 +182,40 @@ export const Img = ({ src, alt, title }: ImageProps) => (
   </div>
 );
 
+// Iframe (for YouTube embeds, etc.)
+interface IframeProps {
+  src?: string;
+  width?: string | number;
+  height?: string | number;
+  title?: string;
+  allow?: string;
+  allowFullScreen?: boolean;
+  frameBorder?: string | number;
+}
+
+export const Iframe = ({ src, width, height, title, allow, allowFullScreen, frameBorder }: IframeProps) => {
+  // Check if it's a YouTube embed
+  const isYouTube = src?.includes('youtube.com') || src?.includes('youtu.be');
+
+  return (
+    <div className="box-border content-stretch flex items-start justify-center px-0 py-6 relative shrink-0 w-full">
+      <div className="relative w-full" style={{ paddingBottom: isYouTube ? '56.25%' : '0', height: isYouTube ? '0' : 'auto' }}>
+        <iframe
+          src={src}
+          width={isYouTube ? undefined : width}
+          height={isYouTube ? undefined : height}
+          title={title || 'Embedded content'}
+          allow={allow || 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
+          allowFullScreen={allowFullScreen !== false}
+          frameBorder={frameBorder || '0'}
+          className={isYouTube ? 'absolute top-0 left-0 w-full h-full rounded-lg' : 'w-full rounded-lg'}
+          style={!isYouTube ? { maxWidth: '100%' } : undefined}
+        />
+      </div>
+    </div>
+  );
+};
+
 export const markdownComponents = {
   h1: H1,
   h2: H2,
@@ -198,4 +232,5 @@ export const markdownComponents = {
   code: Code,
   pre: Pre,
   img: Img,
+  iframe: Iframe,
 };
