@@ -27,7 +27,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 
       {/* Name */}
       <Link to="/" className="content-stretch flex gap-1 h-[25px] items-center justify-start relative shrink-0 w-full hover:opacity-70 transition-opacity" aria-label="Akash Bhadange home">
-        <p className="font-medium leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[20px] text-justify text-nowrap whitespace-pre">
+        <p className="font-medium leading-normal not-italic relative shrink-0 text-[var(--foreground)] text-xl text-justify text-nowrap whitespace-pre">
           <span className="font-medium">Akash Bhadange </span>
           <span className="font-normal italic">aka</span>
           <span className="font-medium"> @designerdada</span>
@@ -38,7 +38,7 @@ export function Header({ activePage }: HeaderProps = {}) {
       <nav className="content-stretch flex gap-4 items-center relative shrink-0" aria-label="Main navigation">
         <Link 
           to="/writing" 
-          className={`font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
+          className={`font-normal leading-normal not-italic relative shrink-0 text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
             activePage === 'writing' ? 'text-[var(--foreground)] underline decoration-[var(--muted)]' : 'text-gray-500 hover:text-[var(--foreground)]'
           }`}
           aria-current={activePage === 'writing' ? 'page' : undefined}
@@ -47,7 +47,7 @@ export function Header({ activePage }: HeaderProps = {}) {
         </Link>
         <Link
           to="/favorites"
-          className={`font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
+          className={`font-normal leading-normal not-italic relative shrink-0 text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
             activePage === 'favorites' ? 'text-[var(--foreground)] underline decoration-[var(--muted)]' : 'text-gray-500 hover:text-[var(--foreground)]'
           }`}
           aria-current={activePage === 'favorites' ? 'page' : undefined}

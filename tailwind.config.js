@@ -10,6 +10,11 @@ export default {
       fontFamily: {
         'eb-garamond': ['"EB Garamond"', 'serif'],
       },
+      fontSize: {
+        '2.5xl': '1.375rem', // 22px
+        '3.5xl': '2rem', // 32px
+        '5.5xl': '3.125rem', // 50px
+      },
     },
   },
   plugins: [],
