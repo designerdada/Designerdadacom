@@ -74,7 +74,7 @@ function SearchAndFilters({
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setIsInputFocused(true)}
           onBlur={() => setIsInputFocused(false)}
-          className="font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-justify bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-slate-400 w-full"
+          className="font-normal leading-[1.4] not-italic relative shrink-0 text-base text-justify bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-slate-400 w-full"
           aria-label="Search favorites"
         />
       </div>
@@ -88,7 +88,7 @@ function SearchAndFilters({
           aria-haspopup="true"
           aria-expanded={showDropdown}
         >
-          <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[14px] text-justify text-nowrap whitespace-pre">
+          <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre">
             {selectedCategory}
           </p>
           <ChevronDown className="size-4 text-[var(--foreground)]" strokeWidth={1.5} />
@@ -103,7 +103,7 @@ function SearchAndFilters({
                   setSelectedCategory(category);
                   setShowDropdown(false);
                 }}
-                className={`w-full text-left px-4 py-2 text-[14px] cursor-pointer transition-colors ${
+                className={`w-full text-left px-4 py-2 text-base cursor-pointer transition-colors ${
                   selectedCategory === category 
                     ? 'font-medium text-[var(--foreground)] bg-gray-100 dark:bg-gray-800' 
                     : 'text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800/50'
@@ -171,7 +171,7 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
   if (filteredFavorites.length === 0) {
     return (
       <div className="content-stretch flex items-center justify-center py-8 w-full">
-        <p className="text-[14px] text-slate-500">No favorites found</p>
+        <p className="text-base text-slate-500">No favorites found</p>
       </div>
     );
   }
@@ -195,18 +195,18 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
               />
             </div>
             <div className="basis-0 content-stretch flex gap-2 grow items-center min-h-px min-w-px relative shrink-0">
-              <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4">
+              <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4">
                 {favorite.name}
               </p>
-              <p className="leading-[1.4] not-italic relative shrink-0 text-[12px] text-justify text-nowrap text-slate-500 whitespace-pre">
+              <p className="leading-[1.4] not-italic relative shrink-0 text-sm text-justify text-nowrap text-slate-500 whitespace-pre">
                 /
               </p>
-              <p className="[white-space-collapse:collapse] basis-0 grow leading-[1.4] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-[14px] text-justify text-nowrap">
+              <p className="[white-space-collapse:collapse] basis-0 grow leading-[1.4] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap">
                 {favorite.description}
               </p>
             </div>
           </div>
-          <p className="leading-[1.5] not-italic relative shrink-0 text-[14px] text-nowrap text-slate-500 whitespace-pre">
+          <p className="leading-[1.4] not-italic relative shrink-0 text-base text-nowrap text-slate-500 whitespace-pre">
             {getDomain(favorite.url)}
           </p>
         </a>
@@ -266,7 +266,7 @@ export function Favorites() {
         <div className="animate-in w-full">
           <Header activePage="favorites" />
         </div>
-        <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-[16px] text-justify w-full animate-in animate-delay-1">
+        <p className="leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify w-full animate-in animate-delay-1">
           I love discovering great things, whether it's a beautifully designed product, an inspiring person, or a website I keep coming back to. This is my collection of those gems I find on the internet and in the real world. Everything here has caught my attention and stuck with me for one reason or another.
         </p>
         <div className="animate-in animate-delay-2 w-full relative z-50">

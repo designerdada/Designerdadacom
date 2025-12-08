@@ -47,7 +47,7 @@ export function Home() {
         </div>
 
         {/* Bio Content */}
-        <div className="font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-base text-justify flex flex-col gap-4">
+        <div className="font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-lg text-justify flex flex-col gap-4">
           <p className="leading-[1.4] relative animate-in animate-delay-1">
             <span>I'm a product designer and founder building </span>
             <a
@@ -104,7 +104,7 @@ export function Home() {
             >
               <button
                 onClick={handleCopyEmail}
-                className="[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors cursor-pointer bg-transparent border-none p-0 text-[var(--foreground)] text-base"
+                className="[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors cursor-pointer bg-transparent border-none p-0 text-[var(--foreground)] text-lg"
               >
                 Say hello
               </button>

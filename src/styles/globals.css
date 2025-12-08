@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,7 +37,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'EB Garamond', serif;
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -48,8 +48,8 @@ body {
   color: #000000;
 }
 
-.font-source-serif {
-  font-family: 'Source Serif 4', serif;
+.font-eb-garamond {
+  font-family: 'EB Garamond', serif;
 }
 
 /* Page load animations */
