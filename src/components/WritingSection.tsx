@@ -12,7 +12,7 @@ export function WritingSection() {
           <Link
             key={article.id}
             to={`/writing/${article.id}`}
-            className="content-stretch flex items-center justify-between leading-normal not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
+            className="content-stretch flex items-center justify-between leading-[1.5] not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
           >
             <p className="font-medium relative shrink-0 text-[var(--foreground)] text-lg group-hover:underline underline-offset-4">
               {article.title}
@@ -25,7 +25,7 @@ export function WritingSection() {
       </div>
       <Link
         to="/writing"
-        className="font-normal leading-normal not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
+        className="font-normal leading-[1.5] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
       >
         View all →
       </Link>

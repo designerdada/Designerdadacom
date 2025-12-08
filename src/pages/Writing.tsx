@@ -16,7 +16,7 @@ function ArticleList() {
         <Link 
           key={article.id}
           to={`/writing/${article.id}`}
-          className="content-stretch flex items-center justify-between leading-normal not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
+          className="content-stretch flex items-center justify-between leading-[1.5] not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
         >
           <p className="font-medium relative shrink-0 text-[var(--foreground)] text-lg group-hover:underline underline-offset-4">{article.title}</p>
           <p className="relative shrink-0 text-base text-[var(--muted)]">{article.date}</p>
@@ -76,7 +76,7 @@ export function Writing() {
           <div className="animate-in w-full">
             <Header activePage="writing" />
           </div>
-          <p className="leading-normal not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify w-full animate-in animate-delay-1">
+          <p className="leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify w-full animate-in animate-delay-1">
             I write whenever inspiration strikes, which means I'm pretty irregular about it. These are my raw thoughts on design, building products, and the startup journey. Some are polished, others are more stream-of-consciousness, but they all capture what I was thinking about at the time.
           </p>
           <div className="animate-in animate-delay-2 w-full">
