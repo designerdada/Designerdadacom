@@ -27,19 +27,19 @@ export const resetFirstParagraph = () => {
 
 // Headings
 export const H1 = ({ children }: ComponentProps) => (
-  <h1 className="font-medium leading-[1.5] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-4 pt-2">
+  <h1 className="font-medium leading-[1.4] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-4 pt-2">
     {children}
   </h1>
 );
 
 export const H2 = ({ children }: ComponentProps) => (
-  <h2 className="font-semibold leading-[1.5] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-3 pt-6">
+  <h2 className="font-semibold leading-[1.4] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-3 pt-6">
     {children}
   </h2>
 );
 
 export const H3 = ({ children }: ComponentProps) => (
-  <h3 className="font-semibold leading-[1.5] not-italic text-[var(--foreground)] text-2.5xl text-justify w-full pb-2 pt-4">
+  <h3 className="font-semibold leading-[1.4] not-italic text-[var(--foreground)] text-2.5xl text-justify w-full pb-2 pt-4">
     {children}
   </h3>
 );
@@ -82,14 +82,14 @@ export const P = ({ children }: ParagraphProps) => {
         : children;
 
     return (
-      <p className="font-normal leading-[1.5] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
+      <p className="font-normal leading-[1.4] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
         {processedChildren}
       </p>
     );
   }
 
   return (
-    <p className="font-normal leading-[1.5] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
+    <p className="font-normal leading-[1.4] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
       {children}
     </p>
   );
@@ -110,7 +110,7 @@ export const OL = ({ children }: ComponentProps) => (
 
 export const LI = ({ children }: ComponentProps) => (
   <li className="mb-2 last:mb-0">
-    <span className="leading-[1.5]">{children}</span>
+    <span className="leading-[1.4]">{children}</span>
   </li>
 );
 
@@ -126,7 +126,7 @@ export const HR = () => (
 // Blockquote
 export const Blockquote = ({ children }: ComponentProps) => (
   <div className="box-border content-stretch flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-[var(--foreground)] my-4">
-    <blockquote className="italic leading-[1.5] relative shrink-0 text-[var(--foreground)] text-lg w-full [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p:only-child]:pb-0">
+    <blockquote className="italic leading-[1.4] relative shrink-0 text-[var(--foreground)] text-lg w-full [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p:only-child]:pb-0">
       {children}
     </blockquote>
   </div>
@@ -175,7 +175,7 @@ export const Img = ({ src, alt, title }: ImageProps) => (
       <img src={src} alt={alt || ''} className="w-full h-auto object-cover" />
     </div>
     {title && (
-      <p className="leading-[1.5] not-italic relative shrink-0 text-sm text-center text-[var(--muted)] w-full">
+      <p className="leading-[1.4] not-italic relative shrink-0 text-sm text-center text-[var(--muted)] w-full">
         {title}
       </p>
     )}

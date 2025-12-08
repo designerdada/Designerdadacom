@@ -48,7 +48,7 @@ export function Home() {
 
         {/* Bio Content */}
         <div className="font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-lg text-justify flex flex-col gap-4">
-          <p className="leading-[1.5] relative animate-in animate-delay-1">
+          <p className="leading-[1.4] relative animate-in animate-delay-1">
             <span>I'm a product designer and founder building </span>
             <a
               href="https://peerlist.io"
@@ -69,7 +69,7 @@ export function Home() {
             </a>
             <span>. Over the past 15 years, I've focused on designing beautiful software that people love to use.</span>
           </p>
-          <p className="leading-[1.5] animate-in animate-delay-2">
+          <p className="leading-[1.4] animate-in animate-delay-2">
             <span>I regularly </span>
             <a
               href="/writing"
@@ -79,7 +79,7 @@ export function Home() {
             </a>
             <span> about my design philosophy, approach to building products, and hard-won lessons from my journey as a founder. These essays are my way of thinking through challenges and sharing what I've learned along the way.</span>
           </p>
-          <p className="leading-[1.5] animate-in animate-delay-3">
+          <p className="leading-[1.4] animate-in animate-delay-3">
             <span>When I'm not designing, I love shooting street </span>
             <a
               href="https://retrolens.me"
@@ -91,7 +91,7 @@ export function Home() {
             </a>
             <span> on film with my Leica M6. There's something special about slowing down and capturing everyday moments on analog.</span>
           </p>
-          <p className="leading-[1.5] animate-in animate-delay-4">
+          <p className="leading-[1.4] animate-in animate-delay-4">
             <span>Always open to interesting conversations about design, startups, and photography. </span>
             <span
               className="relative inline-block"

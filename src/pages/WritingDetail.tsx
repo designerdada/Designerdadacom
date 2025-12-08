@@ -47,7 +47,7 @@ const customSchema = {
 function ArticleHeader({ title }: { title: string }) {
   return (
     <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
-      <h1 className="font-medium leading-[1.5] not-italic relative shrink-0 text-[var(--foreground)] text-3.5xl w-full">
+      <h1 className="font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-3.5xl w-full">
         {title}
       </h1>
     </div>
@@ -84,7 +84,7 @@ function ReadMore({ currentSlug }: { currentSlug: string }) {
   return (
     <div className="content-stretch flex flex-col gap-4 items-end relative shrink-0 w-full">
       <div className="content-stretch flex gap-1 items-center relative shrink-0 w-full">
-        <p className="font-medium leading-[1.5] not-italic relative shrink-0 text-gray-500 text-base text-justify text-nowrap whitespace-pre">
+        <p className="font-medium leading-[1.4] not-italic relative shrink-0 text-gray-500 text-base text-justify text-nowrap whitespace-pre">
           Further reading
         </p>
       </div>
@@ -93,7 +93,7 @@ function ReadMore({ currentSlug }: { currentSlug: string }) {
           <Link
             key={article.id}
             to={`/writing/${article.id}`}
-            className="content-stretch flex items-center justify-between leading-[1.5] not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
+            className="content-stretch flex items-center justify-between leading-[1.4] not-italic relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group"
           >
             <p className="font-medium relative shrink-0 text-[var(--foreground)] text-lg group-hover:underline underline-offset-4">
               {article.title}
@@ -119,13 +119,13 @@ function Footer() {
       <div className="content-stretch flex gap-4 items-center relative shrink-0">
         <Link
           to="/writing"
-          className="font-normal leading-[1.5] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
+          className="font-normal leading-[1.4] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
         >
           Writing
         </Link>
         <Link
           to="/favorites"
-          className="font-normal leading-[1.5] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
+          className="font-normal leading-[1.4] not-italic relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all"
         >
           Favorites
         </Link>
@@ -142,7 +142,7 @@ function Footer() {
         </Tooltip>
       </div>
       <div className="content-stretch flex gap-1 items-center relative shrink-0 w-full">
-        <p className="basis-0 font-normal grow leading-[1.5] min-h-px min-w-px not-italic relative shrink-0 text-sm text-center text-[var(--muted)]">
+        <p className="basis-0 font-normal grow leading-[1.4] min-h-px min-w-px not-italic relative shrink-0 text-sm text-center text-[var(--muted)]">
           This site template is open sourced and available on{' '}
           <a
             href="https://github.com/designerdada/Designerdadacom"
@@ -270,23 +270,23 @@ export function WritingDetail() {
                           src="/assets/profile.png"
                         />
                       </div>
-                      <span className="leading-[1.5] text-base">Akash Bhadange</span>
+                      <span className="leading-[1.4] text-base">Akash Bhadange</span>
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <span className="leading-[1.5] text-sm text-gray-500">/</span>
+                  <span className="leading-[1.4] text-sm text-gray-500">/</span>
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/writing" className="leading-[1.5] text-base">Writing</Link>
+                    <Link to="/writing" className="leading-[1.4] text-base">Writing</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <span className="leading-[1.5] text-sm text-gray-500">/</span>
+                  <span className="leading-[1.4] text-sm text-gray-500">/</span>
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="leading-[1.5] text-base">{articleData.metadata.title}</BreadcrumbPage>
+                  <BreadcrumbPage className="leading-[1.4] text-base">{articleData.metadata.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
