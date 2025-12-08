@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'source-serif': ['"Source Serif 4"', 'serif'],
+        'eb-garamond': ['"EB Garamond"', 'serif'],
       },
     },
   },

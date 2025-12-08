@@ -14,7 +14,7 @@ export function Footer() {
 
       {/* Footer Note */}
       <div className="content-stretch flex gap-1 items-center relative shrink-0 w-full">
-        <p className="basis-0 font-normal grow leading-[1.4] min-h-px min-w-px not-italic relative shrink-0 text-xs text-center text-[var(--muted)]">
+        <p className="basis-0 font-normal grow leading-[1.5] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-center text-[var(--muted)]">
           This site template is open sourced and available on{' '}
           <a
             href="https://github.com/designerdada/Designerdadacom"
