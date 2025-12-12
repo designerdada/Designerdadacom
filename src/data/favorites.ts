@@ -163,6 +163,20 @@ export const favorites: Favorite[] = [
     category: 'Site'
   },
   {
+    id: 'minimum',
+    name: 'Minimum',
+    description: 'Minimal websites directory.',
+    url: 'https://mnmm.xyz/',
+    category: 'Site'
+  },
+  {
+    id: 'neal-agarwal',
+    name: 'Neal Agarwal',
+    description: "Click only if you've 2 hours to spare.",
+    url: 'https://neal.fun',
+    category: 'Site'
+  },
+  {
     id: 'departure-mono',
     name: 'Departure Mono',
     description: 'Beautiful pixel mono font',
