@@ -79,6 +79,13 @@ export const favorites: Favorite[] = [
     category: 'Product'
   },
   {
+    id: 'bauhaus-clock',
+    name: 'Bauhaus Clock',
+    description: 'A minimal and beautiful clock screensaver for your mac.',
+    url: 'https://bauhausclock.com/',
+    category: 'Product'
+  },
+  {
     id: 'dieter-rams',
     name: 'Dieter Rams',
     description: 'My source of inspiration',
