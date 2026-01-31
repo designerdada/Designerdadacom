@@ -54,7 +54,27 @@ function corsHeaders(origin: string): HeadersInit {
 		"Access-Control-Allow-Origin": origin,
 		"Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
 		"Access-Control-Allow-Headers": "Content-Type, Authorization",
+		"Access-Control-Allow-Credentials": "true",
 	};
+}
+
+// Check if origin is allowed
+function getAllowedOrigin(requestOrigin: string | null, corsOrigins: string): string {
+	// Parse CORS_ORIGIN as comma-separated list of allowed origins
+	const allowedOrigins = corsOrigins.split(",").map((o) => o.trim());
+
+	// If request origin is in allowed list, return it (enables credentials)
+	if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+		return requestOrigin;
+	}
+
+	// If wildcard is allowed, return wildcard
+	if (allowedOrigins.includes("*")) {
+		return "*";
+	}
+
+	// Default to first allowed origin
+	return allowedOrigins[0] || "*";
 }
 
 // Get photos.json from R2
@@ -84,7 +104,8 @@ export default {
 		const url = new URL(request.url);
 		const path = url.pathname;
 		const method = request.method;
-		const origin = env.CORS_ORIGIN || "*";
+		const requestOrigin = request.headers.get("Origin");
+		const origin = getAllowedOrigin(requestOrigin, env.CORS_ORIGIN || "*");
 
 		// Handle CORS preflight
 		if (method === "OPTIONS") {
