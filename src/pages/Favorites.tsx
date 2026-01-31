@@ -139,14 +139,15 @@ function FavoritesList({ searchQuery, selectedCategory }: { searchQuery: string;
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(fav => 
+      filtered = filtered.filter(fav =>
         fav.name.toLowerCase().includes(query) ||
         fav.description.toLowerCase().includes(query) ||
         fav.url.toLowerCase().includes(query)
       );
     }
-    
-    return filtered;
+
+    // Sort alphabetically by name
+    return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
   }, [searchQuery, selectedCategory]);
 
   const getDomain = (url: string) => {
