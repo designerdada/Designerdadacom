@@ -109,18 +109,19 @@ export function PhotoLightbox({
           )}
 
           {/* Main image area */}
-          <div className="flex size-full flex-col items-center justify-center p-4 md:p-8">
+          <div className="flex size-full flex-col items-center justify-center px-16 py-4">
             {/* Image container */}
-            <div className="relative flex max-h-[80vh] w-full max-w-5xl items-center justify-center">
+            <div className="relative flex flex-1 w-full items-center justify-center min-h-0">
               {/* Loading skeleton */}
               {!imageLoaded && (
                 <div
                   className="absolute animate-pulse rounded-lg bg-white/10"
                   style={{
                     aspectRatio: photo.aspectRatio,
-                    maxHeight: '80vh',
+                    maxHeight: 'calc(100vh - 140px)',
+                    maxWidth: 'calc(100vw - 128px)',
                     width: photo.aspectRatio > 1 ? '100%' : 'auto',
-                    height: photo.aspectRatio <= 1 ? '80vh' : 'auto',
+                    height: photo.aspectRatio <= 1 ? '100%' : 'auto',
                   }}
                 />
               )}
@@ -129,14 +130,18 @@ export function PhotoLightbox({
                 src={photo.urls.large}
                 alt={photo.title}
                 onLoad={() => setImageLoaded(true)}
-                className={`max-h-[80vh] max-w-full rounded-lg object-contain transition-opacity duration-300 ${
+                className={`rounded-lg object-contain transition-opacity duration-300 ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
+                style={{
+                  maxHeight: 'calc(100vh - 140px)',
+                  maxWidth: 'calc(100vw - 128px)',
+                }}
               />
             </div>
 
             {/* Photo info */}
-            <div className="mt-4 w-full max-w-5xl text-center text-white">
+            <div className="mt-4 w-full max-w-5xl text-center text-white shrink-0">
               <Dialog.Title className="text-lg font-medium">
                 {photo.title}
               </Dialog.Title>
