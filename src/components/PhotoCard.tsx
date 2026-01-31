@@ -4,10 +4,9 @@ import { Photo } from '../data/cloudflare-config';
 interface PhotoCardProps {
   photo: Photo;
   onClick: () => void;
-  priority?: boolean;
 }
 
-export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) {
+export function PhotoCard({ photo, onClick }: PhotoCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const prefetchedRef = useRef(false);
@@ -45,8 +44,7 @@ export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) 
       <img
         src={photo.urls.thumbnail}
         alt={photo.title}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
+        loading="lazy"
         decoding="async"
         onLoad={handleImageLoad}
         className={`absolute inset-0 size-full object-cover transition-all duration-300 ${
