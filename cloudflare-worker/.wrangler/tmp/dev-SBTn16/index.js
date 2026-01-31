@@ -1,7 +1,7 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
-// .wrangler/tmp/bundle-tBcrX0/checked-fetch.js
+// .wrangler/tmp/bundle-JYVtf7/checked-fetch.js
 var urls = /* @__PURE__ */ new Set();
 function checkURL(request, init) {
   const url = request instanceof URL ? request : new URL(
@@ -49,10 +49,22 @@ function corsHeaders(origin) {
   return {
     "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization"
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Credentials": "true"
   };
 }
 __name(corsHeaders, "corsHeaders");
+function getAllowedOrigin(requestOrigin, corsOrigins) {
+  const allowedOrigins = corsOrigins.split(",").map((o) => o.trim());
+  if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+    return requestOrigin;
+  }
+  if (allowedOrigins.includes("*")) {
+    return "*";
+  }
+  return allowedOrigins[0] || "*";
+}
+__name(getAllowedOrigin, "getAllowedOrigin");
 async function getPhotosData(bucket) {
   const object = await bucket.get("photos.json");
   if (!object) {
@@ -77,7 +89,8 @@ var src_default = {
     const url = new URL(request.url);
     const path = url.pathname;
     const method = request.method;
-    const origin = env.CORS_ORIGIN || "*";
+    const requestOrigin = request.headers.get("Origin");
+    const origin = getAllowedOrigin(requestOrigin, env.CORS_ORIGIN || "*");
     if (method === "OPTIONS") {
       return new Response(null, { headers: corsHeaders(origin) });
     }
@@ -234,7 +247,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-tBcrX0/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-JYVtf7/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -266,7 +279,7 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-tBcrX0/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-JYVtf7/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
