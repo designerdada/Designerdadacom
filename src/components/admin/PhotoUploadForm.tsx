@@ -1,62 +1,99 @@
 import { useState, useRef } from 'react';
-import { Upload, X } from 'lucide-react';
-import { WORKER_API_URL, PhotoCategory, PHOTO_CATEGORIES } from '../../data/cloudflare-config';
+import { Upload, X, CheckCircle } from 'lucide-react';
+import { WORKER_API_URL } from '../../data/cloudflare-config';
 import { getAuthToken } from './AdminAuthGuard';
 
 interface PhotoUploadFormProps {
   onUploadComplete: () => void;
 }
 
-const categories = PHOTO_CATEGORIES.filter((c): c is Exclude<PhotoCategory, 'All'> => c !== 'All');
+interface SelectedPhoto {
+  file: File;
+  preview: string;
+  title: string;
+  uploaded?: boolean;
+}
+
+const CAMERAS = ['Leica M6', 'Pentax 17', 'Yashica FX-3'] as const;
+const FILMS = [
+  'Kodak Gold 200',
+  'Kodak Ultramax 400',
+  'Kodak Portra 400',
+  'Kodak Tmax 400',
+  'Kodacolor 100',
+  'Kodacolor 200',
+  'Fujifilm Superia 400',
+] as const;
 
 export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
   const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null);
   const [error, setError] = useState('');
-  const [preview, setPreview] = useState<string | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedPhotos, setSelectedPhotos] = useState<SelectedPhoto[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Form fields
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
-  const [camera, setCamera] = useState('Leica M6');
-  const [film, setFilm] = useState('');
-  const [location, setLocation] = useState('');
-  const [category, setCategory] = useState<Exclude<PhotoCategory, 'All'>>('Street');
+  // Shared form fields
+  const [camera, setCamera] = useState<typeof CAMERAS[number]>('Leica M6');
+  const [film, setFilm] = useState<typeof FILMS[number]>('Kodak Gold 200');
 
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const getFilenameWithoutExtension = (filename: string): string => {
+    return filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+  };
 
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      setError('Please select an image file');
+  const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setError('');
+    const newPhotos: SelectedPhoto[] = [];
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        continue;
+      }
+
+      // Create preview
+      const preview = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+
+      newPhotos.push({
+        file,
+        preview,
+        title: getFilenameWithoutExtension(file.name),
+      });
+    }
+
+    if (newPhotos.length === 0) {
+      setError('Please select valid image files');
       return;
     }
 
-    setSelectedFile(file);
-    setError('');
+    setSelectedPhotos((prev) => [...prev, ...newPhotos]);
 
-    // Create preview
-    const reader = new FileReader();
-    reader.onload = () => {
-      setPreview(reader.result as string);
-    };
-    reader.readAsDataURL(file);
-
-    // Get aspect ratio from image
-    const img = new Image();
-    img.onload = () => {
-      // Store aspect ratio for later use
-      (file as File & { aspectRatio?: number }).aspectRatio = img.width / img.height;
-    };
-    img.src = URL.createObjectURL(file);
+    // Reset file input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
-  const clearFile = () => {
-    setSelectedFile(null);
-    setPreview(null);
+  const removePhoto = (index: number) => {
+    setSelectedPhotos((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const updatePhotoTitle = (index: number, newTitle: string) => {
+    setSelectedPhotos((prev) =>
+      prev.map((photo, i) => (i === index ? { ...photo, title: newTitle } : photo))
+    );
+  };
+
+  const clearAllPhotos = () => {
+    setSelectedPhotos([]);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -64,13 +101,22 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedFile || !title || !date || !category) {
-      setError('Please fill in all required fields');
+
+    // Validate all photos have titles
+    const photosWithoutTitles = selectedPhotos.filter((p) => !p.title.trim());
+    if (photosWithoutTitles.length > 0) {
+      setError('Please provide titles for all photos');
+      return;
+    }
+
+    if (selectedPhotos.length === 0) {
+      setError('Please select at least one photo');
       return;
     }
 
     setIsUploading(true);
     setError('');
+    setUploadProgress({ current: 0, total: selectedPhotos.length });
 
     try {
       const token = getAuthToken();
@@ -78,49 +124,52 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
         throw new Error('Not authenticated');
       }
 
-      // Get aspect ratio
-      const aspectRatio = await new Promise<number>((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve(img.width / img.height);
-        img.src = URL.createObjectURL(selectedFile);
-      });
+      for (let i = 0; i < selectedPhotos.length; i++) {
+        const photo = selectedPhotos[i];
+        setUploadProgress({ current: i + 1, total: selectedPhotos.length });
 
-      const metadata = {
-        title,
-        description: description || undefined,
-        date,
-        camera: camera || undefined,
-        film: film || undefined,
-        location: location || undefined,
-        category,
-        aspectRatio,
-      };
+        // Get aspect ratio
+        const aspectRatio = await new Promise<number>((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(img.width / img.height);
+          img.src = URL.createObjectURL(photo.file);
+        });
 
-      const formData = new FormData();
-      formData.append('file', selectedFile);
-      formData.append('metadata', JSON.stringify(metadata));
+        const metadata = {
+          title: photo.title,
+          camera,
+          film,
+          aspectRatio,
+        };
 
-      const response = await fetch(`${WORKER_API_URL}/api/photos`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+        const formData = new FormData();
+        formData.append('file', photo.file);
+        formData.append('metadata', JSON.stringify(metadata));
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Upload failed');
+        const response = await fetch(`${WORKER_API_URL}/api/photos`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const data = await response.json();
+          throw new Error(`Failed to upload "${photo.title}": ${data.error || 'Upload failed'}`);
+        }
+
+        // Mark as uploaded
+        setSelectedPhotos((prev) =>
+          prev.map((p, idx) => (idx === i ? { ...p, uploaded: true } : p))
+        );
       }
 
       // Reset form
-      setTitle('');
-      setDescription('');
-      setDate('');
-      setFilm('');
-      setLocation('');
-      setCategory('Street');
-      clearFile();
+      setCamera('Leica M6');
+      setFilm('Kodak Gold 200');
+      clearAllPhotos();
+      setUploadProgress(null);
 
       onUploadComplete();
     } catch (err) {
@@ -130,136 +179,152 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
     }
   };
 
+  const hasPhotos = selectedPhotos.length > 0;
+  const allTitlesValid = selectedPhotos.every((p) => p.title.trim());
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       {/* File upload area */}
-      <div className="relative">
-        {preview ? (
-          <div className="relative">
-            <img
-              src={preview}
-              alt="Preview"
-              className="max-h-64 w-full rounded-lg object-contain"
-            />
-            <button
-              type="button"
-              onClick={clearFile}
-              className="absolute right-2 top-2 rounded-full bg-black/50 p-1 text-white hover:bg-black/70"
-            >
-              <X className="size-4" />
-            </button>
-          </div>
-        ) : (
-          <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[var(--muted)]/30 px-4 py-12 transition-colors hover:border-[var(--foreground)]">
-            <Upload className="mb-2 size-8 text-[var(--muted)]" />
-            <span className="text-sm text-[var(--muted)]">Click to upload photo</span>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              onChange={handleFileSelect}
-              className="hidden"
-            />
-          </label>
-        )}
+      <div>
+        <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[var(--muted)]/30 px-4 py-8 transition-colors hover:border-[var(--foreground)]">
+          <Upload className="mb-2 size-8 text-[var(--muted)]" />
+          <span className="text-sm text-[var(--muted)]">
+            {hasPhotos ? 'Click to add more photos' : 'Click to upload photos'}
+          </span>
+          <span className="mt-1 text-xs text-[var(--muted)]/60">Select multiple files at once</span>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleFileSelect}
+            className="hidden"
+          />
+        </label>
       </div>
 
-      {/* Form fields */}
-      <div className="grid gap-4">
-        <div>
-          <label className="mb-1 block text-sm text-[var(--muted)]">Title *</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Photo title"
-            className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="mb-1 block text-sm text-[var(--muted)]">Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Optional description"
-            rows={2}
-            className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-          />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="mb-1 block text-sm text-[var(--muted)]">Date *</label>
-            <input
-              type="text"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              placeholder="DD.MMM.YYYY"
-              className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-              required
-            />
-          </div>
-          <div>
-            <label className="mb-1 block text-sm text-[var(--muted)]">Category *</label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value as Exclude<PhotoCategory, 'All'>)}
-              className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] focus:border-[var(--foreground)] focus:outline-none"
+      {/* Selected photos grid */}
+      {hasPhotos && (
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-[var(--muted)]">
+              {selectedPhotos.length} photo{selectedPhotos.length !== 1 ? 's' : ''} selected
+            </span>
+            <button
+              type="button"
+              onClick={clearAllPhotos}
+              className="text-sm text-red-500 hover:text-red-400"
+              disabled={isUploading}
             >
-              {categories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
+              Clear all
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {selectedPhotos.map((photo, index) => (
+              <div
+                key={index}
+                className={`relative rounded-lg border ${
+                  photo.uploaded
+                    ? 'border-green-500/50 bg-green-500/5'
+                    : 'border-[var(--muted)]/30'
+                }`}
+              >
+                <div className="relative">
+                  <img
+                    src={photo.preview}
+                    alt={photo.title}
+                    className="h-32 w-full rounded-t-lg object-cover"
+                  />
+                  {photo.uploaded && (
+                    <div className="absolute inset-0 flex items-center justify-center rounded-t-lg bg-green-500/20">
+                      <CheckCircle className="size-8 text-green-500" />
+                    </div>
+                  )}
+                  {!isUploading && !photo.uploaded && (
+                    <button
+                      type="button"
+                      onClick={() => removePhoto(index)}
+                      className="absolute right-1 top-1 rounded-full bg-black/50 p-1 text-white hover:bg-black/70"
+                    >
+                      <X className="size-3" />
+                    </button>
+                  )}
+                </div>
+                <div className="p-2">
+                  <input
+                    type="text"
+                    value={photo.title}
+                    onChange={(e) => updatePhotoTitle(index, e.target.value)}
+                    placeholder="Photo title"
+                    disabled={isUploading || photo.uploaded}
+                    className="w-full rounded border border-[var(--muted)]/30 bg-transparent px-2 py-1 text-xs text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none disabled:opacity-50"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+      )}
 
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="mb-1 block text-sm text-[var(--muted)]">Camera</label>
-            <input
-              type="text"
-              value={camera}
-              onChange={(e) => setCamera(e.target.value)}
-              placeholder="e.g., Leica M6"
-              className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-            />
-          </div>
-          <div>
-            <label className="mb-1 block text-sm text-[var(--muted)]">Film</label>
-            <input
-              type="text"
-              value={film}
-              onChange={(e) => setFilm(e.target.value)}
-              placeholder="e.g., Kodak Portra 400"
-              className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-            />
-          </div>
-        </div>
-
+      {/* Shared form fields */}
+      <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="mb-1 block text-sm text-[var(--muted)]">Location</label>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="e.g., Mumbai, India"
-            className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none"
-          />
+          <label className="mb-1 block text-sm text-[var(--muted)]">Camera (all photos)</label>
+          <select
+            value={camera}
+            onChange={(e) => setCamera(e.target.value as typeof CAMERAS[number])}
+            disabled={isUploading}
+            className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] focus:border-[var(--foreground)] focus:outline-none disabled:opacity-50"
+          >
+            {CAMERAS.map((cam) => (
+              <option key={cam} value={cam}>
+                {cam}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="mb-1 block text-sm text-[var(--muted)]">Film (all photos)</label>
+          <select
+            value={film}
+            onChange={(e) => setFilm(e.target.value as typeof FILMS[number])}
+            disabled={isUploading}
+            className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-3 py-2 text-[var(--foreground)] focus:border-[var(--foreground)] focus:outline-none disabled:opacity-50"
+          >
+            {FILMS.map((f) => (
+              <option key={f} value={f}>
+                {f}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
       {error && <p className="text-sm text-red-500">{error}</p>}
 
+      {uploadProgress && (
+        <div className="flex flex-col gap-2">
+          <div className="h-2 overflow-hidden rounded-full bg-[var(--muted)]/20">
+            <div
+              className="h-full bg-[var(--foreground)] transition-all"
+              style={{ width: `${(uploadProgress.current / uploadProgress.total) * 100}%` }}
+            />
+          </div>
+          <p className="text-center text-sm text-[var(--muted)]">
+            Uploading {uploadProgress.current} of {uploadProgress.total}...
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        disabled={isUploading || !selectedFile || !title || !date}
+        disabled={isUploading || !hasPhotos || !allTitlesValid}
         className="rounded-lg bg-[var(--foreground)] px-4 py-2 text-[var(--background)] transition-opacity hover:opacity-80 disabled:opacity-50"
       >
-        {isUploading ? 'Uploading...' : 'Upload Photo'}
+        {isUploading
+          ? `Uploading...`
+          : `Upload ${selectedPhotos.length} Photo${selectedPhotos.length !== 1 ? 's' : ''}`}
       </button>
     </form>
   );
