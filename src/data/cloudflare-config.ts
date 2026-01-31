@@ -4,10 +4,10 @@
 export const R2_PUBLIC_URL =
   import.meta.env.VITE_R2_PUBLIC_URL || "https://your-r2-bucket.r2.dev";
 
-// Worker API URL - set via VITE_WORKER_API_URL env var or update default
-// For local development, use: "http://localhost:8787"
-export const WORKER_API_URL =
-  import.meta.env.VITE_WORKER_API_URL || "http://localhost:8787";
+// Worker API URL - set via VITE_WORKER_API_URL env var
+// For local development, set VITE_WORKER_API_URL=http://localhost:8787 in .env
+// Empty string means photography API is not configured
+export const WORKER_API_URL = import.meta.env.VITE_WORKER_API_URL || "";
 
 // Photo categories
 export const PHOTO_CATEGORIES = [

@@ -19,6 +19,12 @@ export function usePhotos(): UsePhotosResult {
   const [error, setError] = useState<string | null>(null);
 
   const fetchPhotos = useCallback(async () => {
+    // Skip fetching if no API URL is configured
+    if (!WORKER_API_URL) {
+      setLoading(false);
+      return;
+    }
+
     const now = Date.now();
 
     // Use cache if valid
