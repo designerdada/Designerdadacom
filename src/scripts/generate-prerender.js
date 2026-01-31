@@ -233,6 +233,12 @@ function prerenderStaticPages() {
       title: 'Favorites | Akash Bhadange',
       description: 'A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.',
       ogImage: 'https://designerdada.com/assets/og-images/og-favorites.jpg'
+    },
+    {
+      path: 'photography',
+      title: 'Photography | Akash Bhadange',
+      description: 'A collection of photographs capturing moments and perspectives.',
+      ogImage: 'https://designerdada.com/assets/og-images/og-default.jpg'
     }
   ];
 
