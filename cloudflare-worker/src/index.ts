@@ -135,7 +135,12 @@ export default {
 			if (path === "/api/photos" && method === "GET") {
 				const data = await getPhotosData(env.PHOTOS_BUCKET);
 				return new Response(JSON.stringify(data), {
-					headers: { ...corsHeaders(origin), "Content-Type": "application/json" },
+					headers: {
+						...corsHeaders(origin),
+						"Content-Type": "application/json",
+						// Cache for 5 minutes, allow stale for 1 hour while revalidating
+						"Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+					},
 				});
 			}
 

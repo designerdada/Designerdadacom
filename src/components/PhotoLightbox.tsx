@@ -1,165 +1,175 @@
-import { useEffect, useCallback, useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Photo } from '../data/cloudflare-config';
+import { useEffect, useCallback, useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Photo } from "../data/cloudflare-config";
 
 interface PhotoLightboxProps {
-  photo: Photo | null;
-  photos: Photo[];
-  isOpen: boolean;
-  onClose: () => void;
-  onNavigate: (photo: Photo) => void;
+	photo: Photo | null;
+	photos: Photo[];
+	isOpen: boolean;
+	onClose: () => void;
+	onNavigate: (photo: Photo) => void;
 }
 
-export function PhotoLightbox({
-  photo,
-  photos,
-  isOpen,
-  onClose,
-  onNavigate,
-}: PhotoLightboxProps) {
-  const [imageLoaded, setImageLoaded] = useState(false);
+// Preload an image and return a promise
+function preloadImage(src: string): void {
+	const img = new Image();
+	img.src = src;
+}
 
-  const currentIndex = photo ? photos.findIndex((p) => p.id === photo.id) : -1;
-  const hasPrev = currentIndex > 0;
-  const hasNext = currentIndex < photos.length - 1;
+export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: PhotoLightboxProps) {
+	const [imageLoaded, setImageLoaded] = useState(false);
 
-  const goToPrev = useCallback(() => {
-    if (hasPrev) {
-      setImageLoaded(false);
-      onNavigate(photos[currentIndex - 1]);
-    }
-  }, [hasPrev, currentIndex, photos, onNavigate]);
+	const currentIndex = photo ? photos.findIndex((p) => p.id === photo.id) : -1;
+	const hasPrev = currentIndex > 0;
+	const hasNext = currentIndex < photos.length - 1;
 
-  const goToNext = useCallback(() => {
-    if (hasNext) {
-      setImageLoaded(false);
-      onNavigate(photos[currentIndex + 1]);
-    }
-  }, [hasNext, currentIndex, photos, onNavigate]);
+	// Preload adjacent images for instant navigation
+	useEffect(() => {
+		if (!isOpen || currentIndex === -1) return;
 
-  // Keyboard navigation
-  useEffect(() => {
-    if (!isOpen) return;
+		// Preload next image
+		if (hasNext) {
+			preloadImage(photos[currentIndex + 1].urls.large);
+		}
+		// Preload previous image
+		if (hasPrev) {
+			preloadImage(photos[currentIndex - 1].urls.large);
+		}
+	}, [isOpen, currentIndex, hasNext, hasPrev, photos]);
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      switch (e.key) {
-        case 'ArrowLeft':
-          e.preventDefault();
-          goToPrev();
-          break;
-        case 'ArrowRight':
-          e.preventDefault();
-          goToNext();
-          break;
-        case 'Escape':
-          e.preventDefault();
-          onClose();
-          break;
-      }
-    };
+	const goToPrev = useCallback(() => {
+		if (hasPrev) {
+			setImageLoaded(false);
+			onNavigate(photos[currentIndex - 1]);
+		}
+	}, [hasPrev, currentIndex, photos, onNavigate]);
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, goToPrev, goToNext, onClose]);
+	const goToNext = useCallback(() => {
+		if (hasNext) {
+			setImageLoaded(false);
+			onNavigate(photos[currentIndex + 1]);
+		}
+	}, [hasNext, currentIndex, photos, onNavigate]);
 
-  // Reset image loaded state when photo changes
-  useEffect(() => {
-    setImageLoaded(false);
-  }, [photo?.id]);
+	// Keyboard navigation
+	useEffect(() => {
+		if (!isOpen) return;
 
-  if (!photo) return null;
+		const handleKeyDown = (e: KeyboardEvent) => {
+			switch (e.key) {
+				case "ArrowLeft":
+					e.preventDefault();
+					goToPrev();
+					break;
+				case "ArrowRight":
+					e.preventDefault();
+					goToNext();
+					break;
+				case "Escape":
+					e.preventDefault();
+					onClose();
+					break;
+			}
+		};
 
-  return (
-    <Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <Dialog.Content className="fixed inset-0 z-50 flex items-center justify-center focus:outline-none">
-          {/* Close button */}
-          <Dialog.Close asChild>
-            <button
-              type="button"
-              className="absolute right-4 top-4 z-10 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
-              aria-label="Close"
-            >
-              <X className="size-6" />
-            </button>
-          </Dialog.Close>
+		window.addEventListener("keydown", handleKeyDown);
+		return () => window.removeEventListener("keydown", handleKeyDown);
+	}, [isOpen, goToPrev, goToNext, onClose]);
 
-          {/* Navigation buttons */}
-          {hasPrev && (
-            <button
-              type="button"
-              onClick={goToPrev}
-              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
-              aria-label="Previous photo"
-            >
-              <ChevronLeft className="size-6" />
-            </button>
-          )}
-          {hasNext && (
-            <button
-              type="button"
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
-              aria-label="Next photo"
-            >
-              <ChevronRight className="size-6" />
-            </button>
-          )}
+	// Reset image loaded state when photo changes
+	useEffect(() => {
+		setImageLoaded(false);
+	}, [photo?.id]);
 
-          {/* Main image area */}
-          <div className="flex size-full flex-col items-center justify-center px-16 py-4">
-            {/* Image container */}
-            <div className="relative flex flex-1 w-full items-center justify-center min-h-0">
-              {/* Loading skeleton */}
-              {!imageLoaded && (
-                <div
-                  className="absolute animate-pulse rounded-lg bg-black/10"
-                  style={{
-                    aspectRatio: photo.aspectRatio,
-                    maxHeight: 'calc(100vh - 140px)',
-                    maxWidth: 'calc(100vw - 128px)',
-                    width: photo.aspectRatio > 1 ? '100%' : 'auto',
-                    height: photo.aspectRatio <= 1 ? '100%' : 'auto',
-                  }}
-                />
-              )}
+	if (!photo) return null;
 
-              <img
-                src={photo.urls.large}
-                alt={photo.title}
-                onLoad={() => setImageLoaded(true)}
-                className={`rounded-lg object-contain transition-opacity duration-300 ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{
-                  maxHeight: 'calc(100vh - 140px)',
-                  maxWidth: 'calc(100vw - 128px)',
-                }}
-              />
-            </div>
+	return (
+		<Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
+			<Dialog.Portal>
+				<Dialog.Overlay className='fixed inset-0 z-50 bg-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
+				<Dialog.Content className='fixed inset-0 z-50 flex items-center justify-center focus:outline-none'>
+					{/* Close button */}
+					<Dialog.Close asChild>
+						<button
+							type='button'
+							className='absolute right-4 top-4 z-10 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black'
+							aria-label='Close'>
+							<X className='size-6' />
+						</button>
+					</Dialog.Close>
 
-            {/* Photo info */}
-            <div className="mt-4 w-full max-w-5xl text-center text-black shrink-0">
-              <Dialog.Title className="text-lg font-medium">
-                {photo.title}
-              </Dialog.Title>
-              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-black/60">
-                {photo.date && <span>{photo.date}</span>}
-                {photo.camera && <span>{photo.camera}</span>}
-                {photo.film && <span>{photo.film}</span>}
-                {photo.location && <span>{photo.location}</span>}
-              </div>
-              {photo.description && (
-                <Dialog.Description className="mt-2 text-sm text-black/80">
-                  {photo.description}
-                </Dialog.Description>
-              )}
-            </div>
-          </div>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
+					{/* Navigation buttons */}
+					{hasPrev && (
+						<button
+							type='button'
+							onClick={goToPrev}
+							className='absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black'
+							aria-label='Previous photo'>
+							<ChevronLeft className='size-6' />
+						</button>
+					)}
+					{hasNext && (
+						<button
+							type='button'
+							onClick={goToNext}
+							className='absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black'
+							aria-label='Next photo'>
+							<ChevronRight className='size-6' />
+						</button>
+					)}
+
+					{/* Main image area */}
+					<div className='flex size-full flex-col items-center justify-center px-16 py-4'>
+						{/* Image container */}
+						<div className='relative flex flex-1 w-full items-center justify-center min-h-0'>
+							{/* Blur-up placeholder using thumbnail */}
+							{!imageLoaded && (
+								<img
+									src={photo.urls.thumbnail}
+									alt=""
+									aria-hidden="true"
+									className='absolute object-contain blur-md scale-105'
+									style={{
+										maxHeight: "calc(100vh - 140px)",
+										maxWidth: "calc(100vw - 128px)",
+									}}
+								/>
+							)}
+
+							<img
+								src={photo.urls.large}
+								alt={photo.title}
+								decoding="async"
+								onLoad={() => setImageLoaded(true)}
+								className={`object-contain transition-opacity duration-300 ${
+									imageLoaded ? "opacity-100" : "opacity-0"
+								}`}
+								style={{
+									maxHeight: "calc(100vh - 140px)",
+									maxWidth: "calc(100vw - 128px)",
+								}}
+							/>
+						</div>
+
+						{/* Photo info */}
+						<div className='mt-4 w-full max-w-5xl text-center text-black shrink-0'>
+							<Dialog.Title className='text-lg font-medium'>{photo.title}</Dialog.Title>
+							<div className='mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-black/60'>
+								{photo.date && <span>{photo.date}</span>}
+								{photo.camera && <span>{photo.camera}</span>}
+								{photo.film && <span>{photo.film}</span>}
+								{photo.location && <span>{photo.location}</span>}
+							</div>
+							{photo.description && (
+								<Dialog.Description className='mt-2 text-sm text-black/80'>
+									{photo.description}
+								</Dialog.Description>
+							)}
+						</div>
+					</div>
+				</Dialog.Content>
+			</Dialog.Portal>
+		</Dialog.Root>
+	);
 }

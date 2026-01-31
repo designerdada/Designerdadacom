@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { Photo } from '../data/cloudflare-config';
 
 interface PhotoCardProps {
@@ -9,10 +9,21 @@ interface PhotoCardProps {
 export function PhotoCard({ photo, onClick }: PhotoCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const prefetchedRef = useRef(false);
 
   const handleImageLoad = useCallback(() => {
     setIsLoaded(true);
   }, []);
+
+  // Prefetch large image on hover for faster lightbox opening
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+    if (!prefetchedRef.current) {
+      prefetchedRef.current = true;
+      const img = new Image();
+      img.src = photo.urls.large;
+    }
+  }, [photo.urls.large]);
 
   return (
     <button
@@ -20,7 +31,7 @@ export function PhotoCard({ photo, onClick }: PhotoCardProps) {
       className="relative w-full overflow-hidden rounded-lg bg-[var(--muted)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/20"
       style={{ aspectRatio: photo.aspectRatio }}
       onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       aria-label={`View ${photo.title}`}
     >
@@ -34,6 +45,7 @@ export function PhotoCard({ photo, onClick }: PhotoCardProps) {
         src={photo.urls.thumbnail}
         alt={photo.title}
         loading="lazy"
+        decoding="async"
         onLoad={handleImageLoad}
         className={`absolute inset-0 size-full object-cover transition-all duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
