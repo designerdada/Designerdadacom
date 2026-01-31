@@ -1,9 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { siteConfig } from './site-config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const SITE_URL = siteConfig.url;
 
 // Read articles from articles.ts
 const articlesPath = path.join(__dirname, '../data/articles.ts');
@@ -20,6 +23,7 @@ const currentDate = new Date().toISOString().split('T')[0];
 const staticPages = [
   { url: '', changefreq: 'weekly', priority: '1.0' },
   { url: 'writing', changefreq: 'weekly', priority: '0.9' },
+  { url: 'photography', changefreq: 'weekly', priority: '0.8' },
   { url: 'favorites', changefreq: 'monthly', priority: '0.7' },
 ];
 
@@ -31,7 +35,7 @@ const generateSitemap = () => {
   // Add static pages
   staticPages.forEach(page => {
     xml += '  <url>\n';
-    xml += `    <loc>https://designerdada.com/${page.url}</loc>\n`;
+    xml += `    <loc>${SITE_URL}/${page.url}</loc>\n`;
     xml += `    <lastmod>${currentDate}</lastmod>\n`;
     xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
     xml += `    <priority>${page.priority}</priority>\n`;
@@ -41,7 +45,7 @@ const generateSitemap = () => {
   // Add article pages
   articleIds.forEach(id => {
     xml += '  <url>\n';
-    xml += `    <loc>https://designerdada.com/writing/${id}</loc>\n`;
+    xml += `    <loc>${SITE_URL}/writing/${id}</loc>\n`;
     xml += `    <lastmod>${currentDate}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.8</priority>\n`;

@@ -19,6 +19,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Cloudflare Worker secrets
+cloudflare-worker/.dev.vars
+
 # IDE
 .vscode/
 .idea/

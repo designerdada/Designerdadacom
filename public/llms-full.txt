@@ -256,6 +256,48 @@ If you have read till here, I have 2 asks from you —
 
 ---
 
+### Trying to Be Human
+
+URL: https://designerdada.com/writing/trying-to-be-human
+Published: 07.Dec.2025
+Description: Why human creation will matter more, not less, in an age of infinite AI-generated content.
+
+I've been loading film cameras lately. Not because I need to, or because the pictures are better, but because there's something about the mechanical click of the advance lever that feels like proof of presence. Last week, standing on a street corner in Pune, I watched a family arrange themselves for a photo. They took seventeen versions with their phone, each one instantly reviewable, instantly deletable, instantly forgettable. I took one frame. It cost me money. I won't see it for days. I might have missed the moment entirely.
+
+This is an absurd way to make photographs in 2025, and I know it. But absurdity might be the point.
+
+We're entering a period where the question "Was this made by a person?" will become as important as "Is this any good?" They used to be the same question. They're not anymore. You can generate a sunset photograph that would have taken [Ansel Adams](https://www.anseladams.com/) three days of hiking and perfect timing. You can produce it in seconds, all before breakfast. The image might be beautiful. But it wasn't witnessed. No one stood there in the cold, waiting for the light.
+
+**For most of human history, creation was evidence of experience.** A painting meant someone looked at that landscape. A photograph meant you were there. The thing and the making of it were inseparable. Now they're not. We've figured out how to have the thing without the making, the output without the input, the result without the experience.
+
+**The internet promised us unlimited access to human creativity. What we're getting instead is unlimited access to the appearance of human creativity.** An AI can write in the style of Joan Didion, compose in the manner of Mozart, paint like Vermeer. It can do all of this without understanding a single word, note, or brushstroke. And for most purposes, that's enough.
+
+Except it isn't.
+
+I wrote an article recently. It got a good response. People shared it, told me they liked it. But twice, in different contexts, someone asked: "ChatGPT?" The question landed differently than criticism would have. It wasn't "this is bad" or "I disagree." It was "did you actually write this?" The content was the same either way, but the question had poisoned it. The meaning had collapsed before we could even discuss the ideas.
+
+This is the world we're building. One where the first question isn't "What does this mean?" but "Who made this?"
+
+**And here's what I think happens next: human-made things become precious exactly because they're scarce.**
+
+When your kid draws a picture of your house, you don't hang it on the refrigerator because it's architecturally accurate. You hang it there because they made it, because the wonky perspective and the purple sun mean they were thinking about where you live and what it looks like to them. If you ran their drawing through an AI upscaler that fixed all the proportions, you'd have a better image and a worthless artifact.
+
+We think we want art for its aesthetic properties, but what we actually want is evidence of human attention. **The struggle is the point. The difficulty is the signal.**
+
+This is why analog photography, vinyl records, handwritten letters, and mechanical watches are having their moment. Not because they're superior technologies, but because they require human participation. They're inefficient by design. That inefficiency is a feature.
+
+**The flood of AI-generated content will make human creation more valuable, not less.** When everything is abundant, scarcity becomes the premium. What cuts through is the thing that required presence, the thing that couldn't exist without someone being there to make it.
+
+Film makes me hesitate. Before I press the shutter, I have to decide if this moment is worth the chemical space it will occupy. When the scans come back, there's always a small shock of recognition. These aren't perfectly composed, algorithmically optimized images. They're what I saw, translated through chemistry and my own imperfect judgment. The mistakes are mine. The successes are mine. The whole thing exists because I was there.
+
+That's what we're going to need more of. Not just in photography, but in everything. Things that couldn't exist without someone being present to create them. Work that carries the signature of human limitation and human choice.
+
+We're not going back to a world before AI. But we are entering a world where being human, being present, being the one who actually made the thing, will matter more than it has in a long time.
+
+Making choices that require my judgment. Creating things that couldn't exist without my particular attention. Accepting that what I make will be imperfect, limited, unmistakably mine.
+
+---
+
 ## Contact
 
 Email: akash@peerlist.io

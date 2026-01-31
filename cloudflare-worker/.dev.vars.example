@@ -1,0 +1,7 @@
+# Cloudflare Worker Local Development Secrets
+# Copy this file to .dev.vars and fill in your values
+
+# Admin password hash (SHA-256)
+# Generate with: echo -n "your-secure-password" | shasum -a 256
+# Then copy only the hash (without the trailing " -")
+ADMIN_PASSWORD_HASH="your-sha256-hash-here"

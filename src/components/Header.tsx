@@ -5,7 +5,7 @@ import Moon from '../imports/Moon';
 import Sun from '../imports/Sun';
 
 interface HeaderProps {
-  activePage?: 'writing' | 'favorites';
+  activePage?: 'writing' | 'favorites' | 'photography';
 }
 
 export function Header({ activePage }: HeaderProps = {}) {
@@ -35,7 +35,7 @@ export function Header({ activePage }: HeaderProps = {}) {
       </Link>
 
       {/* Navigation */}
-      <nav className="content-stretch flex gap-4 items-center relative shrink-0" aria-label="Main navigation">
+      <nav className="content-stretch flex gap-4 items-center relative shrink-0 w-full" aria-label="Main navigation">
         <Link 
           to="/writing" 
           className={`font-normal leading-[1.4] not-italic relative shrink-0 text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
@@ -54,7 +54,16 @@ export function Header({ activePage }: HeaderProps = {}) {
         >
           Favorites
         </Link>
-        <Tooltip content={theme === 'dark' ? 'Delight' : 'Go Dark'}>
+        <Link
+          to="/photography"
+          className={`font-normal leading-[1.4] not-italic relative shrink-0 text-base text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
+            activePage === 'photography' ? 'text-[var(--foreground)] underline decoration-[var(--muted)]' : 'text-gray-500 hover:text-[var(--foreground)]'
+          }`}
+          aria-current={activePage === 'photography' ? 'page' : undefined}
+        >
+          Photography
+        </Link>
+        <Tooltip content={theme === 'dark' ? 'Delight' : 'Go Dark'} className="ml-auto">
           <button
             onClick={toggleTheme}
             className="group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-gray-500 hover:text-[var(--foreground)] flex items-center"

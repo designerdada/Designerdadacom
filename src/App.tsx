@@ -3,6 +3,8 @@ import { Home } from './pages/Home';
 import { Writing } from './pages/Writing';
 import { WritingDetail } from './pages/WritingDetail';
 import { Favorites } from './pages/Favorites';
+import { Photography } from './pages/Photography';
+import { AdminPhotos } from './pages/AdminPhotos';
 import { Helmet } from 'react-helmet';
 
 export default function App() {
@@ -84,6 +86,8 @@ export default function App() {
         <Route path="/writing" element={<Writing />} />
         <Route path="/writing/:id" element={<WritingDetail />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/photography" element={<Photography />} />
+        <Route path="/admin/photos" element={<AdminPhotos />} />
       </Routes>
     </Router>
   );

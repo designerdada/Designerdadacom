@@ -1,0 +1,19 @@
+name = "designerdada-photos-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "PHOTOS_BUCKET"
+bucket_name = "designerdada-photos"
+
+# Environment variables (set via wrangler secret)
+# ADMIN_PASSWORD_HASH - bcrypt hash of the admin password
+# Set with: wrangler secret put ADMIN_PASSWORD_HASH
+
+[vars]
+# For local development, use: "http://localhost:3000"
+CORS_ORIGIN = "http://localhost:3000"
+# R2 public URL - update this to your R2 bucket's public URL
+# Format: https://pub-YOUR_ACCOUNT_HASH.r2.dev or your custom domain
+R2_PUBLIC_URL = "https://your-r2-bucket-url.r2.dev"

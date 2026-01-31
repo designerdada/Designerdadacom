@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a minimal, SEO-optimized personal website for Akash Bhadange (@designerdada), built with React 18, TypeScript, Vite, and Tailwind CSS. The site features a centered single-column layout (544px max width), dark mode support, and an MDX-powered blog.
+This is a minimal, SEO-optimized personal website template, built with React 18, TypeScript, Vite, and Tailwind CSS. The site features a centered single-column layout (544px max width), dark mode support, and an MDX-powered blog.
 
 **Tech Stack:**
 - React 18 with TypeScript
@@ -14,6 +14,32 @@ This is a minimal, SEO-optimized personal website for Akash Bhadange (@designerd
 - MDX (blog content)
 - Radix UI (component primitives)
 - Deployed on Vercel
+
+## Fork Setup (For New Users)
+
+When someone forks this repo, they need to customize these files:
+
+### Configuration Files
+- `src/config/site.ts` - Main site configuration (name, URL, author, social links)
+- `src/scripts/site-config.js` - Same config for build scripts
+
+### Personal Content
+- `public/assets/profile.png` - Profile photo
+- `public/assets/footer-signature.png` - Footer signature/logo
+- `public/assets/og-images/` - Open Graph images
+- `src/pages/Home.tsx` - Bio text
+- `src/components/Header.tsx` - Name display
+
+### Files with Hardcoded URLs (need search/replace)
+Search and replace `designerdada.com` with their domain in:
+- `src/App.tsx` (JSON-LD, meta tags)
+- `src/pages/*.tsx` (page meta tags)
+- `src/scripts/generate-prerender.js`
+- `src/content/writing/*.mdx` (ogImage URLs in frontmatter)
+
+### Environment Variables (Optional - for photography feature)
+- Copy `.env.example` to `.env`
+- Set `VITE_WORKER_API_URL` and `VITE_R2_PUBLIC_URL`
 
 ## Development Commands
 
@@ -75,16 +101,19 @@ The site uses a custom MDX processing pipeline:
 - `/writing` - Blog listing (Writing.tsx)
 - `/writing/:id` - Article detail pages (WritingDetail.tsx)
 - `/favorites` - Curated favorites list (Favorites.tsx)
+- `/photography` - Photo gallery (Photography.tsx) - optional
 
 ### Component Organization
 
 - `/components/` - Main React components (Header, Footer, MailingList, etc.)
 - `/components/ui/` - Radix UI wrapper components
 - `/components/figma/` - Figma import components
+- `/config/` - Site configuration
 - `/pages/` - Top-level page components
 - `/data/` - Static data files (articles.ts, favorites.ts)
 - `/utils/` - Utility functions (MDX parsing, etc.)
 - `/hooks/` - Custom React hooks
+- `/scripts/` - Build scripts (sitemap, llms.txt, etc.)
 
 ### Vite Configuration
 
@@ -111,8 +140,6 @@ The site has comprehensive SEO:
 
 ## Development Guidelines
 
-From `/src/guidelines/Guidelines.md`:
-
 1. **Layout**: Use flexbox and grid by default. Only use absolute positioning when necessary.
 2. **Code Quality**: Refactor as you go. Keep files small. Put helpers in separate files.
 3. **SEO/AIO**: Use correct Open Graph and Twitter meta tags. Use appropriate JSON-LD schemas for each page type.
@@ -126,13 +153,20 @@ From `/src/guidelines/Guidelines.md`:
 
 ## Important Files
 
+- `/src/config/site.ts` - Centralized site configuration
+- `/src/scripts/site-config.js` - Build script configuration
 - `/src/scripts/generate-mdx-index.js` - Auto-generates content index from MDX files
 - `/src/scripts/generate-sitemap.js` - Generates sitemap.xml
 - `/src/scripts/generate-llms-txt.js` - Generates llms.txt for AI crawlers
 - `/src/scripts/generate-prerender.js` - Pre-renders static HTML
 - `/src/content/writing/index.ts` - AUTO-GENERATED - do not edit manually
-- `/src/PRODUCTION_CHECKLIST.md` - Pre-deployment checklist
-- `/src/OG_IMAGE_GUIDE.md` - Guide for creating Open Graph images
+
+## Security Notes
+
+- `.env` files are gitignored - never commit secrets
+- `cloudflare-worker/.dev.vars` is gitignored - use `.dev.vars.example` as template
+- All API keys and tokens should be set via environment variables
+- R2 bucket URLs and account IDs are now configurable via environment variables
 
 ## Deployment
 
@@ -160,3 +194,7 @@ Update meta tags and JSON-LD in the page component using react-helmet. Follow th
 2. Add route in `/src/App.tsx`
 3. Add meta tags and JSON-LD structured data
 4. Update sitemap generation script if needed
+
+### Setting Up Photography Feature (Optional)
+
+See `cloudflare-worker/README.md` for Cloudflare R2 and Worker setup.
