@@ -3,7 +3,8 @@
   "outputDirectory": "build",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/:path*", "destination": "/index.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
