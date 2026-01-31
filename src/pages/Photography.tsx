@@ -3,28 +3,20 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { PhotoGrid } from "../components/PhotoGrid";
 import { PhotoLightbox } from "../components/PhotoLightbox";
-import { PhotoFilters } from "../components/PhotoFilters";
 import { Helmet } from "react-helmet";
-import {
-	Photo,
-	PhotoCategory,
-	sortPhotosByDate,
-	filterPhotosByCategory,
-} from "../data/cloudflare-config";
+import { Photo, sortPhotosByDate } from "../data/cloudflare-config";
 import { usePhotos } from "../hooks/usePhotos";
 
 export function Photography() {
-	const [selectedCategory, setSelectedCategory] = useState<PhotoCategory>("All");
 	const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
 	// Use mock data for development - switch to usePhotos() when API is ready
 	const { photos, loading, error } = usePhotos();
 
-	// Filter and sort photos
+	// Sort photos by date
 	const displayedPhotos = useMemo(() => {
-		const filtered = filterPhotosByCategory(photos, selectedCategory);
-		return sortPhotosByDate(filtered);
-	}, [photos, selectedCategory]);
+		return sortPhotosByDate(photos);
+	}, [photos]);
 
 	return (
 		<>
@@ -80,12 +72,6 @@ export function Photography() {
 						</p>
 					</div>
 					<main className='w-full flex flex-col gap-6 animate-in animate-delay-2'>
-						{/* Filters */}
-						<PhotoFilters
-							selectedCategory={selectedCategory}
-							onCategoryChange={setSelectedCategory}
-						/>
-
 						{/* Error state */}
 						{error && (
 							<div className='text-center py-8'>
