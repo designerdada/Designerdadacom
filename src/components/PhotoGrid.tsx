@@ -34,9 +34,9 @@ export function PhotoGrid({ photos, onPhotoClick, loading }: PhotoGridProps) {
 
   return (
     <div className="columns-2 gap-4">
-      {photos.map((photo) => (
+      {photos.map((photo, index) => (
         <div key={photo.id} className="mb-4 break-inside-avoid">
-          <PhotoCard photo={photo} onClick={() => onPhotoClick(photo)} />
+          <PhotoCard photo={photo} onClick={() => onPhotoClick(photo)} priority={index < 4} />
         </div>
       ))}
     </div>
