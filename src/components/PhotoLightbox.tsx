@@ -88,7 +88,9 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 		<Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
 			<Dialog.Portal>
 				<Dialog.Overlay className='fixed inset-0 z-50 bg-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
-				<Dialog.Content className='fixed inset-0 z-50 flex items-center justify-center focus:outline-none'>
+				<Dialog.Content
+					className='fixed inset-0 z-50 flex items-center justify-center focus:outline-none'
+					{...(!photo.description && { 'aria-describedby': undefined })}>
 					{/* Close button */}
 					<Dialog.Close asChild>
 						<button
