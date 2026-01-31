@@ -260,6 +260,9 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
                     disabled={isUploading || photo.uploaded}
                     className="w-full rounded border border-[var(--muted)]/30 bg-transparent px-2 py-1 text-xs text-[var(--foreground)] placeholder:text-[var(--muted)]/50 focus:border-[var(--foreground)] focus:outline-none disabled:opacity-50"
                   />
+                  <div className="mt-1 text-[10px] text-[var(--muted)]/70">
+                    {camera} · {film}
+                  </div>
                 </div>
               </div>
             ))}
