@@ -73,13 +73,13 @@ export function PhotoLightbox({
   return (
     <Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/90 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <Dialog.Content className="fixed inset-0 z-50 flex items-center justify-center focus:outline-none">
           {/* Close button */}
           <Dialog.Close asChild>
             <button
               type="button"
-              className="absolute right-4 top-4 z-10 rounded-full bg-black/50 p-2 text-white/80 transition-colors hover:bg-black/70 hover:text-white"
+              className="absolute right-4 top-4 z-10 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
               aria-label="Close"
             >
               <X className="size-6" />
@@ -91,7 +91,7 @@ export function PhotoLightbox({
             <button
               type="button"
               onClick={goToPrev}
-              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white/80 transition-colors hover:bg-black/70 hover:text-white"
+              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
               aria-label="Previous photo"
             >
               <ChevronLeft className="size-6" />
@@ -101,7 +101,7 @@ export function PhotoLightbox({
             <button
               type="button"
               onClick={goToNext}
-              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white/80 transition-colors hover:bg-black/70 hover:text-white"
+              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black"
               aria-label="Next photo"
             >
               <ChevronRight className="size-6" />
@@ -115,7 +115,7 @@ export function PhotoLightbox({
               {/* Loading skeleton */}
               {!imageLoaded && (
                 <div
-                  className="absolute animate-pulse rounded-lg bg-white/10"
+                  className="absolute animate-pulse rounded-lg bg-black/10"
                   style={{
                     aspectRatio: photo.aspectRatio,
                     maxHeight: 'calc(100vh - 140px)',
@@ -141,18 +141,18 @@ export function PhotoLightbox({
             </div>
 
             {/* Photo info */}
-            <div className="mt-4 w-full max-w-5xl text-center text-white shrink-0">
+            <div className="mt-4 w-full max-w-5xl text-center text-black shrink-0">
               <Dialog.Title className="text-lg font-medium">
                 {photo.title}
               </Dialog.Title>
-              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-white/60">
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-black/60">
                 {photo.date && <span>{photo.date}</span>}
                 {photo.camera && <span>{photo.camera}</span>}
                 {photo.film && <span>{photo.film}</span>}
                 {photo.location && <span>{photo.location}</span>}
               </div>
               {photo.description && (
-                <Dialog.Description className="mt-2 text-sm text-white/80">
+                <Dialog.Description className="mt-2 text-sm text-black/80">
                   {photo.description}
                 </Dialog.Description>
               )}
