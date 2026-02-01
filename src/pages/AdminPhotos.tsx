@@ -94,9 +94,11 @@ function AdminPhotosContent() {
                   />
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-[var(--foreground)]">{photo.title}</p>
-                    <p className="text-sm text-[var(--muted)]">
-                      {photo.category} • {photo.date}
-                    </p>
+                    {(photo.camera || photo.film) && (
+                      <p className="text-sm text-[var(--muted)]">
+                        {[photo.camera, photo.film].filter(Boolean).join(' · ')}
+                      </p>
+                    )}
                   </div>
                   <button
                     type="button"
