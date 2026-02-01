@@ -7,11 +7,12 @@
       "film": "Kodacolor 200",
       "aspectRatio": 0.7498188843274571,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/daabac16-da8a-4c43-9b15-8f6b74f7b844/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/daabac16-da8a-4c43-9b15-8f6b74f7b844/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/daabac16-da8a-4c43-9b15-8f6b74f7b844/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9fc9c443-ee93-4761-dd9e-c110bd37c300/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9fc9c443-ee93-4761-dd9e-c110bd37c300/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9fc9c443-ee93-4761-dd9e-c110bd37c300/large"
       },
-      "createdAt": "2026-02-01T05:10:45.863Z"
+      "createdAt": "2026-02-01T05:10:45.863Z",
+      "cfImageId": "9fc9c443-ee93-4761-dd9e-c110bd37c300"
     },
     {
       "id": "5affefd1-7659-4cba-beec-6558e4ddf8e4",
@@ -20,11 +21,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.4998174516246805,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/5affefd1-7659-4cba-beec-6558e4ddf8e4/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/5affefd1-7659-4cba-beec-6558e4ddf8e4/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/5affefd1-7659-4cba-beec-6558e4ddf8e4/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/227c49bf-29b6-4f26-b32b-7dcedbb0fc00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/227c49bf-29b6-4f26-b32b-7dcedbb0fc00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/227c49bf-29b6-4f26-b32b-7dcedbb0fc00/large"
       },
-      "createdAt": "2026-02-01T05:03:36.732Z"
+      "createdAt": "2026-02-01T05:03:36.732Z",
+      "cfImageId": "227c49bf-29b6-4f26-b32b-7dcedbb0fc00"
     },
     {
       "id": "18505d6b-1fff-4eeb-b0ab-942490aabcd9",
@@ -33,11 +35,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/18505d6b-1fff-4eeb-b0ab-942490aabcd9/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/18505d6b-1fff-4eeb-b0ab-942490aabcd9/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/18505d6b-1fff-4eeb-b0ab-942490aabcd9/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/1b1b84aa-2e5f-4d34-0b1a-e6b1c1f3a400/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/1b1b84aa-2e5f-4d34-0b1a-e6b1c1f3a400/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/1b1b84aa-2e5f-4d34-0b1a-e6b1c1f3a400/large"
       },
-      "createdAt": "2026-02-01T05:03:23.519Z"
+      "createdAt": "2026-02-01T05:03:23.519Z",
+      "cfImageId": "1b1b84aa-2e5f-4d34-0b1a-e6b1c1f3a400"
     },
     {
       "id": "4292a618-0e24-4c16-9892-b53cd7e1bbf1",
@@ -46,11 +49,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/4292a618-0e24-4c16-9892-b53cd7e1bbf1/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/4292a618-0e24-4c16-9892-b53cd7e1bbf1/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/4292a618-0e24-4c16-9892-b53cd7e1bbf1/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f4ac10e9-71c9-477b-03da-38cd3af40b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f4ac10e9-71c9-477b-03da-38cd3af40b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f4ac10e9-71c9-477b-03da-38cd3af40b00/large"
       },
-      "createdAt": "2026-02-01T05:03:00.945Z"
+      "createdAt": "2026-02-01T05:03:00.945Z",
+      "cfImageId": "f4ac10e9-71c9-477b-03da-38cd3af40b00"
     },
     {
       "id": "1a966fbe-20d1-44b5-b1c9-d8892142d04b",
@@ -59,11 +63,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/1a966fbe-20d1-44b5-b1c9-d8892142d04b/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/1a966fbe-20d1-44b5-b1c9-d8892142d04b/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/1a966fbe-20d1-44b5-b1c9-d8892142d04b/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2d264087-93ff-4224-de91-83c442572800/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2d264087-93ff-4224-de91-83c442572800/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2d264087-93ff-4224-de91-83c442572800/large"
       },
-      "createdAt": "2026-02-01T05:02:38.796Z"
+      "createdAt": "2026-02-01T05:02:38.796Z",
+      "cfImageId": "2d264087-93ff-4224-de91-83c442572800"
     },
     {
       "id": "ec959735-bb97-4e30-a41b-25d9a33bbbcb",
@@ -72,11 +77,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/ec959735-bb97-4e30-a41b-25d9a33bbbcb/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/ec959735-bb97-4e30-a41b-25d9a33bbbcb/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/ec959735-bb97-4e30-a41b-25d9a33bbbcb/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5e8b00ae-4ea2-4a8c-352f-b5d4c82f2100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5e8b00ae-4ea2-4a8c-352f-b5d4c82f2100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5e8b00ae-4ea2-4a8c-352f-b5d4c82f2100/large"
       },
-      "createdAt": "2026-02-01T05:02:17.776Z"
+      "createdAt": "2026-02-01T05:02:17.776Z",
+      "cfImageId": "5e8b00ae-4ea2-4a8c-352f-b5d4c82f2100"
     },
     {
       "id": "17207d2a-e4c1-4a7b-8664-841dc1916a65",
@@ -85,11 +91,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/17207d2a-e4c1-4a7b-8664-841dc1916a65/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/17207d2a-e4c1-4a7b-8664-841dc1916a65/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/17207d2a-e4c1-4a7b-8664-841dc1916a65/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/83268f6f-194c-45b7-8f42-93cdeb862300/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/83268f6f-194c-45b7-8f42-93cdeb862300/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/83268f6f-194c-45b7-8f42-93cdeb862300/large"
       },
-      "createdAt": "2026-02-01T05:01:36.795Z"
+      "createdAt": "2026-02-01T05:01:36.795Z",
+      "cfImageId": "83268f6f-194c-45b7-8f42-93cdeb862300"
     },
     {
       "id": "a0dba296-155a-4c1a-b944-2775ec28089a",
@@ -98,11 +105,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/a0dba296-155a-4c1a-b944-2775ec28089a/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/a0dba296-155a-4c1a-b944-2775ec28089a/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/a0dba296-155a-4c1a-b944-2775ec28089a/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a114aa43-11fa-487c-1dd7-1fbd5bab2700/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a114aa43-11fa-487c-1dd7-1fbd5bab2700/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a114aa43-11fa-487c-1dd7-1fbd5bab2700/large"
       },
-      "createdAt": "2026-02-01T05:01:14.265Z"
+      "createdAt": "2026-02-01T05:01:14.265Z",
+      "cfImageId": "a114aa43-11fa-487c-1dd7-1fbd5bab2700"
     },
     {
       "id": "53d80c81-bc5d-40e4-8c36-a0b855184096",
@@ -111,11 +119,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/53d80c81-bc5d-40e4-8c36-a0b855184096/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/53d80c81-bc5d-40e4-8c36-a0b855184096/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/53d80c81-bc5d-40e4-8c36-a0b855184096/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91448b74-d4a5-4e6e-9318-957d40ebf800/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91448b74-d4a5-4e6e-9318-957d40ebf800/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91448b74-d4a5-4e6e-9318-957d40ebf800/large"
       },
-      "createdAt": "2026-02-01T05:00:46.958Z"
+      "createdAt": "2026-02-01T05:00:46.958Z",
+      "cfImageId": "91448b74-d4a5-4e6e-9318-957d40ebf800"
     },
     {
       "id": "6310b6f1-3915-476e-9a47-dfa47ca2cf36",
@@ -124,11 +133,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/6310b6f1-3915-476e-9a47-dfa47ca2cf36/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/6310b6f1-3915-476e-9a47-dfa47ca2cf36/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/6310b6f1-3915-476e-9a47-dfa47ca2cf36/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/76632a51-13d3-483a-1672-32782b82f100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/76632a51-13d3-483a-1672-32782b82f100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/76632a51-13d3-483a-1672-32782b82f100/large"
       },
-      "createdAt": "2026-02-01T05:00:23.781Z"
+      "createdAt": "2026-02-01T05:00:23.781Z",
+      "cfImageId": "76632a51-13d3-483a-1672-32782b82f100"
     },
     {
       "id": "da5b1667-c974-4a15-9551-1668dc19f703",
@@ -137,11 +147,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/da5b1667-c974-4a15-9551-1668dc19f703/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/da5b1667-c974-4a15-9551-1668dc19f703/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/da5b1667-c974-4a15-9551-1668dc19f703/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f78f4dcd-c209-4810-f1c8-33f3350e3700/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f78f4dcd-c209-4810-f1c8-33f3350e3700/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f78f4dcd-c209-4810-f1c8-33f3350e3700/large"
       },
-      "createdAt": "2026-02-01T05:00:06.231Z"
+      "createdAt": "2026-02-01T05:00:06.231Z",
+      "cfImageId": "f78f4dcd-c209-4810-f1c8-33f3350e3700"
     },
     {
       "id": "686c0480-7699-40b5-87ef-a7b62e1f23ac",
@@ -150,11 +161,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/686c0480-7699-40b5-87ef-a7b62e1f23ac/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/686c0480-7699-40b5-87ef-a7b62e1f23ac/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/686c0480-7699-40b5-87ef-a7b62e1f23ac/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f639bfc1-c89e-4e38-9ee6-abef63a96100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f639bfc1-c89e-4e38-9ee6-abef63a96100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f639bfc1-c89e-4e38-9ee6-abef63a96100/large"
       },
-      "createdAt": "2026-02-01T04:59:47.362Z"
+      "createdAt": "2026-02-01T04:59:47.362Z",
+      "cfImageId": "f639bfc1-c89e-4e38-9ee6-abef63a96100"
     },
     {
       "id": "10f0b3e2-92b0-420b-8181-2f1d7379872a",
@@ -163,11 +175,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/10f0b3e2-92b0-420b-8181-2f1d7379872a/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/10f0b3e2-92b0-420b-8181-2f1d7379872a/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/10f0b3e2-92b0-420b-8181-2f1d7379872a/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9672376c-9d7e-4763-b126-7c4994202400/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9672376c-9d7e-4763-b126-7c4994202400/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9672376c-9d7e-4763-b126-7c4994202400/large"
       },
-      "createdAt": "2026-02-01T04:59:30.694Z"
+      "createdAt": "2026-02-01T04:59:30.694Z",
+      "cfImageId": "9672376c-9d7e-4763-b126-7c4994202400"
     },
     {
       "id": "582a4612-0723-413e-bd24-58c7aae823ce",
@@ -176,11 +189,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/582a4612-0723-413e-bd24-58c7aae823ce/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/582a4612-0723-413e-bd24-58c7aae823ce/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/582a4612-0723-413e-bd24-58c7aae823ce/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c2b985c0-80e9-4664-86d8-3aef61104b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c2b985c0-80e9-4664-86d8-3aef61104b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c2b985c0-80e9-4664-86d8-3aef61104b00/large"
       },
-      "createdAt": "2026-02-01T04:59:08.726Z"
+      "createdAt": "2026-02-01T04:59:08.726Z",
+      "cfImageId": "c2b985c0-80e9-4664-86d8-3aef61104b00"
     },
     {
       "id": "2283de01-f305-48d3-bc94-88c54a272935",
@@ -189,11 +203,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.7501109631602308,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/2283de01-f305-48d3-bc94-88c54a272935/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/2283de01-f305-48d3-bc94-88c54a272935/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/2283de01-f305-48d3-bc94-88c54a272935/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/ae592153-3672-475c-1a78-56697c262200/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/ae592153-3672-475c-1a78-56697c262200/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/ae592153-3672-475c-1a78-56697c262200/large"
       },
-      "createdAt": "2026-02-01T04:58:41.615Z"
+      "createdAt": "2026-02-01T04:58:41.615Z",
+      "cfImageId": "ae592153-3672-475c-1a78-56697c262200"
     },
     {
       "id": "c1e5ba3d-7e70-401e-b52d-df4afd35b450",
@@ -202,11 +217,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/c1e5ba3d-7e70-401e-b52d-df4afd35b450/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/c1e5ba3d-7e70-401e-b52d-df4afd35b450/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/c1e5ba3d-7e70-401e-b52d-df4afd35b450/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c199cc9d-4bff-4e63-3d71-649ec1d82300/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c199cc9d-4bff-4e63-3d71-649ec1d82300/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/c199cc9d-4bff-4e63-3d71-649ec1d82300/large"
       },
-      "createdAt": "2026-02-01T04:58:24.690Z"
+      "createdAt": "2026-02-01T04:58:24.690Z",
+      "cfImageId": "c199cc9d-4bff-4e63-3d71-649ec1d82300"
     },
     {
       "id": "2804cfd2-b0d9-4abb-83b5-c3da2955991f",
@@ -215,11 +231,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5001512859304085,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/2804cfd2-b0d9-4abb-83b5-c3da2955991f/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/2804cfd2-b0d9-4abb-83b5-c3da2955991f/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/2804cfd2-b0d9-4abb-83b5-c3da2955991f/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91733c59-a456-4813-3f1f-6c494ee2e600/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91733c59-a456-4813-3f1f-6c494ee2e600/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91733c59-a456-4813-3f1f-6c494ee2e600/large"
       },
-      "createdAt": "2026-02-01T04:57:45.349Z"
+      "createdAt": "2026-02-01T04:57:45.349Z",
+      "cfImageId": "91733c59-a456-4813-3f1f-6c494ee2e600"
     },
     {
       "id": "aa7dc7cc-4257-434f-ae1c-0d5322bf37fb",
@@ -228,11 +245,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5004037685060565,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/aa7dc7cc-4257-434f-ae1c-0d5322bf37fb/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/aa7dc7cc-4257-434f-ae1c-0d5322bf37fb/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/aa7dc7cc-4257-434f-ae1c-0d5322bf37fb/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/629f5463-3c37-4465-c0f7-b302c1fa3e00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/629f5463-3c37-4465-c0f7-b302c1fa3e00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/629f5463-3c37-4465-c0f7-b302c1fa3e00/large"
       },
-      "createdAt": "2026-02-01T04:57:25.856Z"
+      "createdAt": "2026-02-01T04:57:25.856Z",
+      "cfImageId": "629f5463-3c37-4465-c0f7-b302c1fa3e00"
     },
     {
       "id": "73188ab6-6fe6-4038-80ba-3073b86b6bc6",
@@ -241,11 +259,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5001345170836695,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/73188ab6-6fe6-4038-80ba-3073b86b6bc6/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/73188ab6-6fe6-4038-80ba-3073b86b6bc6/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/73188ab6-6fe6-4038-80ba-3073b86b6bc6/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/75db9818-6709-450f-5de3-c558bbe4cc00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/75db9818-6709-450f-5de3-c558bbe4cc00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/75db9818-6709-450f-5de3-c558bbe4cc00/large"
       },
-      "createdAt": "2026-02-01T04:57:04.964Z"
+      "createdAt": "2026-02-01T04:57:04.964Z",
+      "cfImageId": "75db9818-6709-450f-5de3-c558bbe4cc00"
     },
     {
       "id": "e974ae79-2ed2-452a-aa1c-a6223949b34f",
@@ -254,11 +273,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/e974ae79-2ed2-452a-aa1c-a6223949b34f/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/e974ae79-2ed2-452a-aa1c-a6223949b34f/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/e974ae79-2ed2-452a-aa1c-a6223949b34f/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/6b9521ec-ae61-4590-413f-760bd0067e00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/6b9521ec-ae61-4590-413f-760bd0067e00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/6b9521ec-ae61-4590-413f-760bd0067e00/large"
       },
-      "createdAt": "2026-02-01T04:56:44.236Z"
+      "createdAt": "2026-02-01T04:56:44.236Z",
+      "cfImageId": "6b9521ec-ae61-4590-413f-760bd0067e00"
     },
     {
       "id": "7c19b7a4-67a7-49b0-b225-dbdaaa9dbdb0",
@@ -267,24 +287,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/7c19b7a4-67a7-49b0-b225-dbdaaa9dbdb0/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/7c19b7a4-67a7-49b0-b225-dbdaaa9dbdb0/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/7c19b7a4-67a7-49b0-b225-dbdaaa9dbdb0/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3ce47a03-f35d-4fb5-e123-c0b9570a4100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3ce47a03-f35d-4fb5-e123-c0b9570a4100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3ce47a03-f35d-4fb5-e123-c0b9570a4100/large"
       },
-      "createdAt": "2026-02-01T04:55:59.277Z"
-    },
-    {
-      "id": "bbc07243-dabd-479d-9ee8-40ee54353cb4",
-      "title": "Jantar Mantar, Jaipur",
-      "camera": "Leica M6",
-      "film": "Kodak Gold 200",
-      "aspectRatio": 1.5044390637610976,
-      "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/bbc07243-dabd-479d-9ee8-40ee54353cb4/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/bbc07243-dabd-479d-9ee8-40ee54353cb4/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/bbc07243-dabd-479d-9ee8-40ee54353cb4/original.JPG"
-      },
-      "createdAt": "2026-02-01T04:55:12.601Z"
+      "createdAt": "2026-02-01T04:55:59.277Z",
+      "cfImageId": "3ce47a03-f35d-4fb5-e123-c0b9570a4100"
     },
     {
       "id": "60896239-f90f-4753-83d9-46a81daf789a",
@@ -293,11 +301,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/60896239-f90f-4753-83d9-46a81daf789a/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/60896239-f90f-4753-83d9-46a81daf789a/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/60896239-f90f-4753-83d9-46a81daf789a/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a4c5518f-34bd-48a8-90b0-066425adbf00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a4c5518f-34bd-48a8-90b0-066425adbf00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a4c5518f-34bd-48a8-90b0-066425adbf00/large"
       },
-      "createdAt": "2026-02-01T04:54:12.578Z"
+      "createdAt": "2026-02-01T04:54:12.578Z",
+      "cfImageId": "a4c5518f-34bd-48a8-90b0-066425adbf00"
     },
     {
       "id": "ee1db50a-cec4-4387-9fa0-2a9cee34f576",
@@ -306,11 +315,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/ee1db50a-cec4-4387-9fa0-2a9cee34f576/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/ee1db50a-cec4-4387-9fa0-2a9cee34f576/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/ee1db50a-cec4-4387-9fa0-2a9cee34f576/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/4176e90e-bdf7-4e3d-29ff-03cfbb7aee00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/4176e90e-bdf7-4e3d-29ff-03cfbb7aee00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/4176e90e-bdf7-4e3d-29ff-03cfbb7aee00/large"
       },
-      "createdAt": "2026-02-01T04:53:26.656Z"
+      "createdAt": "2026-02-01T04:53:26.656Z",
+      "cfImageId": "4176e90e-bdf7-4e3d-29ff-03cfbb7aee00"
     },
     {
       "id": "ecddf882-c372-4469-bb33-71ea98cb583c",
@@ -319,11 +329,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/ecddf882-c372-4469-bb33-71ea98cb583c/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/ecddf882-c372-4469-bb33-71ea98cb583c/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/ecddf882-c372-4469-bb33-71ea98cb583c/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2cee10e2-4d6d-4284-7502-43e0ba8e3400/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2cee10e2-4d6d-4284-7502-43e0ba8e3400/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2cee10e2-4d6d-4284-7502-43e0ba8e3400/large"
       },
-      "createdAt": "2026-02-01T04:52:46.098Z"
+      "createdAt": "2026-02-01T04:52:46.098Z",
+      "cfImageId": "2cee10e2-4d6d-4284-7502-43e0ba8e3400"
     },
     {
       "id": "2c882cd8-58b0-4de6-aecf-15134f7d33f8",
@@ -332,11 +343,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/2c882cd8-58b0-4de6-aecf-15134f7d33f8/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/2c882cd8-58b0-4de6-aecf-15134f7d33f8/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/2c882cd8-58b0-4de6-aecf-15134f7d33f8/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d826d23b-303d-4e1c-4b11-5635eac6d900/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d826d23b-303d-4e1c-4b11-5635eac6d900/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d826d23b-303d-4e1c-4b11-5635eac6d900/large"
       },
-      "createdAt": "2026-02-01T04:51:57.086Z"
+      "createdAt": "2026-02-01T04:51:57.086Z",
+      "cfImageId": "d826d23b-303d-4e1c-4b11-5635eac6d900"
     },
     {
       "id": "bdaa300c-b98b-4c25-9145-0a88a032f32c",
@@ -345,11 +357,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5001345170836695,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/bdaa300c-b98b-4c25-9145-0a88a032f32c/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/bdaa300c-b98b-4c25-9145-0a88a032f32c/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/bdaa300c-b98b-4c25-9145-0a88a032f32c/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/0d200cc6-9eba-4677-9e5b-73fa06576900/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/0d200cc6-9eba-4677-9e5b-73fa06576900/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/0d200cc6-9eba-4677-9e5b-73fa06576900/large"
       },
-      "createdAt": "2026-02-01T04:51:12.841Z"
+      "createdAt": "2026-02-01T04:51:12.841Z",
+      "cfImageId": "0d200cc6-9eba-4677-9e5b-73fa06576900"
     },
     {
       "id": "3df24bdf-eb20-4946-b1c7-43132c9ebcab",
@@ -358,11 +371,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/3df24bdf-eb20-4946-b1c7-43132c9ebcab/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/3df24bdf-eb20-4946-b1c7-43132c9ebcab/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/3df24bdf-eb20-4946-b1c7-43132c9ebcab/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/935ef8a3-7ff1-4aa1-8ba0-db964bf66b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/935ef8a3-7ff1-4aa1-8ba0-db964bf66b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/935ef8a3-7ff1-4aa1-8ba0-db964bf66b00/large"
       },
-      "createdAt": "2026-02-01T04:50:47.922Z"
+      "createdAt": "2026-02-01T04:50:47.922Z",
+      "cfImageId": "935ef8a3-7ff1-4aa1-8ba0-db964bf66b00"
     },
     {
       "id": "95b03a17-6e57-4c2d-a540-2f70ac673fa5",
@@ -371,11 +385,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.8000580383052814,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/95b03a17-6e57-4c2d-a540-2f70ac673fa5/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/95b03a17-6e57-4c2d-a540-2f70ac673fa5/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/95b03a17-6e57-4c2d-a540-2f70ac673fa5/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/87d8e349-a215-4612-451e-be899f659a00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/87d8e349-a215-4612-451e-be899f659a00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/87d8e349-a215-4612-451e-be899f659a00/large"
       },
-      "createdAt": "2026-02-01T04:50:03.213Z"
+      "createdAt": "2026-02-01T04:50:03.213Z",
+      "cfImageId": "87d8e349-a215-4612-451e-be899f659a00"
     },
     {
       "id": "c3b462a5-5f92-4d31-978b-4641c8aea729",
@@ -384,11 +399,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/c3b462a5-5f92-4d31-978b-4641c8aea729/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/c3b462a5-5f92-4d31-978b-4641c8aea729/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/c3b462a5-5f92-4d31-978b-4641c8aea729/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/902eb0e4-1973-4311-cddb-2b10231d6600/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/902eb0e4-1973-4311-cddb-2b10231d6600/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/902eb0e4-1973-4311-cddb-2b10231d6600/large"
       },
-      "createdAt": "2026-02-01T04:49:49.698Z"
+      "createdAt": "2026-02-01T04:49:49.698Z",
+      "cfImageId": "902eb0e4-1973-4311-cddb-2b10231d6600"
     },
     {
       "id": "268d2103-4b9f-4571-ba8f-ecc0306c60cd",
@@ -397,11 +413,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/268d2103-4b9f-4571-ba8f-ecc0306c60cd/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/268d2103-4b9f-4571-ba8f-ecc0306c60cd/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/268d2103-4b9f-4571-ba8f-ecc0306c60cd/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/7265a30f-1b65-43a5-c6e2-802e8f939b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/7265a30f-1b65-43a5-c6e2-802e8f939b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/7265a30f-1b65-43a5-c6e2-802e8f939b00/large"
       },
-      "createdAt": "2026-02-01T04:49:06.204Z"
+      "createdAt": "2026-02-01T04:49:06.204Z",
+      "cfImageId": "7265a30f-1b65-43a5-c6e2-802e8f939b00"
     },
     {
       "id": "13af1b91-1959-422e-b05d-325efcf0659a",
@@ -410,11 +427,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.8000430477830391,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/13af1b91-1959-422e-b05d-325efcf0659a/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/13af1b91-1959-422e-b05d-325efcf0659a/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/13af1b91-1959-422e-b05d-325efcf0659a/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/913b89ef-67f4-4bb1-b13d-c25834d2ad00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/913b89ef-67f4-4bb1-b13d-c25834d2ad00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/913b89ef-67f4-4bb1-b13d-c25834d2ad00/large"
       },
-      "createdAt": "2026-02-01T04:48:29.463Z"
+      "createdAt": "2026-02-01T04:48:29.463Z",
+      "cfImageId": "913b89ef-67f4-4bb1-b13d-c25834d2ad00"
     },
     {
       "id": "3ebc1fb8-60e1-4865-aec2-e56483ab9b1b",
@@ -423,11 +441,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/3ebc1fb8-60e1-4865-aec2-e56483ab9b1b/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/3ebc1fb8-60e1-4865-aec2-e56483ab9b1b/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/3ebc1fb8-60e1-4865-aec2-e56483ab9b1b/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/58d405cf-6ad3-4eec-5af2-43191158ae00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/58d405cf-6ad3-4eec-5af2-43191158ae00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/58d405cf-6ad3-4eec-5af2-43191158ae00/large"
       },
-      "createdAt": "2026-02-01T04:48:10.362Z"
+      "createdAt": "2026-02-01T04:48:10.362Z",
+      "cfImageId": "58d405cf-6ad3-4eec-5af2-43191158ae00"
     },
     {
       "id": "7580f646-ba5f-4e1a-86ea-e333bbec7dac",
@@ -436,11 +455,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/7580f646-ba5f-4e1a-86ea-e333bbec7dac/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/7580f646-ba5f-4e1a-86ea-e333bbec7dac/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/7580f646-ba5f-4e1a-86ea-e333bbec7dac/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/663973cd-5dcf-4ef9-2ce2-388bb2d39600/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/663973cd-5dcf-4ef9-2ce2-388bb2d39600/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/663973cd-5dcf-4ef9-2ce2-388bb2d39600/large"
       },
-      "createdAt": "2026-02-01T04:47:29.672Z"
+      "createdAt": "2026-02-01T04:47:29.672Z",
+      "cfImageId": "663973cd-5dcf-4ef9-2ce2-388bb2d39600"
     },
     {
       "id": "5d462cee-7352-435f-a88d-078b6fbf31b6",
@@ -449,11 +469,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/5d462cee-7352-435f-a88d-078b6fbf31b6/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/5d462cee-7352-435f-a88d-078b6fbf31b6/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/5d462cee-7352-435f-a88d-078b6fbf31b6/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2e503381-5730-4888-e620-4d0f52bf6800/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2e503381-5730-4888-e620-4d0f52bf6800/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2e503381-5730-4888-e620-4d0f52bf6800/large"
       },
-      "createdAt": "2026-02-01T04:47:04.693Z"
+      "createdAt": "2026-02-01T04:47:04.693Z",
+      "cfImageId": "2e503381-5730-4888-e620-4d0f52bf6800"
     },
     {
       "id": "e9b17cd5-4adc-402d-859b-8e7c05c64df6",
@@ -462,11 +483,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/e9b17cd5-4adc-402d-859b-8e7c05c64df6/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/e9b17cd5-4adc-402d-859b-8e7c05c64df6/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/e9b17cd5-4adc-402d-859b-8e7c05c64df6/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d4429232-2172-4bb0-53ca-ce5af6960000/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d4429232-2172-4bb0-53ca-ce5af6960000/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d4429232-2172-4bb0-53ca-ce5af6960000/large"
       },
-      "createdAt": "2026-02-01T04:46:41.266Z"
+      "createdAt": "2026-02-01T04:46:41.266Z",
+      "cfImageId": "d4429232-2172-4bb0-53ca-ce5af6960000"
     },
     {
       "id": "5b898dbe-9684-4f13-861a-83a46d22e6ad",
@@ -475,11 +497,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.8000430477830391,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/5b898dbe-9684-4f13-861a-83a46d22e6ad/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/5b898dbe-9684-4f13-861a-83a46d22e6ad/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/5b898dbe-9684-4f13-861a-83a46d22e6ad/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/29db518f-35a0-4d7a-f02c-cce42cd64000/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/29db518f-35a0-4d7a-f02c-cce42cd64000/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/29db518f-35a0-4d7a-f02c-cce42cd64000/large"
       },
-      "createdAt": "2026-02-01T04:46:01.308Z"
+      "createdAt": "2026-02-01T04:46:01.308Z",
+      "cfImageId": "29db518f-35a0-4d7a-f02c-cce42cd64000"
     },
     {
       "id": "105574a7-6c99-427c-824a-6a7efc7f6152",
@@ -488,11 +511,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5044390637610976,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/105574a7-6c99-427c-824a-6a7efc7f6152/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/105574a7-6c99-427c-824a-6a7efc7f6152/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/105574a7-6c99-427c-824a-6a7efc7f6152/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f0ecd0fb-f03d-470f-e1a7-fcec9a9d6d00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f0ecd0fb-f03d-470f-e1a7-fcec9a9d6d00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f0ecd0fb-f03d-470f-e1a7-fcec9a9d6d00/large"
       },
-      "createdAt": "2026-02-01T04:45:41.063Z"
+      "createdAt": "2026-02-01T04:45:41.063Z",
+      "cfImageId": "f0ecd0fb-f03d-470f-e1a7-fcec9a9d6d00"
     },
     {
       "id": "025989a4-1045-4d99-972d-a315dcf8f748",
@@ -501,11 +525,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/025989a4-1045-4d99-972d-a315dcf8f748/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/025989a4-1045-4d99-972d-a315dcf8f748/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/025989a4-1045-4d99-972d-a315dcf8f748/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9c8501f9-c2f7-4254-3179-4c9391a1ca00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9c8501f9-c2f7-4254-3179-4c9391a1ca00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/9c8501f9-c2f7-4254-3179-4c9391a1ca00/large"
       },
-      "createdAt": "2026-02-01T04:45:00.377Z"
+      "createdAt": "2026-02-01T04:45:00.377Z",
+      "cfImageId": "9c8501f9-c2f7-4254-3179-4c9391a1ca00"
     },
     {
       "id": "01953382-9ae0-4684-8c5c-c6e932eec615",
@@ -514,11 +539,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/01953382-9ae0-4684-8c5c-c6e932eec615/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/01953382-9ae0-4684-8c5c-c6e932eec615/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/01953382-9ae0-4684-8c5c-c6e932eec615/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3136ea5e-482f-4210-48b4-cf17f53a0200/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3136ea5e-482f-4210-48b4-cf17f53a0200/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/3136ea5e-482f-4210-48b4-cf17f53a0200/large"
       },
-      "createdAt": "2026-02-01T04:44:12.567Z"
+      "createdAt": "2026-02-01T04:44:12.567Z",
+      "cfImageId": "3136ea5e-482f-4210-48b4-cf17f53a0200"
     },
     {
       "id": "f4ce9156-5b0b-4c75-828f-0fbcf369056f",
@@ -527,11 +553,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/f4ce9156-5b0b-4c75-828f-0fbcf369056f/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/f4ce9156-5b0b-4c75-828f-0fbcf369056f/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/f4ce9156-5b0b-4c75-828f-0fbcf369056f/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f75be39a-d428-44c0-afa1-0598bb647000/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f75be39a-d428-44c0-afa1-0598bb647000/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/f75be39a-d428-44c0-afa1-0598bb647000/large"
       },
-      "createdAt": "2026-02-01T04:43:48.744Z"
+      "createdAt": "2026-02-01T04:43:48.744Z",
+      "cfImageId": "f75be39a-d428-44c0-afa1-0598bb647000"
     },
     {
       "id": "53566b1c-80ed-460f-85d5-6c177ff23ef3",
@@ -540,11 +567,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/53566b1c-80ed-460f-85d5-6c177ff23ef3/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/53566b1c-80ed-460f-85d5-6c177ff23ef3/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/53566b1c-80ed-460f-85d5-6c177ff23ef3/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/13292607-befe-455b-06a2-aa87bdb6a100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/13292607-befe-455b-06a2-aa87bdb6a100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/13292607-befe-455b-06a2-aa87bdb6a100/large"
       },
-      "createdAt": "2026-02-01T04:43:23.579Z"
+      "createdAt": "2026-02-01T04:43:23.579Z",
+      "cfImageId": "13292607-befe-455b-06a2-aa87bdb6a100"
     },
     {
       "id": "861a6db2-390d-4d2c-b4d6-4a7b8442685d",
@@ -553,11 +581,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/861a6db2-390d-4d2c-b4d6-4a7b8442685d/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/861a6db2-390d-4d2c-b4d6-4a7b8442685d/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/861a6db2-390d-4d2c-b4d6-4a7b8442685d/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/57423c59-7f02-47b0-5e0d-6ea22910e000/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/57423c59-7f02-47b0-5e0d-6ea22910e000/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/57423c59-7f02-47b0-5e0d-6ea22910e000/large"
       },
-      "createdAt": "2026-02-01T04:43:00.432Z"
+      "createdAt": "2026-02-01T04:43:00.432Z",
+      "cfImageId": "57423c59-7f02-47b0-5e0d-6ea22910e000"
     },
     {
       "id": "74a211c0-f3cc-42eb-9714-aad58ca98089",
@@ -566,11 +595,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.6584757834757835,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/74a211c0-f3cc-42eb-9714-aad58ca98089/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/74a211c0-f3cc-42eb-9714-aad58ca98089/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/74a211c0-f3cc-42eb-9714-aad58ca98089/original.JPG"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/94c2fb77-30d7-48ee-5d9a-76d73485b500/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/94c2fb77-30d7-48ee-5d9a-76d73485b500/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/94c2fb77-30d7-48ee-5d9a-76d73485b500/large"
       },
-      "createdAt": "2026-02-01T04:42:03.165Z"
+      "createdAt": "2026-02-01T04:42:03.165Z",
+      "cfImageId": "94c2fb77-30d7-48ee-5d9a-76d73485b500"
     },
     {
       "id": "3d262367-2158-4664-94d7-46b983fbdc91",
@@ -579,11 +609,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/3d262367-2158-4664-94d7-46b983fbdc91/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/3d262367-2158-4664-94d7-46b983fbdc91/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/3d262367-2158-4664-94d7-46b983fbdc91/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5c1f6e96-89e5-4974-fe2d-8c37311aae00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5c1f6e96-89e5-4974-fe2d-8c37311aae00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5c1f6e96-89e5-4974-fe2d-8c37311aae00/large"
       },
-      "createdAt": "2026-02-01T04:41:16.191Z"
+      "createdAt": "2026-02-01T04:41:16.191Z",
+      "cfImageId": "5c1f6e96-89e5-4974-fe2d-8c37311aae00"
     },
     {
       "id": "75716267-52cf-494d-a1b4-68aa4053ec56",
@@ -592,11 +623,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/75716267-52cf-494d-a1b4-68aa4053ec56/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/75716267-52cf-494d-a1b4-68aa4053ec56/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/75716267-52cf-494d-a1b4-68aa4053ec56/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/32fc94e3-d33e-46f6-1dc6-2c67177e8500/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/32fc94e3-d33e-46f6-1dc6-2c67177e8500/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/32fc94e3-d33e-46f6-1dc6-2c67177e8500/large"
       },
-      "createdAt": "2026-02-01T04:40:48.199Z"
+      "createdAt": "2026-02-01T04:40:48.199Z",
+      "cfImageId": "32fc94e3-d33e-46f6-1dc6-2c67177e8500"
     },
     {
       "id": "ec4b85a2-c5cc-4206-b116-25840acd0097",
@@ -605,11 +637,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/ec4b85a2-c5cc-4206-b116-25840acd0097/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/ec4b85a2-c5cc-4206-b116-25840acd0097/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/ec4b85a2-c5cc-4206-b116-25840acd0097/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5649dff2-307e-4da3-8b5d-b972f57adc00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5649dff2-307e-4da3-8b5d-b972f57adc00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/5649dff2-307e-4da3-8b5d-b972f57adc00/large"
       },
-      "createdAt": "2026-02-01T04:40:15.169Z"
+      "createdAt": "2026-02-01T04:40:15.169Z",
+      "cfImageId": "5649dff2-307e-4da3-8b5d-b972f57adc00"
     },
     {
       "id": "e6a039fc-ab9f-43ae-a896-02e6a69c2969",
@@ -618,11 +651,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/e6a039fc-ab9f-43ae-a896-02e6a69c2969/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/e6a039fc-ab9f-43ae-a896-02e6a69c2969/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/e6a039fc-ab9f-43ae-a896-02e6a69c2969/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/54d67305-4f2a-41a4-0be1-50c5046cd100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/54d67305-4f2a-41a4-0be1-50c5046cd100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/54d67305-4f2a-41a4-0be1-50c5046cd100/large"
       },
-      "createdAt": "2026-02-01T04:39:38.169Z"
+      "createdAt": "2026-02-01T04:39:38.169Z",
+      "cfImageId": "54d67305-4f2a-41a4-0be1-50c5046cd100"
     },
     {
       "id": "a32c4112-bfe7-4033-b87c-d2011637bfb2",
@@ -631,11 +665,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5186587344510547,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/a32c4112-bfe7-4033-b87c-d2011637bfb2/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/a32c4112-bfe7-4033-b87c-d2011637bfb2/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/a32c4112-bfe7-4033-b87c-d2011637bfb2/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d7fdf3c9-760d-4a2d-3141-277307faa600/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d7fdf3c9-760d-4a2d-3141-277307faa600/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/d7fdf3c9-760d-4a2d-3141-277307faa600/large"
       },
-      "createdAt": "2026-02-01T04:39:07.200Z"
+      "createdAt": "2026-02-01T04:39:07.200Z",
+      "cfImageId": "d7fdf3c9-760d-4a2d-3141-277307faa600"
     },
     {
       "id": "defeb5e5-00be-4369-86e9-9f3efc4311cb",
@@ -644,37 +679,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5203362255965294,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/defeb5e5-00be-4369-86e9-9f3efc4311cb/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/defeb5e5-00be-4369-86e9-9f3efc4311cb/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/defeb5e5-00be-4369-86e9-9f3efc4311cb/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/42457422-49c0-426d-aaa8-73fae1336d00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/42457422-49c0-426d-aaa8-73fae1336d00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/42457422-49c0-426d-aaa8-73fae1336d00/large"
       },
-      "createdAt": "2026-02-01T04:38:39.217Z"
-    },
-    {
-      "id": "8e946d30-556a-48a0-9109-21d0de6abd28",
-      "title": "Hawa Mahal, Jaipur",
-      "camera": "Leica M6",
-      "film": "Kodak Gold 200",
-      "aspectRatio": 1.5203362255965294,
-      "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/8e946d30-556a-48a0-9109-21d0de6abd28/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/8e946d30-556a-48a0-9109-21d0de6abd28/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/8e946d30-556a-48a0-9109-21d0de6abd28/original.JPG"
-      },
-      "createdAt": "2026-02-01T04:38:14.801Z"
-    },
-    {
-      "id": "74c3ac63-6a37-4f57-aa11-ae9f432665a4",
-      "title": "Hawa Mahal, Jaipur",
-      "camera": "Leica M6",
-      "film": "Kodak Gold 200",
-      "aspectRatio": 1.5203362255965294,
-      "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/74c3ac63-6a37-4f57-aa11-ae9f432665a4/original.JPG",
-        "medium": "https://cdn.designerdada.com/photos/74c3ac63-6a37-4f57-aa11-ae9f432665a4/original.JPG",
-        "large": "https://cdn.designerdada.com/photos/74c3ac63-6a37-4f57-aa11-ae9f432665a4/original.JPG"
-      },
-      "createdAt": "2026-02-01T04:36:56.606Z"
+      "createdAt": "2026-02-01T04:38:39.217Z",
+      "cfImageId": "42457422-49c0-426d-aaa8-73fae1336d00"
     },
     {
       "id": "acdf3cc0-6520-46fd-ae54-ddc36b816e97",
@@ -683,11 +693,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5203362255965294,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/acdf3cc0-6520-46fd-ae54-ddc36b816e97/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/acdf3cc0-6520-46fd-ae54-ddc36b816e97/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/acdf3cc0-6520-46fd-ae54-ddc36b816e97/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/151f1cbc-7802-4203-baf1-113099e28800/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/151f1cbc-7802-4203-baf1-113099e28800/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/151f1cbc-7802-4203-baf1-113099e28800/large"
       },
-      "createdAt": "2026-02-01T04:35:08.612Z"
+      "createdAt": "2026-02-01T04:35:08.612Z",
+      "cfImageId": "151f1cbc-7802-4203-baf1-113099e28800"
     },
     {
       "id": "cd2a4443-2f9f-4417-9c1d-158a178bc608",
@@ -696,11 +707,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.6584757834757835,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/cd2a4443-2f9f-4417-9c1d-158a178bc608/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/cd2a4443-2f9f-4417-9c1d-158a178bc608/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/cd2a4443-2f9f-4417-9c1d-158a178bc608/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91a7f97c-0ee8-4a01-ca5d-14ac3238f000/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91a7f97c-0ee8-4a01-ca5d-14ac3238f000/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/91a7f97c-0ee8-4a01-ca5d-14ac3238f000/large"
       },
-      "createdAt": "2026-01-31T17:35:58.360Z"
+      "createdAt": "2026-01-31T17:35:58.360Z",
+      "cfImageId": "91a7f97c-0ee8-4a01-ca5d-14ac3238f000"
     },
     {
       "id": "7ae4ad79-ef7c-4cd0-b616-fb3c129e7db8",
@@ -709,11 +721,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5255018990775908,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/7ae4ad79-ef7c-4cd0-b616-fb3c129e7db8/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/7ae4ad79-ef7c-4cd0-b616-fb3c129e7db8/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/7ae4ad79-ef7c-4cd0-b616-fb3c129e7db8/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a9b35d95-b9fb-4ffd-a1b2-249a424c8b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a9b35d95-b9fb-4ffd-a1b2-249a424c8b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/a9b35d95-b9fb-4ffd-a1b2-249a424c8b00/large"
       },
-      "createdAt": "2026-01-31T17:35:51.774Z"
+      "createdAt": "2026-01-31T17:35:51.774Z",
+      "cfImageId": "a9b35d95-b9fb-4ffd-a1b2-249a424c8b00"
     },
     {
       "id": "0c4f77c5-57a3-47d9-b17d-9c83372b52c8",
@@ -722,11 +735,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5249522770657213,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/0c4f77c5-57a3-47d9-b17d-9c83372b52c8/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/0c4f77c5-57a3-47d9-b17d-9c83372b52c8/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/0c4f77c5-57a3-47d9-b17d-9c83372b52c8/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/bd8c5c16-d015-49d7-be2d-236cd14b2100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/bd8c5c16-d015-49d7-be2d-236cd14b2100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/bd8c5c16-d015-49d7-be2d-236cd14b2100/large"
       },
-      "createdAt": "2026-01-31T17:35:48.611Z"
+      "createdAt": "2026-01-31T17:35:48.611Z",
+      "cfImageId": "bd8c5c16-d015-49d7-be2d-236cd14b2100"
     },
     {
       "id": "0dfb4c7f-24b1-499d-ae82-4a156d3ee85b",
@@ -735,11 +749,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.3333333333333333,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/0dfb4c7f-24b1-499d-ae82-4a156d3ee85b/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/0dfb4c7f-24b1-499d-ae82-4a156d3ee85b/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/0dfb4c7f-24b1-499d-ae82-4a156d3ee85b/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/b170709d-3c46-4be0-2752-09b210f3b200/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/b170709d-3c46-4be0-2752-09b210f3b200/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/b170709d-3c46-4be0-2752-09b210f3b200/large"
       },
-      "createdAt": "2026-01-31T17:35:46.311Z"
+      "createdAt": "2026-01-31T17:35:46.311Z",
+      "cfImageId": "b170709d-3c46-4be0-2752-09b210f3b200"
     },
     {
       "id": "43a77c8b-2d2f-4331-89b8-f8d4f6a68362",
@@ -748,11 +763,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.7498188843274571,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/43a77c8b-2d2f-4331-89b8-f8d4f6a68362/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/43a77c8b-2d2f-4331-89b8-f8d4f6a68362/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/43a77c8b-2d2f-4331-89b8-f8d4f6a68362/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/eaaf8307-1ab1-4124-984b-0930d207af00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/eaaf8307-1ab1-4124-984b-0930d207af00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/eaaf8307-1ab1-4124-984b-0930d207af00/large"
       },
-      "createdAt": "2026-01-31T17:35:43.122Z"
+      "createdAt": "2026-01-31T17:35:43.122Z",
+      "cfImageId": "eaaf8307-1ab1-4124-984b-0930d207af00"
     },
     {
       "id": "05987955-6daa-4826-b698-5167200b6063",
@@ -761,11 +777,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 1.5203362255965294,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/05987955-6daa-4826-b698-5167200b6063/original.jpg",
-        "medium": "https://cdn.designerdada.com/photos/05987955-6daa-4826-b698-5167200b6063/original.jpg",
-        "large": "https://cdn.designerdada.com/photos/05987955-6daa-4826-b698-5167200b6063/original.jpg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2977b2e7-cad7-47f2-0357-e64c697a1b00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2977b2e7-cad7-47f2-0357-e64c697a1b00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/2977b2e7-cad7-47f2-0357-e64c697a1b00/large"
       },
-      "createdAt": "2026-01-31T17:22:53.373Z"
+      "createdAt": "2026-01-31T17:22:53.373Z",
+      "cfImageId": "2977b2e7-cad7-47f2-0357-e64c697a1b00"
     },
     {
       "id": "7a98e63e-99f6-48ac-9424-c1a3828c3658",
@@ -774,11 +791,12 @@
       "film": "Fujifilm Superia 400",
       "aspectRatio": 0.709995517705065,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/7a98e63e-99f6-48ac-9424-c1a3828c3658/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/7a98e63e-99f6-48ac-9424-c1a3828c3658/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/7a98e63e-99f6-48ac-9424-c1a3828c3658/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/33223164-ae15-4864-2d3b-6dd7f075f100/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/33223164-ae15-4864-2d3b-6dd7f075f100/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/33223164-ae15-4864-2d3b-6dd7f075f100/large"
       },
-      "createdAt": "2026-01-31T17:19:27.148Z"
+      "createdAt": "2026-01-31T17:19:27.148Z",
+      "cfImageId": "33223164-ae15-4864-2d3b-6dd7f075f100"
     },
     {
       "id": "e75b3f89-a817-420d-ac84-485a33892e55",
@@ -787,11 +805,12 @@
       "film": "Kodak Gold 200",
       "aspectRatio": 0.7441137272323411,
       "urls": {
-        "thumbnail": "https://cdn.designerdada.com/photos/e75b3f89-a817-420d-ac84-485a33892e55/original.jpeg",
-        "medium": "https://cdn.designerdada.com/photos/e75b3f89-a817-420d-ac84-485a33892e55/original.jpeg",
-        "large": "https://cdn.designerdada.com/photos/e75b3f89-a817-420d-ac84-485a33892e55/original.jpeg"
+        "thumbnail": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/19e08452-61a2-480a-9fbd-d81b17433f00/thumbnail",
+        "medium": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/19e08452-61a2-480a-9fbd-d81b17433f00/medium",
+        "large": "https://imagedelivery.net/SwqrinvM3qHSiSLb7f3jXg/19e08452-61a2-480a-9fbd-d81b17433f00/large"
       },
-      "createdAt": "2026-01-31T17:17:56.644Z"
+      "createdAt": "2026-01-31T17:17:56.644Z",
+      "cfImageId": "19e08452-61a2-480a-9fbd-d81b17433f00"
     }
   ]
 }

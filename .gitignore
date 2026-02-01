@@ -22,6 +22,9 @@ yarn-error.log*
 # Cloudflare Worker secrets
 cloudflare-worker/.dev.vars
 
+# Migration scripts with credentials
+scripts/
+
 # IDE
 .vscode/
 .idea/

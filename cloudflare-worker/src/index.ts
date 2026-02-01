@@ -2,7 +2,10 @@ export interface Env {
 	PHOTOS_BUCKET: R2Bucket;
 	ADMIN_PASSWORD_HASH: string;
 	CORS_ORIGIN: string;
-	R2_PUBLIC_URL: string;
+	// Cloudflare Images configuration
+	CF_ACCOUNT_ID: string;
+	CF_IMAGES_API_TOKEN: string;
+	CF_IMAGES_ACCOUNT_HASH: string;
 }
 
 interface Photo {
@@ -21,6 +24,70 @@ interface Photo {
 		large: string;
 	};
 	createdAt: string;
+	cfImageId?: string; // Cloudflare Images ID
+}
+
+// Cloudflare Images API response
+interface CFImagesUploadResponse {
+	success: boolean;
+	errors: Array<{ code: number; message: string }>;
+	result?: {
+		id: string;
+		filename: string;
+		uploaded: string;
+		variants: string[];
+	};
+}
+
+// Upload image to Cloudflare Images
+async function uploadToCloudflareImages(
+	file: File,
+	env: Env,
+	metadata: Record<string, string> = {}
+): Promise<{ id: string }> {
+	const formData = new FormData();
+	formData.append("file", file);
+
+	if (Object.keys(metadata).length > 0) {
+		formData.append("metadata", JSON.stringify(metadata));
+	}
+
+	const response = await fetch(
+		`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/images/v1`,
+		{
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${env.CF_IMAGES_API_TOKEN}`,
+			},
+			body: formData,
+		}
+	);
+
+	const result = (await response.json()) as CFImagesUploadResponse;
+
+	if (!result.success || !result.result) {
+		throw new Error(`Upload failed: ${JSON.stringify(result.errors)}`);
+	}
+
+	return { id: result.result.id };
+}
+
+// Delete image from Cloudflare Images
+async function deleteFromCloudflareImages(imageId: string, env: Env): Promise<void> {
+	await fetch(
+		`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/images/v1/${imageId}`,
+		{
+			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${env.CF_IMAGES_API_TOKEN}`,
+			},
+		}
+	);
+}
+
+// Get Cloudflare Images delivery URL
+function getCFImagesUrl(accountHash: string, imageId: string, variant: string): string {
+	return `https://imagedelivery.net/${accountHash}/${imageId}/${variant}`;
 }
 
 interface PhotosData {
@@ -167,27 +234,26 @@ export default {
 					});
 				}
 
-				const photoMetadata = JSON.parse(metadata) as Omit<Photo, "id" | "urls" | "createdAt">;
+				const photoMetadata = JSON.parse(metadata) as Omit<Photo, "id" | "urls" | "createdAt" | "cfImageId">;
 				const id = generateId();
-				const extension = file.name.split(".").pop() || "jpg";
 
-				// Upload original image
-				const arrayBuffer = await file.arrayBuffer();
-				await env.PHOTOS_BUCKET.put(`photos/${id}/original.${extension}`, arrayBuffer, {
-					httpMetadata: { contentType: file.type },
+				// Upload to Cloudflare Images
+				const cfImage = await uploadToCloudflareImages(file, env, {
+					title: photoMetadata.title,
+					originalId: id,
 				});
 
-				// Use Cloudflare Image Resizing for optimized thumbnails
-				const baseUrl = env.R2_PUBLIC_URL;
-				const originalPath = `photos/${id}/original.${extension}`;
+				// Build URLs using Cloudflare Images variants
+				const accountHash = env.CF_IMAGES_ACCOUNT_HASH;
 
 				const newPhoto: Photo = {
 					id,
 					...photoMetadata,
+					cfImageId: cfImage.id,
 					urls: {
-						thumbnail: `${baseUrl}/cdn-cgi/image/width=300,quality=80,format=auto/${originalPath}`,
-						medium: `${baseUrl}/cdn-cgi/image/width=800,quality=80,format=auto/${originalPath}`,
-						large: `${baseUrl}/cdn-cgi/image/width=1600,quality=85,format=auto/${originalPath}`,
+						thumbnail: getCFImagesUrl(accountHash, cfImage.id, "thumbnail"),
+						medium: getCFImagesUrl(accountHash, cfImage.id, "medium"),
+						large: getCFImagesUrl(accountHash, cfImage.id, "large"),
 					},
 					createdAt: new Date().toISOString(),
 				};
@@ -232,13 +298,13 @@ export default {
 					});
 				}
 
+				const photo = data.photos[photoIndex];
 				data.photos.splice(photoIndex, 1);
 				await savePhotosData(env.PHOTOS_BUCKET, data);
 
-				// Delete files from R2
-				const objects = await env.PHOTOS_BUCKET.list({ prefix: `photos/${id}/` });
-				for (const object of objects.objects) {
-					await env.PHOTOS_BUCKET.delete(object.key);
+				// Delete from Cloudflare Images if cfImageId exists
+				if (photo.cfImageId) {
+					await deleteFromCloudflareImages(photo.cfImageId, env);
 				}
 
 				return new Response(JSON.stringify({ success: true }), {

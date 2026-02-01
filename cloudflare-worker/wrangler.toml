@@ -15,6 +15,14 @@ bucket_name = "designerdada-photos"
 # Comma-separated list of allowed CORS origins
 # Includes production domains (www and non-www) plus localhost for development
 CORS_ORIGIN = "https://www.designerdada.com,https://designerdada.com,http://localhost:3000"
-# R2 public URL - update this to your R2 bucket's public URL
-# Format: https://pub-YOUR_ACCOUNT_HASH.r2.dev or your custom domain
-R2_PUBLIC_URL = "https://cdn.designerdada.com"
+# Cloudflare Images configuration (semi-public - account hash is visible in image URLs)
+CF_ACCOUNT_ID = "15da6c62f90a8eb014de5f9ff3918ea0"
+CF_IMAGES_ACCOUNT_HASH = "SwqrinvM3qHSiSLb7f3jXg"
+
+# Secrets (set via wrangler secret put):
+# - ADMIN_PASSWORD_HASH: SHA-256 hash of admin password
+# - CF_IMAGES_API_TOKEN: Cloudflare Images API token
+#
+# Set with:
+#   npx wrangler secret put ADMIN_PASSWORD_HASH
+#   npx wrangler secret put CF_IMAGES_API_TOKEN
