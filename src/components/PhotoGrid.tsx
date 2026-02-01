@@ -8,18 +8,24 @@ interface PhotoGridProps {
 }
 
 // Number of images to prioritize (first N images get loading="eager")
-const PRIORITY_COUNT = 8;
+const PRIORITY_COUNT = 12;
+
+// Max width for each photo column (matches thumbnail size)
+const MAX_COLUMN_WIDTH = 300;
 
 export function PhotoGrid({ photos, onPhotoClick, loading }: PhotoGridProps) {
   // Show skeleton placeholders while loading
   if (loading) {
     return (
-      <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
           <div
             key={`skeleton-${i}`}
-            className="mb-4 break-inside-avoid animate-pulse rounded-lg bg-[var(--muted)]/10"
-            style={{ aspectRatio: i % 3 === 0 ? '2/3' : i % 3 === 1 ? '3/2' : '1/1' }}
+            className="w-full animate-pulse rounded-lg bg-[var(--muted)]/10"
+            style={{
+              maxWidth: MAX_COLUMN_WIDTH,
+              aspectRatio: i % 3 === 0 ? '2/3' : i % 3 === 1 ? '3/2' : '1/1'
+            }}
           />
         ))}
       </div>
@@ -36,9 +42,13 @@ export function PhotoGrid({ photos, onPhotoClick, loading }: PhotoGridProps) {
   }
 
   return (
-    <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       {photos.map((photo, index) => (
-        <div key={photo.id} className="mb-4 break-inside-avoid">
+        <div
+          key={photo.id}
+          className="w-full"
+          style={{ maxWidth: MAX_COLUMN_WIDTH }}
+        >
           <PhotoCard
             photo={photo}
             onClick={() => onPhotoClick(photo)}
