@@ -177,18 +177,17 @@ export default {
 					httpMetadata: { contentType: file.type },
 				});
 
-				// For now, use the same image for all sizes (resize can be done client-side or with a separate service)
-				// In production, you'd want to resize images here or use Cloudflare Image Resizing
+				// Use Cloudflare Image Resizing for optimized thumbnails
 				const baseUrl = env.R2_PUBLIC_URL;
-				const photoPath = `photos/${id}/original.${extension}`;
+				const originalPath = `photos/${id}/original.${extension}`;
 
 				const newPhoto: Photo = {
 					id,
 					...photoMetadata,
 					urls: {
-						thumbnail: `${baseUrl}/${photoPath}`,
-						medium: `${baseUrl}/${photoPath}`,
-						large: `${baseUrl}/${photoPath}`,
+						thumbnail: `${baseUrl}/cdn-cgi/image/width=300,quality=80,format=auto/${originalPath}`,
+						medium: `${baseUrl}/cdn-cgi/image/width=800,quality=80,format=auto/${originalPath}`,
+						large: `${baseUrl}/cdn-cgi/image/width=1600,quality=85,format=auto/${originalPath}`,
 					},
 					createdAt: new Date().toISOString(),
 				};
