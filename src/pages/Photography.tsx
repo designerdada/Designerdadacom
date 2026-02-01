@@ -53,8 +53,9 @@ export function Photography() {
 					content='https://designerdada.com/assets/og-images/og-photography.jpg'
 				/>
 			</Helmet>
-			<div className='bg-[var(--background)] relative size-full min-h-screen'>
-				<div className='box-border content-stretch flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-[544px]'>
+			<div className='bg-[var(--background)] relative size-full min-h-screen flex flex-col items-center'>
+				{/* Header and description - constrained width */}
+				<div className='box-border flex flex-col gap-10 items-center px-4 pt-10 w-full max-w-[544px]'>
 					<div className='animate-in w-full'>
 						<Header activePage='photography' />
 					</div>
@@ -71,17 +72,23 @@ export function Photography() {
 							perfect, but they're real.
 						</p>
 					</div>
-					<main className='w-full flex flex-col gap-6 animate-in animate-delay-2'>
-						{/* Error state */}
-						{error && (
-							<div className='text-center py-8'>
-								<p className='text-red-500 text-sm'>{error}</p>
-							</div>
-						)}
+				</div>
 
-						{/* Photo grid */}
-						<PhotoGrid photos={displayedPhotos} onPhotoClick={setSelectedPhoto} loading={loading} />
-					</main>
+				{/* Photo grid - full width */}
+				<main className='w-full px-4 py-10 animate-in animate-delay-2'>
+					{/* Error state */}
+					{error && (
+						<div className='text-center py-8'>
+							<p className='text-red-500 text-sm'>{error}</p>
+						</div>
+					)}
+
+					{/* Photo grid */}
+					<PhotoGrid photos={displayedPhotos} onPhotoClick={setSelectedPhoto} loading={loading} />
+				</main>
+
+				{/* Footer - constrained width */}
+				<div className='box-border px-4 pb-10 w-full max-w-[544px]'>
 					<div className='animate-in animate-delay-3 w-full'>
 						<Footer />
 					</div>
