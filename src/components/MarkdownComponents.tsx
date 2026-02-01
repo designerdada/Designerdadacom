@@ -69,8 +69,8 @@ export const P = ({ children }: ParagraphProps) => {
 
     // Process children to find first text node
     let processed = false;
-    const processedChildren = Array.isArray(children) 
-      ? children.map((child, index) => {
+    const processedChildren = Array.isArray(children)
+      ? children.map((child) => {
           if (!processed && typeof child === 'string' && child.trim().length > 0) {
             processed = true;
             return processChildren(child);

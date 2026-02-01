@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export function Footer() {
   return (
     <div className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full">

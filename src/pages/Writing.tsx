@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom';
 import { sortedArticles } from '../data/articles';
-import { useTheme } from '../hooks/useTheme';
-import { Tooltip } from '../components/Tooltip';
-// import { MailingList } from '../components/MailingList';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Helmet } from 'react-helmet';
-import Moon from '../imports/Moon';
-import Sun from '../imports/Sun';
 
 function ArticleList() {
   return (
@@ -49,8 +44,6 @@ function ColorDots() {
 }
 
 export function Writing() {
-  const { toggleTheme, theme } = useTheme();
-  
   return (
     <>
       <Helmet>
