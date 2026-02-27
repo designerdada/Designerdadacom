@@ -106,10 +106,10 @@ function SearchAndFilters({
 	}, [showDropdown]);
 
 	return (
-		<div className='content-stretch flex gap-4 items-center relative shrink-0 w-full' role='search'>
+		<div className='flex gap-4 items-center relative shrink-0 w-full' role='search'>
 			{/* Search Input */}
 			<div
-				className='basis-0 content-stretch flex gap-3 grow items-center min-h-px min-w-px relative shrink-0'
+				className='basis-0 flex gap-3 grow items-center min-h-px min-w-px relative shrink-0'
 				onMouseEnter={() => setIsInputHovered(true)}
 				onMouseLeave={() => setIsInputHovered(false)}>
 				<SearchIcon isHovered={isInputHovered || isInputFocused} />
@@ -121,7 +121,7 @@ function SearchAndFilters({
 					onChange={(e) => setSearchQuery(e.target.value)}
 					onFocus={() => setIsInputFocused(true)}
 					onBlur={() => setIsInputFocused(false)}
-					className='font-normal leading-[1.4] not-italic relative shrink-0 text-base text-justify bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-slate-400 w-full'
+					className='font-normal relative shrink-0 text-sm text-justify bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-slate-400 w-full'
 					aria-label='Search favorites'
 				/>
 			</div>
@@ -130,11 +130,11 @@ function SearchAndFilters({
 			<div className='relative z-50' ref={dropdownRef}>
 				<button
 					onClick={() => setShowDropdown(!showDropdown)}
-					className='content-stretch flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity'
+					className='flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity'
 					aria-label='Filter by category'
 					aria-haspopup='true'
 					aria-expanded={showDropdown}>
-					<p className='font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre'>
+					<p className='font-medium relative shrink-0 text-[var(--foreground)] text-sm text-justify text-nowrap whitespace-pre'>
 						{selectedCategory}
 					</p>
 					<ChevronDown className='size-4 text-[var(--foreground)]' strokeWidth={1.5} />
@@ -142,7 +142,7 @@ function SearchAndFilters({
 
 				{showDropdown && (
 					<div
-						className='absolute right-0 top-full mt-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 z-50 min-w-[120px]'
+						className='absolute right-0 top-full mt-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 z-50 min-w-32'
 						role='menu'>
 						{categories.map((category) => (
 							<button
@@ -151,7 +151,7 @@ function SearchAndFilters({
 									setSelectedCategory(category);
 									setShowDropdown(false);
 								}}
-								className={`w-full text-left px-4 py-2 text-base cursor-pointer transition-colors ${
+								className={`w-full text-left px-4 py-2 text-sm cursor-pointer transition-colors ${
 									selectedCategory === category
 										? "font-medium text-[var(--foreground)] bg-gray-100 dark:bg-gray-800"
 										: "text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800/50"
@@ -230,14 +230,14 @@ function FavoriteItem({
 				}`}
 				style={{ height: "120px" }}>
 				{isLoading ? (
-					<div className='h-[120px] w-[160px] bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse flex items-center justify-center'>
+					<div className='h-30 w-40 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse flex items-center justify-center'>
 						<div className='size-6 border-2 border-gray-300 dark:border-gray-600 border-t-transparent rounded-full animate-spin' />
 					</div>
 				) : ogImage ? (
 					<img
 						src={ogImage}
 						alt={`${favorite.name} preview`}
-						className='h-[120px] w-auto max-w-[240px] object-contain rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900'
+						className='h-30 w-auto max-w-60 object-contain rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900'
 					/>
 				) : null}
 			</div>
@@ -246,10 +246,10 @@ function FavoriteItem({
 				href={favorite.url}
 				target='_blank'
 				rel={`noopener noreferrer${favorite.nofollow === false ? "" : " nofollow"}`}
-				className='content-stretch flex gap-4 items-center relative shrink-0 w-full hover:opacity-70 transition-opacity group'
+				className='flex gap-4 items-center relative shrink-0 w-full hover:opacity-70 transition-opacity group'
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}>
-				<div className='basis-0 content-stretch flex gap-4 grow items-center min-h-px min-w-px relative shrink-0'>
+				<div className='basis-0 flex gap-4 grow items-center min-h-px min-w-px relative shrink-0'>
 					<div className='relative shrink-0 size-5'>
 						<img
 							alt={`${favorite.name} favicon`}
@@ -257,19 +257,19 @@ function FavoriteItem({
 							src={getFaviconUrl(favorite.url)}
 						/>
 					</div>
-					<div className='basis-0 content-stretch flex gap-2 grow items-center min-h-px min-w-px relative shrink-0'>
-						<p className='font-medium leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4'>
+					<div className='basis-0 flex gap-2 grow items-center min-h-px min-w-px relative shrink-0'>
+						<p className='font-medium relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4'>
 							{favorite.name}
 						</p>
-						<p className='leading-[1.4] not-italic relative shrink-0 text-sm text-justify text-nowrap text-slate-500 whitespace-pre'>
+						<p className='relative shrink-0 text-xs text-justify text-nowrap text-slate-500 whitespace-pre'>
 							/
 						</p>
-						<p className='[white-space-collapse:collapse] basis-0 grow leading-[1.4] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap'>
+						<p className='[white-space-collapse:collapse] basis-0 grow min-h-px min-w-px overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-sm text-justify text-nowrap'>
 							{favorite.description}
 						</p>
 					</div>
 				</div>
-				<p className='leading-[1.4] not-italic relative shrink-0 text-base text-nowrap text-slate-500 whitespace-pre'>
+				<p className='relative shrink-0 text-sm text-nowrap text-slate-500 whitespace-pre font-mono'>
 					{getDomain(favorite.url)}
 				</p>
 			</a>
@@ -343,14 +343,14 @@ function FavoritesList({
 
 	if (filteredFavorites.length === 0) {
 		return (
-			<div className='content-stretch flex items-center justify-center py-8 w-full'>
-				<p className='text-base text-slate-500'>No favorites found</p>
+			<div className='flex items-center justify-center py-8 w-full'>
+				<p className='text-sm text-slate-500'>No favorites found</p>
 			</div>
 		);
 	}
 
 	return (
-		<div className='content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full isolate'>
+		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full isolate'>
 			{filteredFavorites.map((favorite) => (
 				<FavoriteItem
 					key={favorite.id}
@@ -365,7 +365,7 @@ function FavoritesList({
 
 function ColorDots() {
 	return (
-		<div className='box-border content-stretch flex gap-2 items-center justify-center px-0 py-2 relative shrink-0 w-full'>
+		<div className='flex gap-2 items-center justify-center px-0 py-2 relative shrink-0 w-full'>
 			<div className='relative shrink-0 size-2'>
 				<svg className='block size-full' fill='none' preserveAspectRatio='none' viewBox='0 0 8 8'>
 					<circle cx='4' cy='4' fill='#E9573F' r='4' />
@@ -425,11 +425,11 @@ export function Favorites() {
 				/>
 			</Helmet>
 			<div className='bg-[var(--background)] relative size-full min-h-screen'>
-				<div className='box-border content-stretch flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-[544px]'>
+				<div className='flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='favorites' />
 					</div>
-					<p className='leading-[1.4] not-italic relative shrink-0 text-[var(--foreground)] text-lg text-justify w-full animate-in animate-delay-1'>
+					<p className='relative shrink-0 text-[var(--foreground)] text-base text-justify w-full animate-in animate-delay-1'>
 						I love discovering great things, whether it's a beautifully designed product, an
 						inspiring person, or a website I keep coming back to. This is my collection of those
 						gems I find on the internet and in the real world. Everything here has caught my

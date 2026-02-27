@@ -40,21 +40,21 @@ export function Home() {
 
 	return (
 		<div className='bg-[var(--background)] min-h-screen w-full flex justify-center py-10'>
-			<div className='flex flex-col gap-10 items-center w-full max-w-[544px] px-4 m-0'>
+			<div className='flex flex-col gap-10 items-center w-full max-w-xl px-4 m-0'>
 				{/* Header */}
 				<div className='animate-in w-full'>
 					<Header />
 				</div>
 
 				{/* Bio Content */}
-				<div className='font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-lg text-justify flex flex-col gap-4'>
-					<p className='leading-[1.4] relative animate-in animate-delay-1'>
+				<div className='font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-base text-justify flex flex-col gap-4'>
+					<p className='relative animate-in animate-delay-1'>
 						<span>I'm a product designer and founder building </span>
 						<a
 							href='https://peerlist.io'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							Peerlist
 						</a>
 						<span> and </span>
@@ -62,7 +62,7 @@ export function Home() {
 							href='https://autosend.com'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							AutoSend
 						</a>
 						<span>
@@ -70,11 +70,9 @@ export function Home() {
 							love to use.
 						</span>
 					</p>
-					<p className='leading-[1.4] animate-in animate-delay-2'>
+					<p className='animate-in animate-delay-2'>
 						<span>I regularly </span>
-						<a
-							href='/writing'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-normal italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+						<a href='/writing' className='link font-normal'>
 							write
 						</a>
 						<span>
@@ -84,13 +82,13 @@ export function Home() {
 							sharing what I've learned along the way.
 						</span>
 					</p>
-					<p className='leading-[1.4] animate-in animate-delay-3'>
+					<p className='animate-in animate-delay-3'>
 						<span>When I'm not designing, I love shooting street </span>
 						<a
 							href='https://retrolens.me'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							photography
 						</a>
 						<span>
@@ -99,7 +97,7 @@ export function Home() {
 							everyday moments on analog.
 						</span>
 					</p>
-					<p className='leading-[1.4] animate-in animate-delay-4'>
+					<p className='animate-in animate-delay-4'>
 						<span>
 							Always open to interesting conversations about design, startups, and photography.{" "}
 						</span>
@@ -113,7 +111,7 @@ export function Home() {
 							}}>
 							<button
 								onClick={handleCopyEmail}
-								className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors cursor-pointer bg-transparent border-none p-0 text-[var(--foreground)] text-lg'>
+								className='link cursor-pointer bg-transparent border-none p-0 text-[var(--foreground)] text-base'>
 								Say hello
 							</button>
 							{showTooltip && (
@@ -127,7 +125,7 @@ export function Home() {
 							href='https://peerlist.io/designerdada'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							Peerlist
 						</a>
 						<span>, </span>
@@ -135,7 +133,7 @@ export function Home() {
 							href='https://x.com/designerdada'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							X
 						</a>
 						<span>, or </span>
@@ -143,7 +141,7 @@ export function Home() {
 							href='https://instagram.com/retrolens.me'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='[text-underline-position:from-font] decoration-solid decoration-[var(--muted)] font-medium italic underline underline-offset-4 hover:decoration-[var(--foreground)] transition-colors'>
+							className='link'>
 							Instagram
 						</a>
 						<span>.</span>

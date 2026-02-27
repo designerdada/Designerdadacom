@@ -188,7 +188,7 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
       <div>
         <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[var(--muted)]/30 px-4 py-8 transition-colors hover:border-[var(--foreground)]">
           <Upload className="mb-2 size-8 text-[var(--muted)]" />
-          <span className="text-sm text-[var(--muted)]">
+          <span className="text-xs text-[var(--muted)]">
             {hasPhotos ? 'Click to add more photos' : 'Click to upload photos'}
           </span>
           <span className="mt-1 text-xs text-[var(--muted)]/60">Select multiple files at once</span>
@@ -207,13 +207,13 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
       {hasPhotos && (
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-[var(--muted)]">
+            <span className="text-xs text-[var(--muted)]">
               {selectedPhotos.length} photo{selectedPhotos.length !== 1 ? 's' : ''} selected
             </span>
             <button
               type="button"
               onClick={clearAllPhotos}
-              className="text-sm text-red-500 hover:text-red-400"
+              className="text-xs text-red-500 hover:text-red-400"
               disabled={isUploading}
             >
               Clear all
@@ -273,7 +273,7 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
       {/* Shared form fields */}
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="mb-1 block text-sm text-[var(--muted)]">Camera (all photos)</label>
+          <label className="mb-1 block text-xs text-[var(--muted)]">Camera (all photos)</label>
           <select
             value={camera}
             onChange={(e) => setCamera(e.target.value as typeof CAMERAS[number])}
@@ -288,7 +288,7 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
           </select>
         </div>
         <div>
-          <label className="mb-1 block text-sm text-[var(--muted)]">Film (all photos)</label>
+          <label className="mb-1 block text-xs text-[var(--muted)]">Film (all photos)</label>
           <select
             value={film}
             onChange={(e) => setFilm(e.target.value as typeof FILMS[number])}
@@ -304,7 +304,7 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
         </div>
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p className="text-xs text-red-500">{error}</p>}
 
       {uploadProgress && (
         <div className="flex flex-col gap-2">
@@ -314,7 +314,7 @@ export function PhotoUploadForm({ onUploadComplete }: PhotoUploadFormProps) {
               style={{ width: `${(uploadProgress.current / uploadProgress.total) * 100}%` }}
             />
           </div>
-          <p className="text-center text-sm text-[var(--muted)]">
+          <p className="text-center text-xs text-[var(--muted)]">
             Uploading {uploadProgress.current} of {uploadProgress.total}...
           </p>
         </div>

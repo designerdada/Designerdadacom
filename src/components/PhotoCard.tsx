@@ -61,7 +61,7 @@ export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) 
         }`}
       >
         <div className="w-full">
-          <h3 className="truncate text-sm font-medium text-white">{photo.title}</h3>
+          <h3 className="truncate text-xs font-medium text-white">{photo.title}</h3>
           {photo.location && (
             <p className="truncate text-xs text-white/70">{photo.location}</p>
           )}

@@ -8,7 +8,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'eb-garamond': ['"EB Garamond"', 'serif'],
+        sans: ['"Schibsted Grotesk"', 'sans-serif'],
+        mono: ['"Sono"', 'monospace'],
+        serif: ['"IBM Plex Serif"', 'serif'],
       },
       fontSize: {
         '2.5xl': '1.375rem', // 22px

@@ -52,12 +52,12 @@ function AdminPhotosContent() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <div className="mb-8 flex items-center justify-between">
-        <h1 className="text-2xl font-medium text-[var(--foreground)]">Photo Admin</h1>
+        <h1 className="text-xl font-medium text-[var(--foreground)]">Photo Admin</h1>
         <button
           type="button"
           onClick={fetchPhotos}
           disabled={loading}
-          className="flex items-center gap-2 rounded-lg border border-[var(--muted)]/30 px-3 py-1.5 text-sm text-[var(--muted)] transition-colors hover:border-[var(--foreground)] hover:text-[var(--foreground)] disabled:opacity-50"
+          className="flex items-center gap-2 rounded-lg border border-[var(--muted)]/30 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:border-[var(--foreground)] hover:text-[var(--foreground)] disabled:opacity-50"
         >
           <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
           Refresh
@@ -67,13 +67,13 @@ function AdminPhotosContent() {
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Upload form */}
         <div>
-          <h2 className="mb-4 text-lg font-medium text-[var(--foreground)]">Upload New Photo</h2>
+          <h2 className="mb-4 text-base font-medium text-[var(--foreground)]">Upload New Photo</h2>
           <PhotoUploadForm onUploadComplete={fetchPhotos} />
         </div>
 
         {/* Photos list */}
         <div>
-          <h2 className="mb-4 text-lg font-medium text-[var(--foreground)]">
+          <h2 className="mb-4 text-base font-medium text-[var(--foreground)]">
             Uploaded Photos ({photos.length})
           </h2>
           {loading && photos.length === 0 ? (
@@ -95,7 +95,7 @@ function AdminPhotosContent() {
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-[var(--foreground)]">{photo.title}</p>
                     {(photo.camera || photo.film) && (
-                      <p className="text-sm text-[var(--muted)]">
+                      <p className="text-xs text-[var(--muted)]">
                         {[photo.camera, photo.film].filter(Boolean).join(' · ')}
                       </p>
                     )}

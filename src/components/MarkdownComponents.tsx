@@ -27,19 +27,19 @@ export const resetFirstParagraph = () => {
 
 // Headings
 export const H1 = ({ children }: ComponentProps) => (
-  <h1 className="font-medium leading-[1.4] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-4 pt-2">
+  <h1 className="font-medium text-[var(--foreground)] text-xl text-justify w-full pb-4 pt-2">
     {children}
   </h1>
 );
 
 export const H2 = ({ children }: ComponentProps) => (
-  <h2 className="font-semibold leading-[1.4] not-italic text-[var(--foreground)] text-2xl text-justify w-full pb-3 pt-6">
+  <h2 className="font-semibold text-[var(--foreground)] text-xl text-justify w-full pb-3 pt-6">
     {children}
   </h2>
 );
 
 export const H3 = ({ children }: ComponentProps) => (
-  <h3 className="font-semibold leading-[1.4] not-italic text-[var(--foreground)] text-2.5xl text-justify w-full pb-2 pt-4">
+  <h3 className="font-semibold text-[var(--foreground)] text-2xl text-justify w-full pb-2 pt-4">
     {children}
   </h3>
 );
@@ -57,7 +57,7 @@ export const P = ({ children }: ParagraphProps) => {
         const rest = child.slice(1);
         return (
           <>
-            <span className="float-left text-5.5xl leading-none font-medium mr-1 -mt-1 text-[var(--foreground)]">
+            <span className="float-left text-5xl leading-none font-medium mr-1 -mt-1 text-[var(--foreground)]">
               {firstLetter}
             </span>
             {rest}
@@ -82,14 +82,14 @@ export const P = ({ children }: ParagraphProps) => {
         : children;
 
     return (
-      <p className="font-normal leading-[1.4] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
+      <p className="font-normal text-[var(--foreground)] text-base text-justify w-full pb-4">
         {processedChildren}
       </p>
     );
   }
 
   return (
-    <p className="font-normal leading-[1.4] not-italic text-[var(--foreground)] text-lg text-justify w-full pb-4">
+    <p className="font-normal text-[var(--foreground)] text-base text-justify w-full pb-4">
       {children}
     </p>
   );
@@ -97,20 +97,20 @@ export const P = ({ children }: ParagraphProps) => {
 
 // Lists
 export const UL = ({ children }: ComponentProps) => (
-  <ul className="font-normal leading-[0] not-italic text-[var(--foreground)] text-lg text-justify w-full list-disc pl-6 pb-4">
+  <ul className="font-normal leading-none text-[var(--foreground)] text-base text-justify w-full list-disc pl-6 pb-4">
     {children}
   </ul>
 );
 
 export const OL = ({ children }: ComponentProps) => (
-  <ol className="font-normal leading-[0] list-decimal not-italic text-[var(--foreground)] text-lg text-justify w-full pl-6 pb-4">
+  <ol className="font-normal leading-none list-decimal text-[var(--foreground)] text-base text-justify w-full pl-6 pb-4">
     {children}
   </ol>
 );
 
 export const LI = ({ children }: ComponentProps) => (
   <li className="mb-2 last:mb-0">
-    <span className="leading-[1.4]">{children}</span>
+    <span className="">{children}</span>
   </li>
 );
 
@@ -125,8 +125,8 @@ export const HR = () => (
 
 // Blockquote
 export const Blockquote = ({ children }: ComponentProps) => (
-  <div className="box-border content-stretch flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-[var(--foreground)] my-4">
-    <blockquote className="italic leading-[1.4] relative shrink-0 text-[var(--foreground)] text-lg w-full [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p:only-child]:pb-0">
+  <div className="flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-[var(--foreground)] my-4">
+    <blockquote className="italic relative shrink-0 text-[var(--foreground)] text-base w-full [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p:only-child]:pb-0">
       {children}
     </blockquote>
   </div>
@@ -156,26 +156,26 @@ export const Em = ({ children }: ComponentProps) => (
 
 // Code
 export const Code = ({ children }: ComponentProps) => (
-  <code className="bg-[var(--accent)] px-1.5 py-0.5 rounded text-base">
+  <code className="bg-[var(--accent)] px-1.5 py-0.5 rounded text-sm">
     {children}
   </code>
 );
 
 // Pre (code block)
 export const Pre = ({ children }: ComponentProps) => (
-  <pre className="bg-[var(--accent)] p-4 rounded overflow-x-auto text-base mb-4">
+  <pre className="bg-[var(--accent)] p-4 rounded overflow-x-auto text-sm mb-4">
     {children}
   </pre>
 );
 
 // Image
 export const Img = ({ src, alt, title }: ImageProps) => (
-  <div className="box-border content-stretch flex flex-col gap-2 items-start justify-center px-0 py-6 relative shrink-0 w-full">
+  <div className="flex flex-col gap-2 items-start justify-center px-0 py-6 relative shrink-0 w-full">
     <div className="relative shrink-0 w-full">
       <img src={src} alt={alt || ''} className="w-full h-auto object-cover" />
     </div>
     {title && (
-      <p className="leading-[1.4] not-italic relative shrink-0 text-sm text-center text-[var(--muted)] w-full">
+      <p className="relative shrink-0 text-xs text-center text-[var(--muted)] w-full">
         {title}
       </p>
     )}
@@ -198,7 +198,7 @@ export const Iframe = ({ src, width, height, title, allow, allowFullScreen, fram
   const isYouTube = src?.includes('youtube.com') || src?.includes('youtu.be');
 
   return (
-    <div className="box-border content-stretch flex items-start justify-center px-0 py-6 relative shrink-0 w-full">
+    <div className="flex items-start justify-center px-0 py-6 relative shrink-0 w-full">
       <div className="relative w-full" style={{ paddingBottom: isYouTube ? '56.25%' : '0', height: isYouTube ? '0' : 'auto' }}>
         <iframe
           src={src}

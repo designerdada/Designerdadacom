@@ -66,7 +66,7 @@ export function AdminAuthGuard({ children }: AdminAuthGuardProps) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[var(--background)] px-4">
         <div className="w-full max-w-sm">
-          <h1 className="mb-6 text-center text-xl font-medium text-[var(--foreground)]">
+          <h1 className="mb-6 text-center text-lg font-medium text-[var(--foreground)]">
             Admin Login
           </h1>
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
@@ -78,7 +78,7 @@ export function AdminAuthGuard({ children }: AdminAuthGuardProps) {
               className="w-full rounded-lg border border-[var(--muted)]/30 bg-transparent px-4 py-2 text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none"
               autoFocus
             />
-            {error && <p className="text-sm text-red-500">{error}</p>}
+            {error && <p className="text-xs text-red-500">{error}</p>}
             <button
               type="submit"
               disabled={isLoading || !password}
@@ -99,7 +99,7 @@ export function AdminAuthGuard({ children }: AdminAuthGuardProps) {
         <button
           type="button"
           onClick={handleLogout}
-          className="rounded-lg border border-[var(--muted)]/30 px-3 py-1.5 text-sm text-[var(--muted)] transition-colors hover:border-[var(--foreground)] hover:text-[var(--foreground)]"
+          className="rounded-lg border border-[var(--muted)]/30 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:border-[var(--foreground)] hover:text-[var(--foreground)]"
         >
           Logout
         </button>

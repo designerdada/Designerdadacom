@@ -156,15 +156,15 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 
 						{/* Photo info */}
 						<div className='mt-4 w-full max-w-5xl text-center text-black dark:text-white shrink-0'>
-							<Dialog.Title className='text-lg font-medium'>{photo.title}</Dialog.Title>
-							<div className='mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-black/60 dark:text-white/60'>
-								{photo.date && <span>{photo.date}</span>}
+							<Dialog.Title className='text-base font-medium'>{photo.title}</Dialog.Title>
+							<div className='mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-black/60 dark:text-white/60'>
+								{photo.date && <span className="font-mono">{photo.date}</span>}
 								{photo.camera && <span>{photo.camera}</span>}
 								{photo.film && <span>{photo.film}</span>}
 								{photo.location && <span>{photo.location}</span>}
 							</div>
 							{photo.description && (
-								<Dialog.Description className='mt-2 text-sm text-black/80 dark:text-white/80'>
+								<Dialog.Description className='mt-2 text-xs text-black/80 dark:text-white/80'>
 									{photo.description}
 								</Dialog.Description>
 							)}

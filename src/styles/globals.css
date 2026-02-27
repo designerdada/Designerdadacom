@@ -1,105 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100..700;1,100..700&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Sono:wght@200..800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Light mode colors */
-  --background: #ffffff;
-  --foreground: #0d0d0d;
-  --muted: #64748b; /* slate-500 */
-  --muted-foreground: #334155; /* slate-700 */
-  --border: #e5e5e5;
-  --accent: #f5f5f5;
+	/* Light mode colors */
+	--background: #ffffff;
+	--foreground: #0d0d0d;
+	--muted: #64748b; /* slate-500 */
+	--muted-foreground: #334155; /* slate-700 */
+	--border: #e5e5e5;
+	--accent: #f5f5f5;
 }
 
 .dark {
-  /* Dark mode colors */
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #94a3b8;
-  --muted-foreground: #cbd5e1;
-  --border: #333333;
-  --accent: #1a1a1a;
+	/* Dark mode colors */
+	--background: #000000;
+	--foreground: #ffffff;
+	--muted: #94a3b8;
+	--muted-foreground: #cbd5e1;
+	--border: #333333;
+	--accent: #1a1a1a;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-  overflow-y: scroll; /* Always show vertical scrollbar to prevent layout shift */
+	overflow-y: scroll; /* Always show vertical scrollbar to prevent layout shift */
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'EB Garamond', serif;
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.3s ease, color 0.3s ease;
+	margin: 0;
+	padding: 0;
+	font-family: "Schibsted Grotesk", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--background);
+	color: var(--foreground);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 ::selection {
-  background-color: #a3e635; /* lime-400 */
-  color: #000000;
+	background-color: #a3e635; /* lime-400 */
+	color: #000000;
 }
 
-.font-eb-garamond {
-  font-family: 'EB Garamond', serif;
+.link {
+	text-underline-position: from-font;
+	text-decoration-color: var(--muted);
+	font-style: italic;
+	font-weight: 500;
+	text-underline-offset: 2px;
+	transition: text-decoration-color 0.15s;
+}
+
+.link:hover {
+	text-decoration-color: var(--foreground);
+	text-decoration-line: underline;
+}
+
+.font-mono {
+	font-family: "Sono", monospace;
+}
+
+.font-serif {
+	font-family: "IBM Plex Serif", serif;
 }
 
 /* Page load animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+		filter: blur(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
 }
 
 .animate-in {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
+	animation: fadeInUp 0.6s ease-out forwards;
+	opacity: 0;
 }
 
 /* Stagger delays for sequential animation */
 .animate-delay-1 {
-  animation-delay: 0.1s;
+	animation-delay: 0.1s;
 }
 
 .animate-delay-2 {
-  animation-delay: 0.2s;
+	animation-delay: 0.2s;
 }
 
 .animate-delay-3 {
-  animation-delay: 0.3s;
+	animation-delay: 0.3s;
 }
 
 .animate-delay-4 {
-  animation-delay: 0.4s;
+	animation-delay: 0.4s;
 }
 
 .animate-delay-5 {
-  animation-delay: 0.5s;
+	animation-delay: 0.5s;
 }
 
 .animate-delay-6 {
-  animation-delay: 0.6s;
+	animation-delay: 0.6s;
 }
 
 .animate-delay-7 {
-  animation-delay: 0.7s;
+	animation-delay: 0.7s;
 }
 
 .animate-delay-8 {
-  animation-delay: 0.8s;
+	animation-delay: 0.8s;
+}
+
+.animate-delay-9 {
+	animation-delay: 0.9s;
+}
+
+.animate-delay-10 {
+	animation-delay: 1s;
 }
