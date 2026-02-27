@@ -79,6 +79,14 @@ export const favorites: Favorite[] = [
     category: 'Product'
   },
   {
+    id: 'foxchat',
+    name: 'Foxchat',
+    description: 'Lightweight Intercom alternative',
+    url: 'https://www.foxchat.dev',
+    category: 'Product',
+    nofollow: false
+  },
+  {
     id: 'bauhaus-clock',
     name: 'Bauhaus Clock',
     description: 'A minimal and beautiful clock screensaver for your mac.',
