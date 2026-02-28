@@ -87,10 +87,10 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
 			<Dialog.Portal>
-				<Dialog.Overlay className='fixed inset-0 z-50 bg-white dark:bg-neutral-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
+				<Dialog.Overlay className='fixed inset-0 z-50 bg-olive-50 dark:bg-olive-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
 				<Dialog.Content
 					className='fixed inset-0 z-50 flex items-center justify-center focus:outline-none'
-					{...(!photo.description && { 'aria-describedby': undefined })}>
+					{...(!photo.description && { "aria-describedby": undefined })}>
 					{/* Close button */}
 					<Dialog.Close asChild>
 						<button
@@ -129,8 +129,8 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 							{!imageLoaded && (
 								<img
 									src={photo.urls.thumbnail}
-									alt=""
-									aria-hidden="true"
+									alt=''
+									aria-hidden='true'
 									className='absolute object-contain blur-md scale-105'
 									style={{
 										maxHeight: "calc(100vh - 140px)",
@@ -142,7 +142,7 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 							<img
 								src={photo.urls.large}
 								alt={photo.title}
-								decoding="async"
+								decoding='async'
 								onLoad={() => setImageLoaded(true)}
 								className={`object-contain transition-opacity duration-300 ${
 									imageLoaded ? "opacity-100" : "opacity-0"
@@ -155,16 +155,16 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 						</div>
 
 						{/* Photo info */}
-						<div className='mt-4 w-full max-w-5xl text-center text-black dark:text-white shrink-0'>
+						<div className='mt-4 w-full max-w-5xl text-center text-olive-800 dark:text-olive-100 shrink-0'>
 							<Dialog.Title className='text-base font-medium'>{photo.title}</Dialog.Title>
-							<div className='mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-black/60 dark:text-white/60'>
-								{photo.date && <span className="font-mono">{photo.date}</span>}
+							<div className='mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-olive-500 dark:text-olive-400'>
+								{photo.date && <span className='font-mono'>{photo.date}</span>}
 								{photo.camera && <span>{photo.camera}</span>}
 								{photo.film && <span>{photo.film}</span>}
 								{photo.location && <span>{photo.location}</span>}
 							</div>
 							{photo.description && (
-								<Dialog.Description className='mt-2 text-xs text-black/80 dark:text-white/80'>
+								<Dialog.Description className='mt-2 text-xs text-olive-700 dark:text-olive-300'>
 									{photo.description}
 								</Dialog.Description>
 							)}

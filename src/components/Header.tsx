@@ -18,10 +18,10 @@ export function Header({ activePage }: HeaderProps = {}) {
 	] as const;
 
 	const navLinkClass = (key: string) =>
-		`font-medium font-mono uppercase relative shrink-0 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all ${
+		`font-medium font-mono uppercase relative shrink-0 text-sm text-justify text-nowrap whitespace-pre transition-all ${
 			activePage === key
-				? "text-[var(--foreground)] underline decoration-[var(--muted)]"
-				: "text-gray-500 hover:text-[var(--foreground)]"
+				? "text-olive-800 dark:text-olive-100"
+				: "text-olive-500 hover:text-olive-800 dark:hover:text-olive-100"
 		}`;
 
 	return (
@@ -44,7 +44,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 				to='/'
 				className='flex gap-1 h-6 items-center w-full hover:opacity-70 transition-opacity'
 				aria-label='Akash Bhadange home'>
-				<p className='font-medium relative shrink-0 text-[var(--foreground)] text-xl text-justify text-nowrap whitespace-pre'>
+				<p className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-xl text-justify text-nowrap whitespace-pre'>
 					<span className='font-medium'>Akash Bhadange </span>
 					<span className='font-normal italic'>aka</span>
 					<span className='font-medium'> @designerdada</span>
@@ -67,7 +67,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"} className='ml-auto'>
 					<button
 						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-gray-500 hover:text-[var(--foreground)] flex items-center'
+						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-olive-500 hover:text-olive-800 dark:text-olive-100 flex items-center'
 						aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}>
 						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
 					</button>

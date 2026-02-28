@@ -1,43 +1,47 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function MailingList() {
-  const [email, setEmail] = useState('');
+	const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Email submitted:', email);
-  };
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		console.log("Email submitted:", email);
+	};
 
-  return (
-    <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
-      <div className="flex gap-1 h-5 items-center w-full">
-        <label htmlFor="email-subscribe" className="font-medium relative shrink-0 text-gray-500 text-sm text-justify text-nowrap whitespace-pre">
-          Get these in your inbox
-        </label>
-      </div>
-      <form onSubmit={handleSubmit} className="w-full" aria-label="Subscribe to newsletter">
-        <div className="flex items-center justify-between pb-3 pt-2 px-0 relative shrink-0 w-full">
-          <div aria-hidden="true" className="absolute border-[0px_0px_1px] border-[var(--border)] border-solid inset-0 pointer-events-none" />
-          <input
-            id="email-subscribe"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@youremail.com"
-            className="relative text-sm bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-gray-400 flex-1"
-            required
-            aria-required="true"
-            aria-label="Email address"
-          />
-          <button 
-            type="submit"
-            className="font-medium relative shrink-0 text-[var(--foreground)] text-sm text-justify text-nowrap uppercase whitespace-pre hover:opacity-70 transition-opacity cursor-pointer bg-transparent border-none"
-            aria-label="Subscribe to newsletter"
-          >
-            Subscribe
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+	return (
+		<div className='flex flex-col gap-2 items-start relative shrink-0 w-full'>
+			<div className='flex gap-1 h-5 items-center w-full'>
+				<label
+					htmlFor='email-subscribe'
+					className='font-medium relative shrink-0 text-olive-500 text-sm text-justify text-nowrap whitespace-pre'>
+					Get these in your inbox
+				</label>
+			</div>
+			<form onSubmit={handleSubmit} className='w-full' aria-label='Subscribe to newsletter'>
+				<div className='flex items-center justify-between pb-3 pt-2 px-0 relative shrink-0 w-full'>
+					<div
+						aria-hidden='true'
+						className='absolute border-[0px_0px_1px] border-olive-200 dark:border-olive-800 border-solid inset-0 pointer-events-none'
+					/>
+					<input
+						id='email-subscribe'
+						type='email'
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						placeholder='you@youremail.com'
+						className='relative text-sm bg-transparent border-none outline-none text-olive-800 dark:text-olive-100 placeholder:text-olive-400 flex-1'
+						required
+						aria-required='true'
+						aria-label='Email address'
+					/>
+					<button
+						type='submit'
+						className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap uppercase whitespace-pre hover:opacity-70 transition-opacity cursor-pointer bg-transparent border-none'
+						aria-label='Subscribe to newsletter'>
+						Subscribe
+					</button>
+				</div>
+			</form>
+		</div>
+	);
 }

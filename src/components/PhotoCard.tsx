@@ -29,7 +29,7 @@ export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) 
   return (
     <button
       type="button"
-      className="relative w-full overflow-hidden rounded-lg bg-[var(--muted)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/20"
+      className="relative w-full overflow-hidden rounded-lg bg-olive-500/10 dark:bg-olive-400/10 focus:outline-none focus:ring-2 focus:ring-olive-950/20 dark:focus:ring-olive-100/20"
       style={{ aspectRatio: photo.aspectRatio }}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
@@ -38,7 +38,7 @@ export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) 
     >
       {/* Skeleton placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 animate-pulse bg-[var(--muted)]/20" />
+        <div className="absolute inset-0 animate-pulse bg-olive-500 dark:bg-olive-400/20" />
       )}
 
       {/* Photo image */}

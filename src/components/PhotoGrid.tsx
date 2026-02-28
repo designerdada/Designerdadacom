@@ -18,7 +18,7 @@ export function PhotoGrid({ photos, onPhotoClick, loading }: PhotoGridProps) {
         {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
           <div
             key={`skeleton-${i}`}
-            className="mb-4 break-inside-avoid animate-pulse rounded-lg bg-[var(--muted)]/10"
+            className="mb-4 break-inside-avoid animate-pulse rounded-lg bg-olive-500 dark:bg-olive-400/10"
             style={{ aspectRatio: i % 3 === 0 ? '2/3' : i % 3 === 1 ? '3/2' : '1/1' }}
           />
         ))}
@@ -30,7 +30,7 @@ export function PhotoGrid({ photos, onPhotoClick, loading }: PhotoGridProps) {
   if (photos.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
-        <p className="text-[var(--muted)]">No photos found</p>
+        <p className="text-olive-500 dark:text-olive-400">No photos found</p>
       </div>
     );
   }

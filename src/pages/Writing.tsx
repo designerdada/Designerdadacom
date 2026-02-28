@@ -12,10 +12,10 @@ function ArticleList() {
 					key={article.id}
 					to={`/writing/${article.id}`}
 					className='flex items-center justify-between relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group'>
-					<p className='font-medium relative shrink-0 text-[var(--foreground)] text-base group-hover:underline underline-offset-4'>
+					<p className='font-semibold relative shrink-0 text-olive-800 dark:text-olive-100 text-sm group-hover:underline underline-offset-4'>
 						{article.title}
 					</p>
-					<p className='relative shrink-0 text-sm text-[var(--muted)] font-mono uppercase'>
+					<p className='relative shrink-0 text-sm text-olive-500 dark:text-olive-400 font-mono uppercase'>
 						{article.date}
 					</p>
 				</Link>
@@ -83,13 +83,13 @@ export function Writing() {
 				/>
 			</Helmet>
 			<div
-				className='bg-[var(--background)] relative size-full min-h-screen'
+				className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'
 				data-name='designerdada.com/writing'>
 				<div className='flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='writing' />
 					</div>
-					<p className='relative shrink-0 text-[var(--foreground)] text-base text-justify w-full animate-in animate-delay-1'>
+					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify w-full animate-in animate-delay-1'>
 						I write whenever inspiration strikes, which means I'm pretty irregular about it. These
 						are my raw thoughts on design, building products, and the startup journey. Some are
 						polished, others are more stream-of-consciousness, but they all capture what I was

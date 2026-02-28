@@ -47,7 +47,7 @@ const customSchema = {
 function ArticleHeader({ title }: { title: string }) {
 	return (
 		<div className='flex flex-col gap-1 items-start relative shrink-0 w-full'>
-			<h1 className='font-medium relative shrink-0 text-[var(--foreground)] text-3xl w-full'>
+			<h1 className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-3xl w-full'>
 				{title}
 			</h1>
 		</div>
@@ -84,7 +84,7 @@ function ReadMore({ currentSlug }: { currentSlug: string }) {
 	return (
 		<div className='flex flex-col gap-4 items-end relative shrink-0 w-full'>
 			<div className='flex gap-1 items-center relative shrink-0 w-full'>
-				<p className='font-medium relative shrink-0 text-gray-500 text-sm text-justify text-nowrap whitespace-pre'>
+				<p className='font-medium relative shrink-0 text-olive-500 text-sm text-justify text-nowrap whitespace-pre'>
 					Further reading
 				</p>
 			</div>
@@ -94,10 +94,10 @@ function ReadMore({ currentSlug }: { currentSlug: string }) {
 						key={article.id}
 						to={`/writing/${article.id}`}
 						className='flex items-center justify-between relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group'>
-						<p className='font-medium relative shrink-0 text-[var(--foreground)] text-base group-hover:underline underline-offset-4'>
+						<p className='font-semibold relative shrink-0 text-olive-800 dark:text-olive-100 text-sm group-hover:underline underline-offset-4'>
 							{article.title}
 						</p>
-						<p className='relative shrink-0 text-sm text-[var(--muted)] font-mono uppercase'>
+						<p className='relative shrink-0 text-sm text-olive-500 dark:text-olive-400 font-mono uppercase'>
 							{article.date}
 						</p>
 					</Link>
@@ -120,31 +120,31 @@ function Footer() {
 			<div className='flex gap-4 items-center relative shrink-0'>
 				<Link
 					to='/writing'
-					className='font-normal relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
+					className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
 					Writing
 				</Link>
 				<Link
 					to='/favorites'
-					className='font-normal relative shrink-0 text-gray-500 hover:text-[var(--foreground)] text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
+					className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
 					Favorites
 				</Link>
 				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"}>
 					<button
 						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-gray-500 hover:text-[var(--foreground)] flex items-center'
+						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-olive-500 hover:text-olive-800 dark:text-olive-100 flex items-center'
 						aria-label='Toggle dark mode'>
 						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
 					</button>
 				</Tooltip>
 			</div>
 			<div className='flex gap-1 items-center relative shrink-0 w-full'>
-				<p className='basis-0 font-normal grow min-h-px min-w-px relative shrink-0 text-xs text-center text-[var(--muted)]'>
+				<p className='basis-0 font-normal grow min-h-px min-w-px relative shrink-0 text-xs text-center text-olive-500 dark:text-olive-400'>
 					This site template is open sourced and available on{" "}
 					<a
 						href='https://github.com/designerdada/Designerdadacom'
 						target='_blank'
 						rel='noopener noreferrer'
-						className='font-medium hover:text-[var(--foreground)] transition-colors'>
+						className='font-medium hover:text-olive-800 dark:text-olive-100 transition-colors'>
 						GitHub
 					</a>
 					.
@@ -251,7 +251,7 @@ export function WritingDetail() {
 				{/* JSON-LD Structured Data */}
 				<script type='application/ld+json'>{JSON.stringify(articleJsonLd)}</script>
 			</Helmet>
-			<div className='bg-[var(--background)] relative size-full min-h-screen'>
+			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
 				<div className='flex flex-col gap-6 items-start mx-auto px-4 py-10 w-full max-w-xl'>
 					{/* Breadcrumb */}
 					<div className={`${animateClass()} w-full`}>
@@ -272,7 +272,7 @@ export function WritingDetail() {
 									</BreadcrumbLink>
 								</BreadcrumbItem>
 								<BreadcrumbSeparator>
-									<span className='text-xs text-gray-500'>/</span>
+									<span className='text-xs text-olive-500'>/</span>
 								</BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<BreadcrumbLink asChild>
@@ -282,7 +282,7 @@ export function WritingDetail() {
 									</BreadcrumbLink>
 								</BreadcrumbItem>
 								<BreadcrumbSeparator>
-									<span className='text-xs text-gray-500'>/</span>
+									<span className='text-xs text-olive-500'>/</span>
 								</BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<BreadcrumbPage className='text-sm'>{articleData.metadata.title}</BreadcrumbPage>

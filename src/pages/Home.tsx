@@ -1,6 +1,7 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Divider } from "../components/Divider";
+import { ProjectsSection } from "../components/ProjectsSection";
 import { WritingSection } from "../components/WritingSection";
 import { useState } from "react";
 
@@ -39,7 +40,7 @@ export function Home() {
 	};
 
 	return (
-		<div className='bg-[var(--background)] min-h-screen w-full flex justify-center py-10'>
+		<div className='bg-olive-100 dark:bg-olive-900 min-h-screen w-full flex justify-center py-10'>
 			<div className='flex flex-col gap-10 items-center w-full max-w-xl px-4 m-0'>
 				{/* Header */}
 				<div className='animate-in w-full'>
@@ -47,7 +48,7 @@ export function Home() {
 				</div>
 
 				{/* Bio Content */}
-				<div className='font-normal min-w-full relative shrink-0 text-[var(--foreground)] text-base text-justify flex flex-col gap-4'>
+				<div className='font-normal min-w-full relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify flex flex-col gap-4'>
 					<p className='relative animate-in animate-delay-1'>
 						<span>I'm a product designer and founder building </span>
 						<a
@@ -111,11 +112,11 @@ export function Home() {
 							}}>
 							<button
 								onClick={handleCopyEmail}
-								className='link cursor-pointer bg-transparent border-none p-0 text-[var(--foreground)] text-base'>
+								className='link cursor-pointer bg-transparent border-none p-0 text-olive-800 dark:text-olive-100 text-sm font-medium'>
 								Say hello
 							</button>
 							{showTooltip && (
-								<span className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-[var(--foreground)] text-[var(--background)] rounded whitespace-nowrap'>
+								<span className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-olive-800 dark:bg-olive-200 text-olive-50 dark:text-olive-800 rounded whitespace-nowrap'>
 									{tooltipText}
 								</span>
 							)}
@@ -153,9 +154,9 @@ export function Home() {
 					<Divider />
 				</div>
 
-				{/* Writing Section */}
+				{/* Projects Section */}
 				<div className='animate-in animate-delay-6 w-full'>
-					<WritingSection />
+					<ProjectsSection />
 				</div>
 
 				{/* Divider */}
@@ -163,8 +164,18 @@ export function Home() {
 					<Divider />
 				</div>
 
-				{/* Footer */}
+				{/* Writing Section */}
 				<div className='animate-in animate-delay-8 w-full'>
+					<WritingSection />
+				</div>
+
+				{/* Divider */}
+				<div className='animate-in animate-delay-9'>
+					<Divider />
+				</div>
+
+				{/* Footer */}
+				<div className='animate-in animate-delay-10 w-full'>
 					<Footer />
 				</div>
 			</div>

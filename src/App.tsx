@@ -47,8 +47,8 @@ export default function App() {
 				/>
 
 				{/* Theme color */}
-				<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
-				<meta name='theme-color' content='#000000' media='(prefers-color-scheme: dark)' />
+				<meta name='theme-color' content='#fbfbf7' media='(prefers-color-scheme: light)' />
+				<meta name='theme-color' content='#1f1f1a' media='(prefers-color-scheme: dark)' />
 
 				{/* JSON-LD Structured Data */}
 				<script type='application/ld+json'>

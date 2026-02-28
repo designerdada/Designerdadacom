@@ -9,13 +9,13 @@ export function Footer() {
 			/>
 
 			{/* Footer Note */}
-			<p className='text-xs font-mono text-center text-[var(--muted)] w-full'>
+			<p className='text-xs font-mono text-center text-olive-500 dark:text-olive-400 w-full'>
 				This site template is open sourced and available on{" "}
 				<a
 					href='https://github.com/designerdada/Designerdadacom'
 					target='_blank'
 					rel='noopener noreferrer'
-					className='font-medium hover:text-[var(--foreground)] transition-colors'>
+					className='font-medium hover:text-olive-800 dark:hover:text-olive-100 transition-colors'>
 					GitHub
 				</a>
 				.

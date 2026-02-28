@@ -45,7 +45,7 @@ function prefetchAllOgImages() {
 type Category = "All" | "Products" | "People" | "Sites" | "Fonts";
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
-	const strokeColor = isHovered ? "var(--foreground)" : "#64748B";
+	const strokeColor = isHovered ? "currentColor" : "#7c7c67";
 
 	return (
 		<div className='relative shrink-0 size-4'>
@@ -121,7 +121,7 @@ function SearchAndFilters({
 					onChange={(e) => setSearchQuery(e.target.value)}
 					onFocus={() => setIsInputFocused(true)}
 					onBlur={() => setIsInputFocused(false)}
-					className='font-normal relative shrink-0 text-sm text-justify bg-transparent border-none outline-none text-[var(--foreground)] placeholder:text-slate-400 w-full'
+					className='font-normal relative shrink-0 text-sm text-justify bg-transparent border-none outline-none text-olive-800 dark:text-olive-100 placeholder:text-olive-400 w-full'
 					aria-label='Search favorites'
 				/>
 			</div>
@@ -134,15 +134,15 @@ function SearchAndFilters({
 					aria-label='Filter by category'
 					aria-haspopup='true'
 					aria-expanded={showDropdown}>
-					<p className='font-medium relative shrink-0 text-[var(--foreground)] text-sm text-justify text-nowrap whitespace-pre'>
+					<p className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre'>
 						{selectedCategory}
 					</p>
-					<ChevronDown className='size-4 text-[var(--foreground)]' strokeWidth={1.5} />
+					<ChevronDown className='size-4 text-olive-800 dark:text-olive-100' strokeWidth={1.5} />
 				</button>
 
 				{showDropdown && (
 					<div
-						className='absolute right-0 top-full mt-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 z-50 min-w-32'
+						className='absolute right-0 top-full mt-2 bg-olive-50 dark:bg-olive-950 border border-olive-200 dark:border-olive-700 rounded-lg shadow-lg py-1 z-50 min-w-32'
 						role='menu'>
 						{categories.map((category) => (
 							<button
@@ -153,8 +153,8 @@ function SearchAndFilters({
 								}}
 								className={`w-full text-left px-4 py-2 text-sm cursor-pointer transition-colors ${
 									selectedCategory === category
-										? "font-medium text-[var(--foreground)] bg-gray-100 dark:bg-gray-800"
-										: "text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+										? "font-medium text-olive-800 dark:text-olive-100 bg-olive-100 dark:bg-olive-800"
+										: "text-olive-500 hover:bg-olive-50 dark:hover:bg-olive-800/50"
 								}`}
 								role='menuitem'
 								aria-current={selectedCategory === category}>
@@ -230,14 +230,14 @@ function FavoriteItem({
 				}`}
 				style={{ height: "120px" }}>
 				{isLoading ? (
-					<div className='h-30 w-40 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse flex items-center justify-center'>
-						<div className='size-6 border-2 border-gray-300 dark:border-gray-600 border-t-transparent rounded-full animate-spin' />
+					<div className='h-30 w-40 bg-olive-100 dark:bg-olive-800 rounded-lg animate-pulse flex items-center justify-center'>
+						<div className='size-6 border-2 border-olive-300 dark:border-olive-600 border-t-transparent rounded-full animate-spin' />
 					</div>
 				) : ogImage ? (
 					<img
 						src={ogImage}
 						alt={`${favorite.name} preview`}
-						className='h-30 w-auto max-w-60 object-contain rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900'
+						className='h-30 w-auto max-w-60 object-contain rounded-xl border border-olive-200 dark:border-olive-700 bg-olive-50 dark:bg-olive-950'
 					/>
 				) : null}
 			</div>
@@ -258,18 +258,18 @@ function FavoriteItem({
 						/>
 					</div>
 					<div className='basis-0 flex gap-2 grow items-center min-h-px min-w-px relative shrink-0'>
-						<p className='font-medium relative shrink-0 text-[var(--foreground)] text-base text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4'>
+						<p className='font-semibold relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre group-hover:underline underline-offset-4'>
 							{favorite.name}
 						</p>
-						<p className='relative shrink-0 text-xs text-justify text-nowrap text-slate-500 whitespace-pre'>
+						<p className='relative shrink-0 text-xs text-justify text-nowrap text-olive-500 whitespace-pre'>
 							/
 						</p>
-						<p className='[white-space-collapse:collapse] basis-0 grow min-h-px min-w-px overflow-ellipsis overflow-hidden relative shrink-0 text-[var(--foreground)] text-sm text-justify text-nowrap'>
+						<p className='[white-space-collapse:collapse] basis-0 grow min-h-px min-w-px overflow-ellipsis overflow-hidden relative shrink-0 text-olive-500 dark:text-olive-100 text-sm text-justify text-nowrap'>
 							{favorite.description}
 						</p>
 					</div>
 				</div>
-				<p className='relative shrink-0 text-sm text-nowrap text-slate-500 whitespace-pre font-mono'>
+				<p className='relative shrink-0 text-sm text-nowrap text-olive-400 whitespace-pre font-mono'>
 					{getDomain(favorite.url)}
 				</p>
 			</a>
@@ -344,7 +344,7 @@ function FavoritesList({
 	if (filteredFavorites.length === 0) {
 		return (
 			<div className='flex items-center justify-center py-8 w-full'>
-				<p className='text-sm text-slate-500'>No favorites found</p>
+				<p className='text-sm text-olive-500'>No favorites found</p>
 			</div>
 		);
 	}
@@ -424,12 +424,12 @@ export function Favorites() {
 					content='https://designerdada.com/assets/og-images/og-favorites.jpg'
 				/>
 			</Helmet>
-			<div className='bg-[var(--background)] relative size-full min-h-screen'>
+			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
 				<div className='flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='favorites' />
 					</div>
-					<p className='relative shrink-0 text-[var(--foreground)] text-base text-justify w-full animate-in animate-delay-1'>
+					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify w-full animate-in animate-delay-1'>
 						I love discovering great things, whether it's a beautifully designed product, an
 						inspiring person, or a website I keep coming back to. This is my collection of those
 						gems I find on the internet and in the real world. Everything here has caught my
