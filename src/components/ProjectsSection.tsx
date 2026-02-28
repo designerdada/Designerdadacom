@@ -48,14 +48,6 @@ export function ProjectsSection() {
 								</p>
 							</div>
 						</div>
-						<p
-							className={`relative shrink-0 text-sm font-medium text-nowrap whitespace-pre font-mono uppercase ${
-								project.status === "Active"
-									? "text-green-600 dark:text-green-500"
-									: "text-olive-400"
-							}`}>
-							{project.status}
-						</p>
 					</a>
 				))}
 			</div>
