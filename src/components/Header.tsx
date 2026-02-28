@@ -67,7 +67,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"} className='ml-auto'>
 					<button
 						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-olive-500 hover:text-olive-800 dark:text-olive-100 flex items-center'
+						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all text-olive-500 hover:text-olive-800 dark:text-olive-500 dark:hover:text-olive-100 flex items-center'
 						aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}>
 						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
 					</button>
