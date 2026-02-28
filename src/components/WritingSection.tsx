@@ -7,12 +7,13 @@ export function WritingSection() {
 
 	return (
 		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
+			<p className='text-olive-400 text-sm mb-3 uppercase font-mono'>Writing</p>
 			<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
 				{recentArticles.map((article) => (
 					<Link
 						key={article.id}
 						to={`/writing/${article.id}`}
-						className='flex items-center justify-between relative shrink-0 text-justify text-nowrap w-full whitespace-pre hover:opacity-70 transition-opacity group'>
+						className='flex items-center justify-between relative shrink-0 text-justify text-nowrap w-full whitespace-pre group'>
 						<p className='font-semibold relative shrink-0 text-olive-800 dark:text-olive-100 text-sm group-hover:underline underline-offset-4'>
 							{article.title}
 						</p>
@@ -24,8 +25,8 @@ export function WritingSection() {
 			</div>
 			<Link
 				to='/writing'
-				className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
-				View all →
+				className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-500 hover:dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
+				View all &rarr;
 			</Link>
 		</div>
 	);

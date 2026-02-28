@@ -18,9 +18,9 @@ export function Header({ activePage }: HeaderProps = {}) {
 	] as const;
 
 	const navLinkClass = (key: string) =>
-		`font-medium font-mono uppercase relative shrink-0 text-sm text-justify text-nowrap whitespace-pre transition-all ${
+		`font-medium relative shrink-0 text-sm text-justify text-nowrap whitespace-pre transition-all ${
 			activePage === key
-				? "text-olive-800 dark:text-olive-100"
+				? "text-olive-800 dark:text-olive-100 font-semibold"
 				: "text-olive-500 hover:text-olive-800 dark:hover:text-olive-100"
 		}`;
 

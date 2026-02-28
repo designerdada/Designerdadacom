@@ -20,6 +20,7 @@ function getDomain(url: string) {
 export function ProjectsSection() {
 	return (
 		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
+			<p className='text-olive-400 text-sm mb-3 uppercase font-mono'>Work</p>
 			<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
 				{projects.map((project) => (
 					<a
@@ -27,7 +28,7 @@ export function ProjectsSection() {
 						href={project.url}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex gap-4 items-center relative shrink-0 w-full hover:opacity-70 transition-opacity group'>
+						className='flex gap-4 items-center relative shrink-0 w-full group'>
 						<div className='basis-0 flex gap-4 grow items-center min-h-px min-w-px relative shrink-0'>
 							<div className='relative shrink-0 size-5'>
 								<img

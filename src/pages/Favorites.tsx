@@ -121,7 +121,7 @@ function SearchAndFilters({
 					onChange={(e) => setSearchQuery(e.target.value)}
 					onFocus={() => setIsInputFocused(true)}
 					onBlur={() => setIsInputFocused(false)}
-					className='font-normal relative shrink-0 text-sm text-justify bg-transparent border-none outline-none text-olive-800 dark:text-olive-100 placeholder:text-olive-400 w-full'
+					className='font-normal relative shrink-0 text-sm text-justify bg-transparent border-none outline-none text-olive-800 dark:text-olive-100 placeholder:text-olive-400 dark:placeholder:text-olive-600 w-full'
 					aria-label='Search favorites'
 				/>
 			</div>
@@ -246,7 +246,7 @@ function FavoriteItem({
 				href={favorite.url}
 				target='_blank'
 				rel={`noopener noreferrer${favorite.nofollow === false ? "" : " nofollow"}`}
-				className='flex gap-4 items-center relative shrink-0 w-full hover:opacity-70 transition-opacity group'
+				className='flex gap-4 items-center relative shrink-0 w-full group'
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}>
 				<div className='basis-0 flex gap-4 grow items-center min-h-px min-w-px relative shrink-0'>
@@ -425,11 +425,11 @@ export function Favorites() {
 				/>
 			</Helmet>
 			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
-				<div className='flex flex-col gap-10 items-center mx-auto px-4 py-10 w-full max-w-xl'>
+				<div className='flex flex-col gap-6 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='favorites' />
 					</div>
-					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify w-full animate-in animate-delay-1'>
+					<p className='relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify w-full animate-in animate-delay-1'>
 						I love discovering great things, whether it's a beautifully designed product, an
 						inspiring person, or a website I keep coming back to. This is my collection of those
 						gems I find on the internet and in the real world. Everything here has caught my

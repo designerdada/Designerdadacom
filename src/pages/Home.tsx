@@ -41,14 +41,14 @@ export function Home() {
 
 	return (
 		<div className='bg-olive-100 dark:bg-olive-900 min-h-screen w-full flex justify-center py-10'>
-			<div className='flex flex-col gap-10 items-center w-full max-w-xl px-4 m-0'>
+			<div className='flex flex-col gap-6 items-center w-full max-w-xl px-4 m-0'>
 				{/* Header */}
 				<div className='animate-in w-full'>
 					<Header />
 				</div>
 
 				{/* Bio Content */}
-				<div className='font-normal min-w-full relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify flex flex-col gap-4'>
+				<div className='font-normal min-w-full relative shrink-0 text-olive-800 dark:text-olive-100 text-sm/6 text-justify flex flex-col gap-4'>
 					<p className='relative animate-in animate-delay-1'>
 						<span>I'm a product designer and founder building </span>
 						<a
