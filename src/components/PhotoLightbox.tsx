@@ -87,7 +87,7 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
 			<Dialog.Portal>
-				<Dialog.Overlay className='fixed inset-0 z-50 bg-olive-50 dark:bg-olive-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
+				<Dialog.Overlay className='fixed inset-0 z-50 bg-olive-100 dark:bg-olive-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' />
 				<Dialog.Content
 					className='fixed inset-0 z-50 flex items-center justify-center focus:outline-none'
 					{...(!photo.description && { "aria-describedby": undefined })}>
@@ -95,7 +95,7 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 					<Dialog.Close asChild>
 						<button
 							type='button'
-							className='absolute right-4 top-4 z-10 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black dark:bg-white/10 dark:text-white/60 dark:hover:bg-white/20 dark:hover:text-white'
+							className='absolute right-4 top-4 z-10 cursor-pointer rounded-full bg-olive-200 p-2 text-olive-600 transition-colors hover:bg-olive-300 hover:text-olive-800 dark:bg-olive-700 dark:text-olive-300 dark:hover:bg-olive-600 dark:hover:text-olive-100'
 							aria-label='Close'>
 							<X className='size-6' />
 						</button>
@@ -106,7 +106,7 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 						<button
 							type='button'
 							onClick={goToPrev}
-							className='absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black dark:bg-white/10 dark:text-white/60 dark:hover:bg-white/20 dark:hover:text-white'
+							className='absolute left-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-olive-200 p-2 text-olive-600 transition-colors hover:bg-olive-300 hover:text-olive-800 dark:bg-olive-700 dark:text-olive-300 dark:hover:bg-olive-600 dark:hover:text-olive-100'
 							aria-label='Previous photo'>
 							<ChevronLeft className='size-6' />
 						</button>
@@ -115,7 +115,7 @@ export function PhotoLightbox({ photo, photos, isOpen, onClose, onNavigate }: Ph
 						<button
 							type='button'
 							onClick={goToNext}
-							className='absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/10 p-2 text-black/60 transition-colors hover:bg-black/20 hover:text-black dark:bg-white/10 dark:text-white/60 dark:hover:bg-white/20 dark:hover:text-white'
+							className='absolute right-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-olive-200 p-2 text-olive-600 transition-colors hover:bg-olive-300 hover:text-olive-800 dark:bg-olive-700 dark:text-olive-300 dark:hover:bg-olive-600 dark:hover:text-olive-100'
 							aria-label='Next photo'>
 							<ChevronRight className='size-6' />
 						</button>

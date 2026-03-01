@@ -7,7 +7,7 @@ export function WritingSection() {
 
 	return (
 		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
-			<p className='text-olive-400 text-sm mb-3 uppercase font-mono'>Writing</p>
+			<p className='text-olive-400 dark:text-olive-600 text-sm mb-3 uppercase font-mono'>Writing</p>
 			<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
 				{recentArticles.map((article) => (
 					<Link

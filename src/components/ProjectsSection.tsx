@@ -20,7 +20,7 @@ function getDomain(url: string) {
 export function ProjectsSection() {
 	return (
 		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
-			<p className='text-olive-400 text-sm mb-3 uppercase font-mono'>Work</p>
+			<p className='text-olive-400 dark:text-olive-600 text-sm mb-3 uppercase font-mono'>Work</p>
 			<div className='flex flex-col gap-3 items-start relative shrink-0 w-full'>
 				{projects.map((project) => (
 					<a

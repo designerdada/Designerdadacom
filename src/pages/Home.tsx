@@ -44,7 +44,7 @@ export function Home() {
 			<div className='flex flex-col gap-6 items-center w-full max-w-xl px-4 m-0'>
 				{/* Header */}
 				<div className='animate-in w-full'>
-					<Header />
+					<Header activePage="home" />
 				</div>
 
 				{/* Bio Content */}

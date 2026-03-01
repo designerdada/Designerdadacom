@@ -29,7 +29,7 @@ export function PhotoCard({ photo, onClick, priority = false }: PhotoCardProps) 
   return (
     <button
       type="button"
-      className="relative w-full overflow-hidden rounded-lg bg-olive-500/10 dark:bg-olive-400/10 focus:outline-none focus:ring-2 focus:ring-olive-950/20 dark:focus:ring-olive-100/20"
+      className="relative w-full cursor-pointer overflow-hidden rounded-lg bg-olive-500/10 dark:bg-olive-400/10 focus:outline-none focus:ring-2 focus:ring-olive-950/20 dark:focus:ring-olive-100/20"
       style={{ aspectRatio: photo.aspectRatio }}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}

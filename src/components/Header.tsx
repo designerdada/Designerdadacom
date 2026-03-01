@@ -5,13 +5,14 @@ import Moon from "../imports/Moon";
 import Sun from "../imports/Sun";
 
 interface HeaderProps {
-	activePage?: "writing" | "favorites" | "photography";
+	activePage?: "home" | "writing" | "favorites" | "photography";
 }
 
 export function Header({ activePage }: HeaderProps = {}) {
 	const { toggleTheme, theme } = useTheme();
 
 	const navLinks = [
+		{ to: "/", label: "Home", key: "home" },
 		{ to: "/writing", label: "Writing", key: "writing" },
 		{ to: "/favorites", label: "Favorites", key: "favorites" },
 		{ to: "/photography", label: "Photography", key: "photography" },
