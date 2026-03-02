@@ -18,10 +18,4 @@ export const projects: Project[] = [
 		description: "Email for developers, marketers, and AI agents",
 		url: "https://autosend.com",
 	},
-	{
-		id: "foxchat",
-		name: "Foxchat",
-		description: "Lightweight Intercom alternative",
-		url: "https://www.foxchat.dev",
-	},
 ];
