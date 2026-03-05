@@ -45,11 +45,11 @@ export function Header({ activePage }: HeaderProps = {}) {
 				to='/'
 				className='flex gap-1 h-6 items-center w-full hover:opacity-70 transition-opacity'
 				aria-label='Akash Bhadange home'>
-				<p className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-xl text-justify text-nowrap whitespace-pre'>
+				<h1 className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-xl text-justify text-nowrap whitespace-pre'>
 					<span className='font-medium'>Akash Bhadange </span>
 					<span className='font-normal italic'>aka</span>
 					<span className='font-medium'> @designerdada</span>
-				</p>
+				</h1>
 			</Link>
 
 			{/* Navigation */}

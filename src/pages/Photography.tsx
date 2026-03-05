@@ -40,6 +40,8 @@ export function Photography() {
 					property='og:image'
 					content='https://designerdada.com/assets/og-images/og-photography.jpg'
 				/>
+				<meta property='og:image:width' content='1200' />
+				<meta property='og:image:height' content='630' />
 
 				{/* Twitter */}
 				<meta name='twitter:card' content='summary_large_image' />

@@ -216,6 +216,32 @@ export function WritingDetail() {
 		keywords: articleData.metadata.keywords || "",
 	};
 
+	// JSON-LD BreadcrumbList for rich SERP breadcrumbs
+	const breadcrumbJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: [
+			{
+				"@type": "ListItem",
+				position: 1,
+				name: "Home",
+				item: "https://designerdada.com",
+			},
+			{
+				"@type": "ListItem",
+				position: 2,
+				name: "Writing",
+				item: "https://designerdada.com/writing",
+			},
+			{
+				"@type": "ListItem",
+				position: 3,
+				name: articleData.metadata.title,
+				item: canonicalUrl,
+			},
+		],
+	};
+
 	return (
 		<>
 			<Helmet>
@@ -234,6 +260,8 @@ export function WritingDetail() {
 				<meta property='og:url' content={canonicalUrl} />
 				<meta property='og:site_name' content='Akash Bhadange' />
 				<meta property='og:image' content={ogImage} />
+				<meta property='og:image:width' content='1200' />
+				<meta property='og:image:height' content='630' />
 
 				{/* Twitter Card */}
 				<meta name='twitter:card' content='summary_large_image' />
@@ -250,6 +278,7 @@ export function WritingDetail() {
 
 				{/* JSON-LD Structured Data */}
 				<script type='application/ld+json'>{JSON.stringify(articleJsonLd)}</script>
+				<script type='application/ld+json'>{JSON.stringify(breadcrumbJsonLd)}</script>
 			</Helmet>
 			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen'>
 				<div className='flex flex-col gap-6 items-start mx-auto px-4 py-10 w-full max-w-xl'>

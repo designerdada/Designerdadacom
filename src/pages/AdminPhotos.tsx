@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Trash2, RefreshCw } from "lucide-react";
+import { Helmet } from "react-helmet";
 import { AdminAuthGuard, getAuthToken } from "../components/admin/AdminAuthGuard";
 import { PhotoUploadForm } from "../components/admin/PhotoUploadForm";
 import { Photo, WORKER_API_URL } from "../data/cloudflare-config";
@@ -122,8 +123,14 @@ function AdminPhotosContent() {
 
 export function AdminPhotos() {
 	return (
-		<AdminAuthGuard>
-			<AdminPhotosContent />
-		</AdminAuthGuard>
+		<>
+			<Helmet>
+				<meta name='robots' content='noindex, nofollow' />
+				<title>Admin | Photos</title>
+			</Helmet>
+			<AdminAuthGuard>
+				<AdminPhotosContent />
+			</AdminAuthGuard>
+		</>
 	);
 }

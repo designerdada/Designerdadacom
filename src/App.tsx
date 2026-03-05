@@ -31,6 +31,8 @@ export default function App() {
 				<meta property='og:site_name' content='designerdada.com' />
 				<meta property='og:url' content='https://designerdada.com' />
 				<meta property='og:image' content='https://designerdada.com/assets/og-images/og-home.jpg' />
+				<meta property='og:image:width' content='1200' />
+				<meta property='og:image:height' content='630' />
 
 				{/* Twitter */}
 				<meta name='twitter:card' content='summary_large_image' />

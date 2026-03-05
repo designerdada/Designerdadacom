@@ -12,11 +12,19 @@ const SITE_URL = siteConfig.url;
 const articlesPath = path.join(__dirname, '../data/articles.ts');
 const articlesContent = fs.readFileSync(articlesPath, 'utf-8');
 
-// Extract article IDs from the articles array
-const articleMatches = articlesContent.matchAll(/id:\s*['"](.+?)['"]/g);
-const articleIds = Array.from(articleMatches, m => m[1]);
+// Extract article IDs and dates from the articles array
+const articleEntries = [];
+const articleRegex = /id:\s*['"](.+?)['"][\s\S]*?date:\s*['"](.+?)['"]/g;
+let match;
+while ((match = articleRegex.exec(articlesContent)) !== null) {
+  const [, id, dateStr] = match;
+  // Parse date like "07.Dec.2025" to ISO format
+  const parsed = new Date(dateStr.replace(/\./g, ' '));
+  const isoDate = !isNaN(parsed.getTime()) ? parsed.toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+  articleEntries.push({ id, date: isoDate });
+}
 
-// Current date in ISO format
+// Current date in ISO format (for static pages)
 const currentDate = new Date().toISOString().split('T')[0];
 
 // Static pages
@@ -42,11 +50,11 @@ const generateSitemap = () => {
     xml += '  </url>\n';
   });
 
-  // Add article pages
-  articleIds.forEach(id => {
+  // Add article pages with per-article dates
+  articleEntries.forEach(({ id, date }) => {
     xml += '  <url>\n';
     xml += `    <loc>${SITE_URL}/writing/${id}</loc>\n`;
-    xml += `    <lastmod>${currentDate}</lastmod>\n`;
+    xml += `    <lastmod>${date}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.8</priority>\n`;
     xml += '  </url>\n';
@@ -61,5 +69,5 @@ const sitemapPath = path.join(__dirname, '../../public/sitemap.xml');
 const sitemap = generateSitemap();
 fs.writeFileSync(sitemapPath, sitemap);
 
-console.log(`✅ Sitemap generated with ${articleIds.length} articles`);
+console.log(`✅ Sitemap generated with ${articleEntries.length} articles`);
 console.log(`📍 Location: public/sitemap.xml`);
