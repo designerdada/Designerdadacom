@@ -53,7 +53,7 @@ export function Photography() {
 					content='https://designerdada.com/assets/og-images/og-photography.jpg'
 				/>
 			</Helmet>
-			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen flex flex-col items-center'>
+			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen flex flex-col items-center'>
 				{/* Header and description - constrained width */}
 				<div className='flex flex-col gap-10 items-center px-4 pt-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>

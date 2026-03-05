@@ -251,7 +251,7 @@ export function WritingDetail() {
 				{/* JSON-LD Structured Data */}
 				<script type='application/ld+json'>{JSON.stringify(articleJsonLd)}</script>
 			</Helmet>
-			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
+			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen'>
 				<div className='flex flex-col gap-6 items-start mx-auto px-4 py-10 w-full max-w-xl'>
 					{/* Breadcrumb */}
 					<div className={`${animateClass()} w-full`}>
