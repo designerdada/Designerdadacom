@@ -24,6 +24,36 @@ I write about design, building products, and the startup journey. When not desig
 
 ## Articles
 
+### AI Is Skipping a Generation
+
+URL: https://designerdada.com/writing/ai-skipping-a-generation
+Published: 06.Mar.2026
+Description: AI isn't firing people. It's just not hiring the next generation. What a new Anthropic report quietly reveals about young workers.
+
+The AI-and-jobs debate usually goes one of two ways. Either AI is coming for everyone's livelihood, or it's just a tool and we'll be fine. Both camps are loud. Neither is looking at the right thing.
+
+Anthropic published a labor market report this week. The headline finding is reassuring: no meaningful increase in unemployment for workers in AI-exposed jobs. If you already have a job as a programmer or financial analyst, you're still employed. The AI apocalypse hasn't arrived.
+
+But buried in the data is something quieter. Workers aged 22 to 25 are being hired into AI-exposed occupations at a noticeably slower rate. Job finding in those roles dropped about 14% compared to pre-ChatGPT levels. The same drop doesn't exist in low-exposure jobs. And it doesn't exist for workers older than 25.
+
+This is a different kind of disruption. Not layoffs. Not the dramatic unemployment spike everyone's been watching for. Just doors opening a little more slowly for people who haven't walked through them yet.
+
+It makes sense when you think about it. Companies don't need to fire their experienced programmer to benefit from AI. They just need to hire fewer new ones. The work gets absorbed. The headcount doesn't grow. Nobody gets displaced because nobody gets placed.
+
+The people who never get the job don't show up in unemployment statistics. They don't file claims. They quietly take a different path, maybe back to school, maybe into a different field. The disruption is invisible in the aggregate data, but very visible in a 23-year-old's job search.
+
+We should be honest about what this means. The entry-level job has historically been how people learn to work. Not from coursework, but from doing real things with real consequences alongside people who know more than them. If those jobs are quietly disappearing, the loss isn't just income. It's the on-ramp.
+
+This doesn't mean catastrophe. The report is careful to note alternative explanations. Young workers might be staying in existing jobs longer, or choosing different fields. The signal is early and statistically modest.
+
+But it's worth watching. The workers who are currently employed in exposed jobs built their skills before AI changed the calculus. The next generation has to build theirs in a world where the calculus has already changed. That's a harder problem, and nobody is quite sure how to solve it yet.
+
+The honest thing to say is: we don't know how this plays out. The report itself is admirably humble on this point. What we do know is that the most important effects of AI on work might not look like layoffs at all. They might look like a generation that has a harder time getting started.
+
+That's worth paying attention to. Even if it doesn't make headlines.
+
+---
+
 ### Buy a Domain
 
 URL: https://designerdada.com/writing/buy-a-domain

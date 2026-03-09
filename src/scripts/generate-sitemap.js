@@ -8,21 +8,32 @@ const __dirname = path.dirname(__filename);
 
 const SITE_URL = siteConfig.url;
 
-// Read articles from articles.ts
-const articlesPath = path.join(__dirname, '../data/articles.ts');
-const articlesContent = fs.readFileSync(articlesPath, 'utf-8');
+// Read articles directly from MDX files
+const contentDir = path.join(__dirname, '../content/writing');
+const mdxFiles = fs.readdirSync(contentDir).filter(file =>
+  file.endsWith('.mdx') && !file.startsWith('_')
+);
 
-// Extract article IDs and dates from the articles array
 const articleEntries = [];
-const articleRegex = /id:\s*['"](.+?)['"][\s\S]*?date:\s*['"](.+?)['"]/g;
-let match;
-while ((match = articleRegex.exec(articlesContent)) !== null) {
-  const [, id, dateStr] = match;
-  // Parse date like "07.Dec.2025" to ISO format
+mdxFiles.forEach(file => {
+  const slug = path.basename(file, '.mdx');
+  const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!frontmatterMatch) return;
+
+  let dateStr = '';
+  frontmatterMatch[1].split('\n').forEach(line => {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex === -1) return;
+    const key = line.slice(0, colonIndex).trim();
+    const value = line.slice(colonIndex + 1).trim();
+    if (key === 'publishDate') dateStr = value;
+  });
+
   const parsed = new Date(dateStr.replace(/\./g, ' '));
   const isoDate = !isNaN(parsed.getTime()) ? parsed.toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
-  articleEntries.push({ id, date: isoDate });
-}
+  articleEntries.push({ id: slug, date: isoDate });
+});
 
 // Current date in ISO format (for static pages)
 const currentDate = new Date().toISOString().split('T')[0];

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { sortedArticles } from "../data/articles";
+import { articleList as sortedArticles } from "../content/writing/index";
 
 export function WritingSection() {
 	// Show only the 5 most recent articles

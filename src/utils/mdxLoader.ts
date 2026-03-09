@@ -1,5 +1,20 @@
 import { ArticleData, ArticleMetadata } from './mdx';
-import { allMDXContent } from '../content/writing/index';
+
+// Eagerly import all MDX files as raw strings via Vite's import.meta.glob
+const mdxModules = import.meta.glob('../content/writing/*.mdx', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>;
+
+// Build slug → raw content map from glob results
+const allMDXContent: Record<string, string> = {};
+for (const [filePath, content] of Object.entries(mdxModules)) {
+  const slug = filePath.split('/').pop()!.replace('.mdx', '');
+  if (!slug.startsWith('_')) {
+    allMDXContent[slug] = content;
+  }
+}
 
 // Parse frontmatter from MDX content
 function parseFrontmatter(content: string): { metadata: ArticleMetadata; content: string } {
@@ -13,7 +28,6 @@ function parseFrontmatter(content: string): { metadata: ArticleMetadata; content
   const [, frontmatterStr, bodyContent] = match;
   const metadata: Partial<ArticleMetadata> = {};
 
-  // Parse frontmatter key-value pairs
   frontmatterStr.split('\n').forEach(line => {
     const colonIndex = line.indexOf(':');
     if (colonIndex === -1) return;
@@ -41,18 +55,15 @@ const articleCache: Record<string, ArticleData> = {};
 
 // Get article by slug
 export function getArticle(slug: string): ArticleData {
-  // Return from cache if available
   if (articleCache[slug]) {
     return articleCache[slug];
   }
 
-  // Get raw MDX content
   const rawContent = allMDXContent[slug];
   if (!rawContent) {
     throw new Error(`Article "${slug}" not found`);
   }
 
-  // Parse and cache
   const article = parseFrontmatter(rawContent);
   articleCache[slug] = article;
   return article;
@@ -61,10 +72,10 @@ export function getArticle(slug: string): ArticleData {
 // Get all articles
 export function getAllArticles(): Record<string, ArticleData> {
   const allArticles: Record<string, ArticleData> = {};
-  
+
   Object.keys(allMDXContent).forEach(slug => {
     allArticles[slug] = getArticle(slug);
   });
-  
+
   return allArticles;
 }

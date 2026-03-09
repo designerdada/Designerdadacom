@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { sortedArticles } from "../data/articles";
+import { articleList as sortedArticles } from "../content/writing/index";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Helmet } from "react-helmet";

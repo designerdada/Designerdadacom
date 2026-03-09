@@ -13,13 +13,11 @@ marked.setOptions({
   headerIds: false
 });
 
-// Read articles from articles.ts
-const articlesPath = path.join(__dirname, '../data/articles.ts');
-const articlesContent = fs.readFileSync(articlesPath, 'utf-8');
-
-// Extract article IDs from the articles array
-const articleMatches = articlesContent.matchAll(/id:\s*['"](.+?)['"]/g);
-const articleIds = Array.from(articleMatches, m => m[1]);
+// Read article IDs directly from MDX files
+const contentDir = path.join(__dirname, '../content/writing');
+const articleIds = fs.readdirSync(contentDir)
+  .filter(file => file.endsWith('.mdx') && !file.startsWith('_'))
+  .map(file => path.basename(file, '.mdx'));
 
 // Read base index.html from build directory
 const buildDir = path.join(__dirname, '../../build');

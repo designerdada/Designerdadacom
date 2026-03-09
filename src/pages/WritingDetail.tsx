@@ -5,8 +5,10 @@ import { Navigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
-import { sortedArticles } from "../data/articles";
-import { articleContents } from "../data/articleContent";
+import { articleList as sortedArticles } from "../content/writing/index";
+import { getAllArticles } from "../utils/mdxLoader";
+
+const articleContents = getAllArticles();
 import { markdownComponents, resetFirstParagraph } from "../components/MarkdownComponents";
 import { useTheme } from "../hooks/useTheme";
 import { Tooltip } from "../components/Tooltip";
