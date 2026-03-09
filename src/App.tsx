@@ -29,8 +29,8 @@ export default function App() {
 					content='Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.'
 				/>
 				<meta property='og:site_name' content='designerdada.com' />
-				<meta property='og:url' content='https://designerdada.com' />
-				<meta property='og:image' content='https://designerdada.com/assets/og-images/og-home.jpg' />
+				<meta property='og:url' content='https://www.designerdada.com' />
+				<meta property='og:image' content='https://www.designerdada.com/assets/og-images/og-home.jpg' />
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
 
@@ -45,7 +45,7 @@ export default function App() {
 				/>
 				<meta
 					name='twitter:image'
-					content='https://designerdada.com/assets/og-images/og-home.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-home.jpg'
 				/>
 
 				{/* Theme color */}
@@ -59,11 +59,11 @@ export default function App() {
 						"@graph": [
 							{
 								"@type": "Person",
-								"@id": "https://designerdada.com/#person",
+								"@id": "https://www.designerdada.com/#person",
 								name: "Akash Bhadange",
 								alternateName: "@designerdada",
-								url: "https://designerdada.com",
-								image: "https://designerdada.com/profile-image.jpg",
+								url: "https://www.designerdada.com",
+								image: "https://www.designerdada.com/profile-image.jpg",
 								jobTitle: "Product Designer & Founder",
 								description:
 									"Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.",
@@ -81,13 +81,13 @@ export default function App() {
 							},
 							{
 								"@type": "WebSite",
-								"@id": "https://designerdada.com/#website",
-								url: "https://designerdada.com",
+								"@id": "https://www.designerdada.com/#website",
+								url: "https://www.designerdada.com",
 								name: "Akash Bhadange - @designerdada",
 								description:
 									"Product designer, founder, and photographer based in San Francisco. Currently building Peerlist and AutoSend.",
 								publisher: {
-									"@id": "https://designerdada.com/#person",
+									"@id": "https://www.designerdada.com/#person",
 								},
 								inLanguage: "en-US",
 							},

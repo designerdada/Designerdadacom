@@ -183,9 +183,9 @@ export function WritingDetail() {
 	}
 
 	const articleData = articleContents[id];
-	const canonicalUrl = `https://designerdada.com/writing/${id}`;
+	const canonicalUrl = `https://www.designerdada.com/writing/${id}`;
 	const ogImage =
-		articleData.metadata.ogImage || "https://designerdada.com/media/og-images/og-default.jpg";
+		articleData.metadata.ogImage || "https://www.designerdada.com/media/og-images/og-default.jpg";
 	const publishDate = articleData.metadata.publishDate;
 	const modifiedDate = articleData.metadata.modifiedDate || publishDate;
 
@@ -204,12 +204,12 @@ export function WritingDetail() {
 		author: {
 			"@type": "Person",
 			name: articleData.metadata.author || "Akash Bhadange",
-			url: "https://designerdada.com",
+			url: "https://www.designerdada.com",
 		},
 		publisher: {
 			"@type": "Person",
 			name: "Akash Bhadange",
-			url: "https://designerdada.com",
+			url: "https://www.designerdada.com",
 		},
 		mainEntityOfPage: {
 			"@type": "WebPage",
@@ -227,13 +227,13 @@ export function WritingDetail() {
 				"@type": "ListItem",
 				position: 1,
 				name: "Home",
-				item: "https://designerdada.com",
+				item: "https://www.designerdada.com",
 			},
 			{
 				"@type": "ListItem",
 				position: 2,
 				name: "Writing",
-				item: "https://designerdada.com/writing",
+				item: "https://www.designerdada.com/writing",
 			},
 			{
 				"@type": "ListItem",

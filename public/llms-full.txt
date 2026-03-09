@@ -2,7 +2,7 @@
 
 Product designer, founder, and photographer. Building Peerlist and AutoSend.
 
-> https://designerdada.com
+> https://www.designerdada.com
 
 ---
 
@@ -16,9 +16,9 @@ I write about design, building products, and the startup journey. When not desig
 
 ## Navigation
 
-- Home: https://designerdada.com
-- Writing: https://designerdada.com/writing
-- Favorites: https://designerdada.com/favorites
+- Home: https://www.designerdada.com
+- Writing: https://www.designerdada.com/writing
+- Favorites: https://www.designerdada.com/favorites
 
 ---
 
@@ -26,7 +26,7 @@ I write about design, building products, and the startup journey. When not desig
 
 ### AI Is Skipping a Generation
 
-URL: https://designerdada.com/writing/ai-skipping-a-generation
+URL: https://www.designerdada.com/writing/ai-skipping-a-generation
 Published: 06.Mar.2026
 Description: AI isn't firing people. It's just not hiring the next generation. What a new Anthropic report quietly reveals about young workers.
 
@@ -56,7 +56,7 @@ That's worth paying attention to. Even if it doesn't make headlines.
 
 ### Buy a Domain
 
-URL: https://designerdada.com/writing/buy-a-domain
+URL: https://www.designerdada.com/writing/buy-a-domain
 Published: 02.Dec.2025
 Description: The first thing you should do when starting a project is buy a domain. Not set up your tech stack. Not design your logo. Buy a domain. Here's why.
 
@@ -90,7 +90,7 @@ The domain comes first. Everything else follows.
 
 ### Design Is The Moat
 
-URL: https://designerdada.com/writing/design-is-the-moat
+URL: https://www.designerdada.com/writing/design-is-the-moat
 Published: 15.Nov.2025
 Description: Design is no longer a layer you add at the end. It is the product. And it's the moat that will matter most.
 
@@ -116,7 +116,7 @@ The future belongs to those who can ship, but more importantly, to those who can
 
 ### Growth Without Hacks
 
-URL: https://designerdada.com/writing/growth-without-hacks
+URL: https://www.designerdada.com/writing/growth-without-hacks
 Published: 05.Nov.2025
 Description: What really drives startup growth. Marketing isn't about shiny tools or growth hacks. It's about understanding people, solving their problems, and showing up consistently.
 
@@ -206,7 +206,7 @@ Highly recommend to read Paul Graham's [Startups in 13 Sentences](https://www.pa
 
 ### Make Something YOU Want
 
-URL: https://designerdada.com/writing/make-something-you-want
+URL: https://www.designerdada.com/writing/make-something-you-want
 Published: 01.Nov.2025
 Description: The best products come from personal frustration. When you build something you actually need, you understand the problem deeply, you know what's missing, and you have the motivation to make it great.
 
@@ -238,7 +238,7 @@ Lastly - Here's Jack Dorsey on why building something for yourself can be better
 
 ### Stop Writing Fictional Case Studies
 
-URL: https://designerdada.com/writing/stop-fictional-case-studies
+URL: https://www.designerdada.com/writing/stop-fictional-case-studies
 Published: 26.Nov.2025
 Description: Dear product designers, stop writing fictional case studies and start collaborating with developers on side projects to build credible proof-of-work.
 
@@ -288,7 +288,7 @@ If you have read till here, I have 2 asks from you —
 
 ### Trying to Be Human
 
-URL: https://designerdada.com/writing/trying-to-be-human
+URL: https://www.designerdada.com/writing/trying-to-be-human
 Published: 07.Dec.2025
 Description: Why human creation will matter more, not less, in an age of infinite AI-generated content.
 

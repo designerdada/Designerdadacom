@@ -397,7 +397,7 @@ export function Favorites() {
 					name='description'
 					content='A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.'
 				/>
-				<link rel='canonical' href='https://designerdada.com/favorites' />
+				<link rel='canonical' href='https://www.designerdada.com/favorites' />
 
 				{/* Open Graph */}
 				<meta property='og:type' content='website' />
@@ -406,10 +406,10 @@ export function Favorites() {
 					property='og:description'
 					content='A curated collection of beautifully designed products, inspiring people, and websites that have caught my attention.'
 				/>
-				<meta property='og:url' content='https://designerdada.com/favorites' />
+				<meta property='og:url' content='https://www.designerdada.com/favorites' />
 				<meta
 					property='og:image'
-					content='https://designerdada.com/assets/og-images/og-favorites.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-favorites.jpg'
 				/>
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
@@ -423,7 +423,7 @@ export function Favorites() {
 				/>
 				<meta
 					name='twitter:image'
-					content='https://designerdada.com/assets/og-images/og-favorites.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-favorites.jpg'
 				/>
 			</Helmet>
 			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen'>

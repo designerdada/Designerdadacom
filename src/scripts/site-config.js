@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Site URL (without trailing slash)
-  url: "https://designerdada.com",
+  url: "https://www.designerdada.com",
 
   // Site name
   name: "designerdada.com",

@@ -11,7 +11,7 @@ export const siteConfig = {
   title: "Akash Bhadange",
   description:
     "Product designer, founder, and photographer. Building Peerlist and AutoSend.",
-  url: "https://designerdada.com",
+  url: "https://www.designerdada.com",
 
   // Author info
   author: {

@@ -26,7 +26,7 @@ export function Photography() {
 					name='description'
 					content='Photography by Akash Bhadange. A collection of moments captured through my lens.'
 				/>
-				<link rel='canonical' href='https://designerdada.com/photography' />
+				<link rel='canonical' href='https://www.designerdada.com/photography' />
 
 				{/* Open Graph */}
 				<meta property='og:type' content='website' />
@@ -35,10 +35,10 @@ export function Photography() {
 					property='og:description'
 					content='Photography by Akash Bhadange. A collection of moments captured through my lens.'
 				/>
-				<meta property='og:url' content='https://designerdada.com/photography' />
+				<meta property='og:url' content='https://www.designerdada.com/photography' />
 				<meta
 					property='og:image'
-					content='https://designerdada.com/assets/og-images/og-photography.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-photography.jpg'
 				/>
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
@@ -52,7 +52,7 @@ export function Photography() {
 				/>
 				<meta
 					name='twitter:image'
-					content='https://designerdada.com/assets/og-images/og-photography.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-photography.jpg'
 				/>
 			</Helmet>
 			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen flex flex-col items-center'>

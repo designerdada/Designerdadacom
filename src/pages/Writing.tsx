@@ -55,7 +55,7 @@ export function Writing() {
 					name='description'
 					content='Raw thoughts on design, building products, and the startup journey by Akash Bhadange.'
 				/>
-				<link rel='canonical' href='https://designerdada.com/writing' />
+				<link rel='canonical' href='https://www.designerdada.com/writing' />
 
 				{/* Open Graph */}
 				<meta property='og:type' content='website' />
@@ -64,10 +64,10 @@ export function Writing() {
 					property='og:description'
 					content='Raw thoughts on design, building products, and the startup journey by Akash Bhadange.'
 				/>
-				<meta property='og:url' content='https://designerdada.com/writing' />
+				<meta property='og:url' content='https://www.designerdada.com/writing' />
 				<meta
 					property='og:image'
-					content='https://designerdada.com/assets/og-images/og-writing.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-writing.jpg'
 				/>
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:image:height' content='630' />
@@ -81,7 +81,7 @@ export function Writing() {
 				/>
 				<meta
 					name='twitter:image'
-					content='https://designerdada.com/assets/og-images/og-writing.jpg'
+					content='https://www.designerdada.com/assets/og-images/og-writing.jpg'
 				/>
 			</Helmet>
 			<div
