@@ -49,7 +49,7 @@ const customSchema = {
 function ArticleHeader({ title }: { title: string }) {
 	return (
 		<div className='flex flex-col gap-1 items-start relative shrink-0 w-full'>
-			<h1 className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-3xl w-full'>
+			<h1 className='font-serif italic relative shrink-0 text-olive-800 dark:text-olive-100 text-4xl w-full'>
 				{title}
 			</h1>
 		</div>
