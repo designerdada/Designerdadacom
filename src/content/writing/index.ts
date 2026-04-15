@@ -4,7 +4,6 @@
 
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
-  { id: 'ai-skipping-a-generation', title: 'AI Is Skipping a Generation', date: '06.Mar.2026' },
   { id: 'trying-to-be-human', title: 'Trying to Be Human', date: '07.Dec.2025' },
   { id: 'buy-a-domain', title: 'Buy a Domain', date: '02.Dec.2025' },
   { id: 'stop-fictional-case-studies', title: 'Stop Writing Fictional Case Studies', date: '26.Nov.2025' },
