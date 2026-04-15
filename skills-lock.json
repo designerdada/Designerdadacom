@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "AutoSend": {
+      "source": "autosendhq/skills",
+      "sourceType": "github",
+      "computedHash": "b234b9153673aa12c68547142595396a75bb232969ecbe4b16a8de2e6bed3ae6"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
