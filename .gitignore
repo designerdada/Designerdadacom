@@ -6,6 +6,9 @@ package-lock.json
 build/
 dist/
 
+# Generated at build time
+api/disposable-domains.json
+
 # Logs
 *.log
 npm-debug.log*

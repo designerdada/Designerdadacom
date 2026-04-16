@@ -1,5 +1,6 @@
 import { createHmac } from "crypto";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import disposableDomains from "./disposable-domains.json";
 
 const API_URL = "https://api.autosend.com/v1";
 const API_KEY = process.env.AUTOSEND_API_KEY!;
@@ -53,6 +54,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 	}
 
 	const normalizedEmail = email.trim().toLowerCase();
+	const domain = normalizedEmail.split("@")[1];
+	if (disposableDomains.includes(domain)) {
+		return res.status(400).json({ error: "Disposable email addresses aren't allowed. Use your real email :)" });
+	}
 
 	try {
 		// Create/update contact as pending (no list yet)
