@@ -35,3 +35,5 @@ scripts/
 # OS
 .DS_Store
 Thumbs.db
+.vercel
+.env*.local

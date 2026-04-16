@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { articleList as sortedArticles } from "../content/writing/index";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { MailingList } from "../components/MailingList";
 import { Helmet } from "react-helmet";
 
 function ArticleList() {
@@ -98,10 +99,12 @@ export function Writing() {
 						thinking about at the time.
 					</p>
 					<div className='animate-in animate-delay-2 w-full'>
+						<MailingList />
+					</div>
+					<div className='animate-in animate-delay-3 w-full'>
 						<ArticleList />
 					</div>
-					{/* <MailingList /> */}
-					<div className='animate-in animate-delay-3'>
+					<div className='animate-in animate-delay-4'>
 						<ColorDots />
 					</div>
 					<div className='animate-in animate-delay-4 w-full'>
