@@ -9,6 +9,7 @@ const FROM_NAME = "Designerdada";
 const TOKEN_SECRET = process.env.NEWSLETTER_TOKEN_SECRET!;
 const CONFIRMATION_TEMPLATE_ID = "A-8361941152306b900290";
 
+
 // Rate limiting: 5 requests per IP per hour
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
@@ -35,6 +36,15 @@ function generateToken(email: string): string {
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 	if (req.method !== "POST") {
 		return res.status(405).json({ error: "Method not allowed" });
+	}
+
+	if (!API_KEY) {
+		console.error("AUTOSEND_API_KEY is not set");
+		return res.status(500).json({ error: "Internal server error" });
+	}
+	if (!TOKEN_SECRET) {
+		console.error("NEWSLETTER_TOKEN_SECRET is not set");
+		return res.status(500).json({ error: "Internal server error" });
 	}
 
 	const ip =
@@ -78,11 +88,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 			}),
 		});
 
+		const contactBody = await contactRes.json();
 		if (!contactRes.ok) {
-			const err = await contactRes.json();
-			console.error("AutoSend contact error:", err);
+			console.error("AutoSend contact error:", JSON.stringify(contactBody));
 			return res.status(500).json({ error: "Failed to create contact" });
 		}
+		console.log("AutoSend contact response:", JSON.stringify(contactBody));
 
 		// Generate confirmation token and send email
 		const token = generateToken(normalizedEmail);

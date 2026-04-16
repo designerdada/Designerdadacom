@@ -50,8 +50,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).send('This confirmation link is invalid or has expired. Please subscribe again at designerdada.com.');
   }
 
+  if (!LIST_ID) {
+    console.error('AUTOSEND_NEWSLETTER_LIST_ID is not set');
+    return res.status(500).send('Server misconfiguration. Please contact the site owner.');
+  }
+
   try {
     // Add contact to the Newsletter list and mark as confirmed
+    console.log(`Adding ${email} to list ${LIST_ID}`);
     const contactRes = await fetch(`${API_URL}/contacts/email`, {
       method: 'POST',
       headers: {
@@ -65,11 +71,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }),
     });
 
+    const contactBody = await contactRes.json();
     if (!contactRes.ok) {
-      const err = await contactRes.json();
-      console.error('AutoSend contact upsert error:', err);
+      console.error('AutoSend contact upsert error:', JSON.stringify(contactBody));
       return res.status(500).send('Something went wrong. Please try again.');
     }
+    console.log('AutoSend contact upsert response:', JSON.stringify(contactBody));
 
     // Send welcome email
     await fetch(`${API_URL}/mails/send`, {
