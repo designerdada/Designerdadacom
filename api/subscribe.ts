@@ -15,15 +15,15 @@ const RATE_WINDOW_MS = 60 * 60 * 1000;
 const ipRequests = new Map<string, { count: number; resetAt: number }>();
 
 function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = ipRequests.get(ip);
-  if (!entry || now > entry.resetAt) {
-    ipRequests.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return false;
-  }
-  if (entry.count >= RATE_LIMIT) return true;
-  entry.count++;
-  return false;
+	const now = Date.now();
+	const entry = ipRequests.get(ip);
+	if (!entry || now > entry.resetAt) {
+		ipRequests.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+		return false;
+	}
+	if (entry.count >= RATE_LIMIT) return true;
+	entry.count++;
+	return false;
 }
 
 function generateToken(email: string): string {
@@ -37,9 +37,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		return res.status(405).json({ error: "Method not allowed" });
 	}
 
-	const ip = (req.headers["x-forwarded-for"] as string)?.split(",")[0].trim() || req.socket.remoteAddress || "unknown";
-	if (isRateLimited(ip)) {
-		return res.status(429).json({ error: "Whoa, slow down! Try again later." });
+	const ip =
+		(req.headers["x-forwarded-for"] as string)?.split(",")[0].trim() ||
+		req.socket.remoteAddress ||
+		"unknown";
+	if (process.env.NODE_ENV !== "development" && isRateLimited(ip)) {
+		return res.status(429).json({ error: "Whoa, slow down! Try after some time." });
 	}
 
 	const { email } = req.body ?? {};
@@ -56,7 +59,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 	const normalizedEmail = email.trim().toLowerCase();
 	const domain = normalizedEmail.split("@")[1];
 	if (disposableDomains.includes(domain)) {
-		return res.status(400).json({ error: "Disposable email addresses aren't allowed. Use your real email :)" });
+		return res
+			.status(400)
+			.json({ error: "Disposable email addresses aren't allowed. Use your real email :)" });
 	}
 
 	try {

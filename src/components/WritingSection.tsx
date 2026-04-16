@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { articleList as sortedArticles } from "../content/writing/index";
-import { MailingList } from "./MailingList";
 
 export function WritingSection() {
 	// Show only the 5 most recent articles
@@ -29,9 +28,7 @@ export function WritingSection() {
 				className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-500 hover:dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
 				View all &rarr;
 			</Link>
-			<div className='pt-4 w-full dark:border-olive-700 mt-1'>
-				<MailingList />
-			</div>
+
 		</div>
 	);
 }
