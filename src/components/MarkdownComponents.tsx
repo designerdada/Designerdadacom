@@ -125,7 +125,7 @@ export const HR = () => (
 
 // Blockquote
 export const Blockquote = ({ children }: ComponentProps) => (
-	<div className='flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-olive-950 dark:border-olive-100 my-4'>
+	<div className='flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-yellow-200 dark:border-olive-100 my-4'>
 		<blockquote className='italic relative shrink-0 text-olive-800 dark:text-olive-100 text-base w-full [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p:only-child]:pb-0'>
 			{children}
 		</blockquote>
