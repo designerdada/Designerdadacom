@@ -98,9 +98,6 @@ export function Writing() {
 						polished, others are more stream-of-consciousness, but they all capture what I was
 						thinking about at the time.
 					</p>
-					<div className='animate-in animate-delay-2 w-full'>
-						<MailingList />
-					</div>
 					<div className='animate-in animate-delay-3 w-full'>
 						<ArticleList />
 					</div>
