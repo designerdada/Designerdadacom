@@ -57,7 +57,7 @@ export const P = ({ children }: ParagraphProps) => {
 				const rest = child.slice(1);
 				return (
 					<>
-						<span className='float-left text-5xl leading-none font-medium mr-1 -mt-1 text-olive-800 dark:text-olive-100'>
+						<span className='float-left text-5xl leading-none font-medium mr-1 text-olive-800 dark:text-olive-100'>
 							{firstLetter}
 						</span>
 						{rest}
@@ -126,7 +126,7 @@ export const HR = () => (
 // Blockquote
 export const Blockquote = ({ children }: ComponentProps) => (
 	<div className='flex flex-col gap-1 items-start justify-center pl-4 pr-0 py-2 relative shrink-0 w-full border-l-4 border-yellow-200 dark:border-olive-100 my-4'>
-		<blockquote className='font-serif relative shrink-0 text-olive-800 dark:text-olive-100 w-full text-lg [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p]:text-lg [&_p:only-child]:pb-0'>
+		<blockquote className='font-serif relative shrink-0 text-olive-800 dark:text-olive-100 w-full text-xl [&>div]:pb-0 [&>div]:pt-0 [&_p]:italic [&_p]:text-xl [&_p:only-child]:pb-0'>
 			{children}
 		</blockquote>
 	</div>
