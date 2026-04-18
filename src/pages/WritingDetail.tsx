@@ -10,9 +10,7 @@ import { getAllArticles } from "../utils/mdxLoader";
 
 const articleContents = getAllArticles();
 import { markdownComponents, resetFirstParagraph } from "../components/MarkdownComponents";
-import { useTheme } from "../hooks/useTheme";
-import { Tooltip } from "../components/Tooltip";
-// import { MailingList } from '../components/MailingList';
+import { Footer } from "../components/Footer";
 import {
 	Breadcrumb,
 	BreadcrumbList,
@@ -21,8 +19,6 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "../components/ui/breadcrumb";
-import Moon from "../imports/Moon";
-import Sun from "../imports/Sun";
 
 // Custom sanitize schema that allows YouTube iframes
 const customSchema = {
@@ -109,52 +105,6 @@ function ReadMore({ currentSlug }: { currentSlug: string }) {
 	);
 }
 
-function Footer() {
-	const { toggleTheme, theme } = useTheme();
-
-	return (
-		<div className='flex flex-col gap-4 items-center justify-center w-full'>
-			<img
-				alt='designerdada.com'
-				className='h-6 w-auto object-contain pointer-events-none'
-				src='/assets/footer-signature.png'
-			/>
-			<div className='flex gap-4 items-center relative shrink-0'>
-				<Link
-					to='/writing'
-					className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
-					Writing
-				</Link>
-				<Link
-					to='/favorites'
-					className='font-normal relative shrink-0 text-olive-500 hover:text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre hover:underline underline-offset-4 transition-all'>
-					Favorites
-				</Link>
-				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"}>
-					<button
-						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all duration-200 text-olive-500 hover:text-olive-800 dark:text-olive-100 flex items-center'
-						aria-label='Toggle dark mode'>
-						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
-					</button>
-				</Tooltip>
-			</div>
-			<div className='flex gap-1 items-center relative shrink-0 w-full'>
-				<p className='basis-0 font-normal grow min-h-px min-w-px relative shrink-0 text-xs text-center text-olive-500 dark:text-olive-400'>
-					This site template is open sourced and available on{" "}
-					<a
-						href='https://github.com/designerdada/Designerdadacom'
-						target='_blank'
-						rel='noopener noreferrer'
-						className='font-medium hover:text-olive-800 dark:text-olive-100 transition-colors'>
-						GitHub
-					</a>
-					.
-				</p>
-			</div>
-		</div>
-	);
-}
 
 export function WritingDetail() {
 	const { id } = useParams<{ id: string }>();
