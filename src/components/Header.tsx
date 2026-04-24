@@ -22,7 +22,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 		`font-medium relative shrink-0 text-sm text-justify text-nowrap whitespace-pre transition-all ${
 			activePage === key
 				? "text-olive-800 dark:text-olive-100 font-semibold"
-				: "text-olive-500 hover:text-olive-800 dark:hover:text-olive-100"
+				: "text-olive-500 dark:text-olive-400 hover:text-olive-800 dark:hover:text-olive-100"
 		}`;
 
 	return (
@@ -68,7 +68,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"} className='ml-auto'>
 					<button
 						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none p-0 transition-all text-olive-500 hover:text-olive-800 dark:text-olive-500 dark:hover:text-olive-100 flex items-center'
+						className='group relative cursor-pointer bg-transparent border-none px-2 py-1 -mx-2 -my-1 transition-all text-olive-500 hover:text-olive-800 dark:text-olive-400 dark:hover:text-olive-50 flex items-center'
 						aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}>
 						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
 					</button>

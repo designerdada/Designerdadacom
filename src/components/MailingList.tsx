@@ -77,7 +77,7 @@ export function MailingList() {
 				className={`w-full sm:w-sm transition-all duration-500 ease-in-out overflow-hidden ${isSuccess ? "opacity-0 max-h-0 pointer-events-none" : "opacity-100 max-h-24"}`}
 				aria-label='Subscribe to newsletter'
 				noValidate>
-				<div className='flex items-center justify-between relative shrink-0 w-full pr-1 rounded-[12px] bg-white dark:bg-olive-900 group'>
+				<div className='flex items-center justify-between relative shrink-0 w-full pr-1 rounded-[12px] bg-white dark:bg-olive-950 group'>
 					<div
 						aria-hidden='true'
 						className='absolute border-1 rounded-[12px] border-olive-300 dark:border-olive-700 border-solid inset-0 pointer-events-none transition-colors duration-200 group-hover:border-olive-400 dark:group-hover:border-olive-600 group-focus-within:border-olive-400 dark:group-focus-within:border-olive-600'

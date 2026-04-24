@@ -130,7 +130,7 @@ function SearchAndFilters({
 			<div className='relative z-50' ref={dropdownRef}>
 				<button
 					onClick={() => setShowDropdown(!showDropdown)}
-					className='flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity'
+					className='flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity px-2 py-1 -mx-2 -my-1'
 					aria-label='Filter by category'
 					aria-haspopup='true'
 					aria-expanded={showDropdown}>
@@ -154,7 +154,7 @@ function SearchAndFilters({
 								className={`w-full text-left px-4 py-2 text-sm cursor-pointer transition-colors ${
 									selectedCategory === category
 										? "font-medium text-olive-800 dark:text-olive-100 bg-olive-100 dark:bg-olive-800"
-										: "text-olive-500 hover:bg-olive-50 dark:hover:bg-olive-800/50"
+										: "text-olive-500 hover:text-olive-800 dark:hover:text-olive-100 hover:bg-olive-100 dark:hover:bg-olive-800/50"
 								}`}
 								role='menuitem'
 								aria-current={selectedCategory === category}>
