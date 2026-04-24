@@ -3,7 +3,7 @@ import mailcheck from "mailcheck";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const IDLE_TEXT = "Subscribe to my not so regular newsletter :)";
+const IDLE_TEXT = "My not so regular newsletter :)";
 const SUCCESS_TEXT = "Check your inbox to confirm your subscription!";
 
 export function MailingList() {

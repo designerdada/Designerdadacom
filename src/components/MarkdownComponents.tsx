@@ -57,7 +57,7 @@ export const P = ({ children }: ParagraphProps) => {
 				const rest = child.slice(1);
 				return (
 					<>
-						<span className='float-left text-5xl leading-none font-medium mr-1 text-olive-800 dark:text-olive-100'>
+						<span className='float-left text-5xl leading-none font-normal mr-1 text-olive-800 dark:text-olive-100'>
 							{firstLetter}
 						</span>
 						{rest}
