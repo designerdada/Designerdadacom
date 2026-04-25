@@ -42,7 +42,7 @@ function prefetchAllOgImages() {
 	});
 }
 
-type Category = "All" | "Products" | "People" | "Sites" | "Fonts";
+type Category = "All" | "Products" | "People" | "Sites" | "Fonts" | "Movies";
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
 	const strokeColor = isHovered ? "currentColor" : "#7c7c67";
@@ -86,7 +86,7 @@ function SearchAndFilters({
 	const [isInputHovered, setIsInputHovered] = useState(false);
 	const [isInputFocused, setIsInputFocused] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
-	const categories: Category[] = ["All", "Products", "People", "Sites", "Fonts"];
+	const categories: Category[] = ["All", "Products", "People", "Sites", "Fonts", "Movies"];
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
@@ -301,6 +301,7 @@ function FavoritesList({
 				People: "People",
 				Sites: "Site",
 				Fonts: "Font",
+				Movies: "Movie",
 			};
 			filtered = filtered.filter(
 				(fav) => fav.category === categoryMap[selectedCategory as keyof typeof categoryMap],

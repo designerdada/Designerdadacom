@@ -3,7 +3,7 @@ export interface Favorite {
   name: string;
   description: string;
   url: string;
-  category: 'Product' | 'People' | 'Site' | 'Font';
+  category: 'Product' | 'People' | 'Site' | 'Font' | 'Movie';
   nofollow?: boolean; // Optional: if false, nofollow won't be added
 }
 
@@ -204,5 +204,12 @@ export const favorites: Favorite[] = [
     description: 'Product font I blindly use',
     url: 'https://vercel.com/font',
     category: 'Font'
+  },
+  {
+    id: 'perfect-days',
+    name: 'Perfect Days',
+    description: 'A humble little film, maybe, but an enriching one.',
+    url: 'https://mubi.com/en/in/films/perfect-days',
+    category: 'Movie'
   }
 ];
