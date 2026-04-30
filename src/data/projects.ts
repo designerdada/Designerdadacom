@@ -7,15 +7,21 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		id: "autosend",
+		name: "AutoSend",
+		description: "Email infra for teams building with AI agents",
+		url: "https://autosend.com",
+	},
+	{
 		id: "peerlist",
 		name: "Peerlist",
 		description: "Professional network for builders",
 		url: "https://peerlist.io",
 	},
 	{
-		id: "autosend",
-		name: "AutoSend",
-		description: "Email for developers, marketers, and AI agents",
-		url: "https://autosend.com",
+		id: "foxchat",
+		name: "Foxchat",
+		description: "Intercom-style live chat widget for websites",
+		url: "https://foxchat.dev",
 	},
 ];

@@ -427,7 +427,7 @@ export function Favorites() {
 					content='https://www.designerdada.com/assets/og-images/og-favorites.jpg'
 				/>
 			</Helmet>
-			<div className='bg-olive-50 dark:bg-olive-800 relative size-full min-h-screen'>
+			<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
 				<div className='flex flex-col gap-6 items-center mx-auto px-4 py-10 w-full max-w-xl'>
 					<div className='animate-in w-full'>
 						<Header activePage='favorites' />
