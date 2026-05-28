@@ -88,6 +88,8 @@ function injectMetaTags(html, metadata, articleContent = null) {
     <meta property="og:url" content="${metadata.canonicalUrl}" data-react-helmet="true" />
     <meta property="og:site_name" content="Akash Bhadange" data-react-helmet="true" />
     <meta property="og:image" content="${metadata.ogImage}" data-react-helmet="true" />
+    <meta property="og:image:width" content="1200" data-react-helmet="true" />
+    <meta property="og:image:height" content="630" data-react-helmet="true" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
@@ -185,7 +187,7 @@ function prerenderArticles() {
         publishDate: frontmatter.publishDate,
         modifiedDate: frontmatter.modifiedDate,
         keywords: frontmatter.keywords,
-        ogImage: frontmatter.ogImage || 'https://www.designerdada.com/assets/og-images/og-default.jpg',
+        ogImage: frontmatter.ogImage || 'https://www.designerdada.com/assets/og-images/og-writing.jpg',
         canonicalUrl: `https://www.designerdada.com/writing/${articleId}`
       };
 
@@ -218,7 +220,7 @@ function prerenderStaticPages() {
       path: '',
       title: 'Akash Bhadange',
       description: 'Product designer, founder, and builder. Currently building Peerlist.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-default.jpg'
+      ogImage: 'https://www.designerdada.com/assets/og-images/og-home.jpg'
     },
     {
       path: 'writing',
@@ -236,7 +238,7 @@ function prerenderStaticPages() {
       path: 'photography',
       title: 'Photography | Akash Bhadange',
       description: 'A collection of photographs capturing moments and perspectives.',
-      ogImage: 'https://www.designerdada.com/assets/og-images/og-default.jpg'
+      ogImage: 'https://www.designerdada.com/assets/og-images/og-photography.jpg'
     }
   ];
 
@@ -263,8 +265,12 @@ function prerenderStaticPages() {
         <meta property="og:description" content="${page.description}" data-react-helmet="true" />
         <meta property="og:url" content="https://www.designerdada.com/${page.path}" data-react-helmet="true" />
         <meta property="og:image" content="${page.ogImage}" data-react-helmet="true" />
+        <meta property="og:image:width" content="1200" data-react-helmet="true" />
+        <meta property="og:image:height" content="630" data-react-helmet="true" />
 
         <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+        <meta name="twitter:site" content="@designerdada" data-react-helmet="true" />
+        <meta name="twitter:creator" content="@designerdada" data-react-helmet="true" />
         <meta name="twitter:title" content="${page.title}" data-react-helmet="true" />
         <meta name="twitter:description" content="${page.description}" data-react-helmet="true" />
         <meta name="twitter:image" content="${page.ogImage}" data-react-helmet="true" />

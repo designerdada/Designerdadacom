@@ -256,6 +256,56 @@ If you have read till here, I have 2 asks from you —
 
 ---
 
+### Taste Can't Be Prompted
+
+URL: https://www.designerdada.com/writing/taste-cant-be-prompted
+Published: 17.Apr.2026
+Description: On designing for humans and agents, what taste actually means, and why "feels right" is a design problem AI can't solve.
+
+Something changed in the last year and most designers haven't noticed yet.
+
+Every product now has two users. There's the person sitting in front of the screen, and there's the AI agent acting on their behalf. The person wants something that feels intuitive. The agent wants something it can parse, navigate, and act on without getting stuck. These are different needs, sometimes competing ones, and almost nobody is designing for both.
+
+This is a new design problem. It didn't exist two years ago. And it doesn't have a playbook yet. But here's what's interesting: the two problems are reinforcing. When you make information architecture clean enough for an agent to navigate, humans benefit too. The things designers were always supposed to care about suddenly have a second audience holding them accountable.
+
+This brings up a harder question. If AI tools can now generate interfaces, write code, and ship products faster than ever before, what exactly is the designer's job?
+
+The answer is taste. And taste is the thing that cannot be automated.
+
+But taste is a loaded word. People hear it and think aesthetics. Pretty colors, nice typography. That's not what I mean. Taste is shorthand for a collection of human qualities that work together: empathy, craftsmanship, attention to detail, and the judgment to know when something is done.
+
+Empathy is understanding that the person using your product is tired, distracted, and doesn't care about your clever interaction pattern. They just want to get the thing done. Craftsmanship is caring about the 4px of padding that nobody will consciously notice but everyone will unconsciously feel. Attention to detail is catching that the loading state feels broken on a slow connection, even though it technically works. And judgment is the decision to remove a feature that works perfectly fine because it distracts from the thing that matters.
+
+These are human qualities. AI doesn't have them. Not because the technology isn't advanced enough, but because they require caring about the experience of another person. You can't prompt your way to giving a damn.
+
+Everyone can build now. A solo founder with the right AI tools can ship something in a weekend that would have taken a small team months. The barrier to making things has collapsed. But the barrier to making things that are good hasn't moved at all.
+
+When everyone can ship, most of what gets shipped is mediocre. Not because the builders lack skill, but because they lack these qualities. AI is excellent at generating options. It is terrible at choosing between them. That choosing is what designers do.
+
+Gergely Orosz made this point recently. He predicted that "UX-pilled" builders will be in massive demand over the next couple of years. Not because design skills are rare in the traditional sense, but because the combination of design judgment and shipping speed is rare. People who can use AI tools to move fast AND have the human judgment to know what "good" looks like. That combination barely exists right now.
+
+**When AI handles the functional layer of a product, the experiential layer is all that's left to compete on.** If two apps do the same thing, and both were built with the same AI tools, and both work fine, the one that wins is the one that feels better. Not works better. Feels better.
+
+What does "feels better" actually mean? This is the question designers should be obsessing over.
+
+It means the app responds to your tap at exactly the right speed. Not instant, which feels mechanical. Not slow, which feels broken. Just fast enough to feel alive. It means transitions that guide your eye instead of jarring it. It means spacing that gives content room to breathe. It means knowing when to use a modal and when to use an inline expansion. It means a hundred small decisions that nobody notices individually but everyone feels collectively.
+
+These are the things AI can't figure out yet. Not because the technology isn't good enough, but because "feels right" is a human judgment about human experience. That knowledge lives in the designer's nervous system, built over years of paying attention to how things land.
+
+> The best designers I know don't just make things look good. They make things feel inevitable. Like the interface couldn't have been any other way.
+
+This is what Karri Saarinen meant when he said AI can generate interfaces but can't figure out what feels right for humans. Generation is the easy part. Knowing what to generate is the hard part. And knowing what to throw away is even harder.
+
+Designers are in a better position than most people think. But only if they adapt.
+
+The designers who will matter in the next few years are the ones who can hold two things in their head at once. They can think about the human using the product and the agent navigating it. They can use AI tools to move at 10x speed without losing the judgment that makes the output worth shipping. They can design systems, not just screens, because some interactions won't have screens at all.
+
+The ones who refuse to use AI tools will be too slow. The ones who rely entirely on AI tools will produce work that's competent but forgettable. The interesting space is in between. Fast enough to keep up, opinionated enough to stand out.
+
+Every product in the market will eventually work. AI will make sure of that. The functional baseline will keep rising. But the gap between "works" and "feels good" will only grow wider. That gap is where designers live. It always has been. The difference now is that everyone else is starting to realize it.
+
+---
+
 ### Trying to Be Human
 
 URL: https://www.designerdada.com/writing/trying-to-be-human
