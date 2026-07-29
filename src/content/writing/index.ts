@@ -4,6 +4,7 @@
 
 // Sorted article list (newest first) - extracted from MDX frontmatter
 export const articleList: { id: string; title: string; date: string }[] = [
+  { id: 'outcomes', title: 'Outcomes', date: '29.Jul.2026' },
   { id: 'manufacturing-luck', title: 'Manufacturing Luck', date: '09.Jun.2026' },
   { id: 'taste-cant-be-prompted', title: 'Taste Can\'t Be Prompted', date: '17.Apr.2026' },
   { id: 'trying-to-be-human', title: 'Trying to Be Human', date: '07.Dec.2025' },
