@@ -226,4 +226,11 @@ export const favorites: Favorite[] = [
 		url: "https://www.netflix.com/title/994992",
 		category: "Movie",
 	},
+	{
+		id: "lofree-block",
+		name: "Lofree Block",
+		description: "The keyboard that makes me feel like a kid again.",
+		url: "https://www.lofree.co/products/lofree-block-wireless-mechanical-keyboard-1",
+		category: "Product",
+	},
 ];
