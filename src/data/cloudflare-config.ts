@@ -1,13 +1,9 @@
 // Cloudflare R2 Configuration for Photography
 
-// Public R2 bucket URL - set via VITE_R2_PUBLIC_URL env var or update default
-export const R2_PUBLIC_URL =
-  import.meta.env.VITE_R2_PUBLIC_URL || "https://your-r2-bucket.r2.dev";
-
-// Worker API URL - set via VITE_WORKER_API_URL env var
-// For local development, set VITE_WORKER_API_URL=http://localhost:8787 in .env
+// Worker API URL - set via NEXT_PUBLIC_WORKER_API_URL (the legacy VITE_WORKER_API_URL is mapped
+// onto it in next.config.ts). For local development use http://localhost:8787.
 // Empty string means photography API is not configured
-export const WORKER_API_URL = import.meta.env.VITE_WORKER_API_URL || "";
+export const WORKER_API_URL = process.env.NEXT_PUBLIC_WORKER_API_URL || "";
 
 // Photo categories
 export const PHOTO_CATEGORIES = [
