@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from "react";
 import { Upload, X, CheckCircle } from "lucide-react";
 import { WORKER_API_URL } from "../../data/cloudflare-config";

@@ -1,0 +1,248 @@
+/* Visual editor content. Mirrors the public article styles in src/lib/markdown/components.tsx. */
+
+.editor-content {
+	outline: none;
+	min-height: 60vh;
+	color: var(--color-olive-800);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+.dark .editor-content {
+	color: var(--color-olive-100);
+}
+
+.editor-content > * + * {
+	margin-top: 1rem;
+}
+.editor-content h1 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	padding-top: 0.5rem;
+}
+.editor-content h2 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	padding-top: 1rem;
+}
+.editor-content h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	padding-top: 0.75rem;
+}
+.editor-content ul {
+	list-style: disc;
+	padding-left: 1.5rem;
+}
+.editor-content ol {
+	list-style: decimal;
+	padding-left: 1.5rem;
+}
+.editor-content li + li {
+	margin-top: 0.5rem;
+}
+.editor-content a {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	font-style: italic;
+	font-weight: 500;
+}
+.editor-content blockquote {
+	border-left: 4px solid var(--color-yellow-300);
+	padding: 0.5rem 0 0.5rem 1rem;
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-size: 1.25rem;
+}
+.editor-content code {
+	background: var(--color-olive-100);
+	border-radius: 0.25rem;
+	padding: 0.1rem 0.35rem;
+	font-size: 0.875rem;
+}
+.editor-content pre {
+	background: var(--color-olive-100);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	font-size: 0.875rem;
+	overflow-x: auto;
+}
+.editor-content pre code {
+	background: none;
+	padding: 0;
+}
+.dark .editor-content code,
+.dark .editor-content pre {
+	background: var(--color-olive-900);
+}
+.editor-content hr {
+	border: none;
+	border-top: 1px solid var(--color-olive-200);
+	margin: 2rem 0;
+}
+.dark .editor-content hr {
+	border-top-color: var(--color-olive-800);
+}
+.editor-content hr.ProseMirror-selectednode {
+	border-top-color: var(--color-olive-500);
+}
+
+/* Tables */
+.editor-content table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.875rem;
+}
+.editor-content th,
+.editor-content td {
+	border: 1px solid var(--color-olive-200);
+	padding: 0.5rem 0.75rem;
+	text-align: left;
+	vertical-align: top;
+	position: relative;
+}
+.dark .editor-content th,
+.dark .editor-content td {
+	border-color: var(--color-olive-800);
+}
+.editor-content th {
+	font-weight: 600;
+	background: var(--color-olive-100);
+}
+.dark .editor-content th {
+	background: var(--color-olive-900);
+}
+.editor-content .selectedCell::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: color-mix(in oklab, var(--color-yellow-300) 30%, transparent);
+	pointer-events: none;
+}
+.editor-content .tableWrapper {
+	overflow-x: auto;
+}
+
+/* Callouts */
+.editor-callout {
+	position: relative;
+	border: 1px solid var(--color-olive-300);
+	background: var(--color-olive-100);
+	border-radius: 0.5rem;
+	padding: 1rem 1rem 1rem;
+}
+.editor-callout[data-type="tip"] {
+	border-color: var(--color-lime-400);
+	background: var(--color-lime-50);
+}
+.editor-callout[data-type="warning"] {
+	border-color: var(--color-amber-400);
+	background: var(--color-amber-50);
+}
+.dark .editor-callout {
+	border-color: var(--color-olive-700);
+	background: var(--color-olive-900);
+}
+.dark .editor-callout[data-type="tip"] {
+	border-color: var(--color-lime-700);
+	background: color-mix(in oklab, var(--color-lime-950) 40%, transparent);
+}
+.dark .editor-callout[data-type="warning"] {
+	border-color: var(--color-amber-700);
+	background: color-mix(in oklab, var(--color-amber-950) 40%, transparent);
+}
+.editor-callout-type {
+	position: absolute;
+	top: 0.35rem;
+	right: 0.5rem;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background: transparent;
+	color: var(--color-olive-500);
+	cursor: pointer;
+}
+.editor-callout > div > * + * {
+	margin-top: 0.75rem;
+}
+
+/* Images with caption and alt text */
+.editor-figure {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.75rem 0;
+}
+.editor-figure img {
+	width: 100%;
+	height: auto;
+	border-radius: 0.25rem;
+	cursor: grab;
+}
+.editor-figure.is-selected img {
+	outline: 2px solid var(--color-olive-400);
+	outline-offset: 2px;
+}
+.editor-figure-fields {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+.editor-figure-fields input {
+	background: transparent;
+	outline: none;
+	font-size: 0.75rem;
+	text-align: center;
+	color: var(--color-olive-500);
+}
+.editor-figure-fields input + input {
+	font-size: 0.7rem;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+.editor-figure:hover .editor-figure-fields input + input,
+.editor-figure-fields input + input:focus,
+.editor-figure-fields input + input:not(:placeholder-shown) {
+	opacity: 1;
+}
+
+/* YouTube embeds */
+.editor-youtube {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+.editor-youtube iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.editor-youtube.ProseMirror-selectednode {
+	outline: 2px solid var(--color-olive-400);
+	outline-offset: 2px;
+}
+
+/* Placeholder on the first empty paragraph */
+.editor-content p.is-editor-empty:first-child::before {
+	content: attr(data-placeholder);
+	float: left;
+	height: 0;
+	pointer-events: none;
+	color: var(--color-olive-400);
+}
+
+/* Markdown (CodeMirror) mode */
+.editor-markdown .cm-editor {
+	background: transparent;
+	font-family: var(--font-mono);
+	font-size: 0.875rem;
+	min-height: 60vh;
+}
+.editor-markdown .cm-editor.cm-focused {
+	outline: none;
+}
+.editor-markdown .cm-gutters {
+	display: none;
+}

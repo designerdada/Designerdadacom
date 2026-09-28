@@ -1,8 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "devCommand": "vite --port 3000",
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/" }
-  ]
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "nextjs",
+	"buildCommand": "if [ \"$VERCEL_ENV\" = \"production\" ]; then npx convex deploy && npm run build; else npm run build; fi"
 }

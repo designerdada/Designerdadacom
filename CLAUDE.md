@@ -4,15 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a minimal, SEO-optimized personal website template, built with React 18, TypeScript, Vite, and Tailwind CSS. The site features a centered single-column layout (544px max width), dark mode support, and an MDX-powered blog.
+This is a minimal, SEO-optimized personal website built with Next.js 16 (App Router, Cache Components), React 19, TypeScript, Tailwind CSS 4, and Convex. The site features a centered single-column layout (544px max width), dark mode support, and a blog whose articles are written in a built-in editor at `/admin` and stored in Convex.
 
 **Tech Stack:**
-- React 18 with TypeScript
-- Vite (build tool)
-- Tailwind CSS v3 (styling)
-- React Router v6 (routing)
-- MDX (blog content)
-- Radix UI (component primitives)
+- Next.js 16 App Router with `cacheComponents` (all public pages are prerendered and cached)
+- React 19 with TypeScript
+- Convex (database, file storage, auth via Convex Auth, scheduled publishing)
+- TipTap 3 (visual editor) + CodeMirror (Markdown mode)
+- Tailwind CSS v4 (`@tailwindcss/postcss`)
 - Deployed on Vercel
 
 ## Fork Setup (For New Users)
@@ -21,176 +20,113 @@ When someone forks this repo, they need to customize these files:
 
 ### Configuration Files
 - `src/config/site.ts` - Main site configuration (name, URL, author, social links)
-- `src/scripts/site-config.js` - Same config for build scripts
 
 ### Personal Content
 - `public/assets/profile.png` - Profile photo
 - `public/assets/footer-signature.png` - Footer signature/logo
-- `public/assets/og-images/` - Open Graph images
-- `src/pages/Home.tsx` - Bio text
+- `public/assets/og-images/` - Open Graph images for static pages
+- `src/app/(site)/page.tsx` - Bio text
 - `src/components/Header.tsx` - Name display
+- `src/app/(site)/layout.tsx` - Analytics IDs
 
-### Files with Hardcoded URLs (need search/replace)
-Search and replace `designerdada.com` with their domain in:
-- `src/App.tsx` (JSON-LD, meta tags)
-- `src/pages/*.tsx` (page meta tags)
-- `src/scripts/generate-prerender.js`
-- `src/content/writing/*.mdx` (ogImage URLs in frontmatter)
+### Convex setup
+1. `npx convex dev` (creates the deployment and writes `NEXT_PUBLIC_CONVEX_URL` to `.env.local`)
+2. `npx @convex-dev/auth` (sets `JWT_PRIVATE_KEY`, `JWKS`, `SITE_URL` on the deployment)
+3. `npx convex env set ADMIN_EMAIL you@example.com`, `AUTOSEND_API_KEY …` (sends the sign-in email), and `REVALIDATE_SECRET <random>` (same secret in the Next.js env)
 
-### Environment Variables (Optional - for photography feature)
-- Copy `.env.example` to `.env`
-- Set `VITE_WORKER_API_URL` and `VITE_R2_PUBLIC_URL`
+See `.env.example` for all variables.
 
 ## Development Commands
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server (opens at localhost:3000)
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Generate all build artifacts
-npm run generate
-
-# Generate MDX content index
-npm run generate:mdx
-
-# Generate sitemap
-npm run generate:sitemap
-
-# Generate llms.txt
-npm run generate:llms
+npm run dev          # convex dev + next dev (http://localhost:3000)
+npm run build        # production build (Vercel runs `npx convex deploy --cmd 'npm run build'`)
+npm run typecheck    # next typegen + tsc
+npm test             # vitest (editor Markdown round-trip)
 ```
-
-## Build Process
-
-The build runs in this order:
-1. **Generate**: Runs all generation scripts (MDX index, sitemap, llms.txt)
-2. **Vite Build**: Creates production bundle in `/build` directory
-3. **Prerender**: Generates static HTML for routes
 
 ## Architecture
 
-### Content Management System
+### Content & publishing
 
-The site uses a custom MDX processing pipeline:
+- **Source of truth**: the `articles` table in Convex (`convex/schema.ts`). The body is Markdown.
+- **Working copy vs. `live` snapshot**: the editor autosaves the working copy; public queries only read `live`, which is written by `publish`. Editing a published article never changes the site until "Update".
+- **Revalidation**: publish/unpublish/remove schedule `convex/revalidate.ts`, which POSTs cache tags to `/api/revalidate`. Tags: `articles` (lists, sitemap, RSS, llms) and `article:<slug>`.
+- **Scheduling**: `ctx.scheduler.runAt` + a 10-minute safety sweep in `convex/crons.ts`.
+- **Slug changes** create `slugRedirects` rows; old URLs return 308.
+- **Data access in Next.js** goes only through `src/lib/content/articles.ts` (`'use cache'` + `cacheTag`).
+- **Auth**: Convex Auth email magic link (sent via AutoSend, `convex/lib/magicLink.ts`), restricted to `ADMIN_EMAIL`. On localhost without `AUTOSEND_API_KEY`, the link is printed to the Convex logs. Every admin function calls `requireAdmin` (`convex/lib/admin.ts`). Auth providers are mounted only in `src/app/admin/layout.tsx` so public pages stay static.
 
-1. **MDX Files** (`/src/content/writing/*.mdx`): Blog articles with frontmatter (single source of truth)
-2. **Auto-generated Index** (`/src/content/writing/index.ts`): Generated by `scripts/generate-mdx-index.js` - NEVER edit manually. Exports `articleList` (sorted metadata only).
-3. **MDX Loader** (`/src/utils/mdxLoader.ts`): Uses Vite's `import.meta.glob` to load MDX files as raw strings. Parses frontmatter and caches articles at runtime.
+### Markdown dialect (one pipeline everywhere)
 
-**Required MDX frontmatter fields:**
-- `title`: Article title
-- `description`: SEO description
-- `publishDate`: Format: DD.MMM.YYYY
-- `author`: Author name
-- `ogImage`: Open Graph image URL
-- `keywords`: Comma-separated keywords
+- `src/lib/markdown/plugins.ts`: remark-gfm + remark-directive + `remark-custom-blocks` + rehype-sanitize.
+- `src/lib/markdown/ArticleBody.tsx` renders it (server pages and the editor preview use the same component).
+- Custom blocks: `:::callout{type="note|tip|warning"}` … `:::`, `::youtube{id="…"}`, and images with captions `![alt](src "caption")`.
+- The TipTap nodes in `src/lib/editor/directives.ts` read/write exactly this syntax. If you add a block, add it in both places and extend `src/lib/editor/__tests__/fixture.md`.
 
 ### Routing Structure
 
-- `/` - Home page (Home.tsx)
-- `/writing` - Blog listing (Writing.tsx)
-- `/writing/:id` - Article detail pages (WritingDetail.tsx)
-- `/favorites` - Curated favorites list (Favorites.tsx)
-- `/photography` - Photo gallery (Photography.tsx) - optional
+- `/`, `/writing`, `/writing/[slug]`, `/favorites`, `/photography` - public pages in `src/app/(site)/`
+- `/admin`, `/admin/articles/[id]`, `/admin/login`, `/admin/photos` - writing desk
+- `/rss.xml`, `/sitemap.xml`, `/llms-full.txt`, `/og/[slug]` (generated OG image) - route handlers
+- `/api/subscribe`, `/api/confirm` (newsletter), `/api/revalidate` (called by Convex)
 
 ### Component Organization
 
-- `/components/` - Main React components (Header, Footer, MailingList, etc.)
-- `/components/ui/` - Radix UI wrapper components
-- `/components/figma/` - Figma import components
-- `/config/` - Site configuration
-- `/pages/` - Top-level page components
-- `/data/` - Static data files (favorites.ts)
-- `/utils/` - Utility functions (MDX parsing, etc.)
-- `/hooks/` - Custom React hooks
-- `/scripts/` - Build scripts (sitemap, llms.txt, etc.)
-
-### Vite Configuration
-
-The `vite.config.ts` contains extensive import aliases to resolve versioned package imports (e.g., `lucide-react@0.487.0` → `lucide-react`). This is required because some components may import packages with version numbers in the import path.
-
-The alias `@` resolves to `./src`.
+- `src/app/` - routes (App Router)
+- `src/components/` - site components; `components/admin/` - dashboard and editor
+- `src/lib/` - content access, Markdown pipeline, editor extensions, SEO helpers
+- `src/config/site.ts` - site configuration
+- `src/data/` - static data (favorites, projects)
+- `convex/` - backend (schema, queries/mutations, auth, crons)
 
 ### Styling System
 
-- **Tailwind CSS**: Utility-first CSS with custom configuration
-- **Dark Mode**: Class-based (`darkMode: 'class'`)
-- **Custom Font**: EB Garamond serif font
-- **Custom Font Sizes**: 2.5xl (22px), 3.5xl (32px), 5.5xl (50px)
-- **Max Width**: 544px centered layout throughout
+- Tailwind CSS v4 configured in `src/app/globals.css` (`@theme`, class-based dark mode via next-themes)
+- Fonts: Schibsted Grotesk (sans), Sono (mono), IM Fell Great Primer (serif), self-hosted via `next/font` in `src/app/fonts.ts` (don't use a Google Fonts `@import`; the CSS pipeline drops it)
+- Article drop cap is CSS (`.article-body > p:first-of-type::first-letter`)
+- Editor content styles: `src/app/admin/admin.css`
 
 ### SEO Implementation
 
-The site has comprehensive SEO:
-- Open Graph and Twitter Card meta tags on all pages
-- JSON-LD structured data (Person, Website, BlogPosting schemas)
-- Article-specific metadata with publish/modified dates
-- Canonical URLs
-- Dynamic meta tags per page via react-helmet
+- Metadata API (`generateMetadata`) for titles, canonical, Open Graph, Twitter
+- JSON-LD: Person + WebSite (site layout), BlogPosting + BreadcrumbList (article page), dates in ISO 8601
+- Per-article SEO title, description, keywords, canonical, and OG image are set in the editor's settings panel
+- Generated OG images: `src/lib/og/ArticleOgImage.tsx` (Figma "outcomes" frame, node 222:48) is the single template, rendered by `/og/[slug]` via next/og and live in the editor settings panel. The og:image URL carries `?v=<hash of title+description>` (`src/lib/og/version.ts`) so edits get a fresh, long-cacheable URL. An uploaded image overrides it.
 
 ## Development Guidelines
 
 1. **Layout**: Use flexbox and grid by default. Only use absolute positioning when necessary.
 2. **Code Quality**: Refactor as you go. Keep files small. Put helpers in separate files.
 3. **SEO/AIO**: Use correct Open Graph and Twitter meta tags. Use appropriate JSON-LD schemas for each page type.
-4. **Content Workflow**:
-   - Add new articles as `.mdx` files in `/src/content/writing/`
-   - Run `npm run generate:mdx` to rebuild the content index
-   - NEVER manually edit `/src/content/writing/index.ts`
-5. **Documentation**: Keep minimal and consolidated. Don't create new .md files unless explicitly requested.
-6. **Component Styling**: Some base components have default styling (gap, typography). Explicitly override these in your React components.
+4. **Content**: Write articles at `/admin`. Never read articles in pages directly from Convex; go through `src/lib/content/articles.ts` so caching and tags stay correct.
+5. **Public pages must stay cacheable**: no `cookies()`/`headers()` or uncached fetches in `src/app/(site)`.
+6. **Documentation**: Keep minimal and consolidated. Don't create new .md files unless explicitly requested.
+7. **Component Styling**: Some base components have default styling (gap, typography). Explicitly override these in your React components.
 
 ## Important Files
 
-- `/src/config/site.ts` - Centralized site configuration
-- `/src/scripts/site-config.js` - Build script configuration
-- `/src/scripts/generate-mdx-index.js` - Auto-generates content index from MDX files
-- `/src/scripts/generate-sitemap.js` - Generates sitemap.xml
-- `/src/scripts/generate-llms-txt.js` - Generates llms.txt for AI crawlers
-- `/src/scripts/generate-prerender.js` - Pre-renders static HTML
-- `/src/content/writing/index.ts` - AUTO-GENERATED - do not edit manually
+- `src/config/site.ts` - Centralized site configuration
+- `convex/schema.ts`, `convex/articles.ts` - Content model and publishing logic
+- `src/lib/content/articles.ts` - Cached data access for public pages
+- `src/lib/markdown/` - Markdown renderer shared by the site, preview, and RSS
+- `src/components/admin/editor/` - Editor UI (visual/Markdown modes, slash menu, settings, publishing)
 
 ## Security Notes
 
-- `.env` files are gitignored - never commit secrets
+- `.env*` files are gitignored - never commit secrets
 - `cloudflare-worker/.dev.vars` is gitignored - use `.dev.vars.example` as template
-- All API keys and tokens should be set via environment variables
-- R2 bucket URLs and account IDs are now configurable via environment variables
+- Admin access is enforced server-side in Convex (`requireAdmin`); the `/admin` UI gate is only UX
+- The photography Worker does not yet validate its Bearer token (known gap)
 
 ## Deployment
 
-The site is configured for Vercel with zero-config deployment:
-- Build command: `npm run build`
-- Output directory: `build`
-- Vercel automatically runs all build scripts
+Vercel (Next.js preset). `vercel.json`: production builds run `npx convex deploy && npm run build` (functions first, so the build prerenders against current queries); preview builds only run `npm run build` and never touch Convex.
 
-## Common Tasks
-
-### Adding a New Blog Article
-
-1. Create `/src/content/writing/new-article-slug.mdx` with required frontmatter
-2. Run `npm run generate:mdx`
-3. Articles auto-sort by date (newest first)
-
-### Modifying Page SEO
-
-Update meta tags and JSON-LD in the page component using react-helmet. Follow the pattern in existing pages (Home.tsx, WritingDetail.tsx).
-
-### Adding a New Page
-
-1. Create page component in `/src/pages/`
-2. Add route in `/src/App.tsx`
-3. Add meta tags and JSON-LD structured data
-4. Update sitemap generation script if needed
+- Vercel env: `CONVEX_DEPLOY_KEY` (Production only), `NEXT_PUBLIC_CONVEX_URL` (all environments; the production deployment URL), `REVALIDATE_SECRET`, `AUTOSEND_API_KEY`, `AUTOSEND_NEWSLETTER_LIST_ID`, `NEWSLETTER_TOKEN_SECRET`, `VITE_WORKER_API_URL` or `NEXT_PUBLIC_WORKER_API_URL`
+- Convex (prod) env: `SITE_URL`, `ADMIN_EMAIL`, `AUTOSEND_API_KEY`, `REVALIDATE_SECRET`, `JWT_PRIVATE_KEY`, `JWKS`
+- Preview deployments read production data (public queries) and their revalidation calls go to production only.
 
 ### Setting Up Photography Feature (Optional)
 

@@ -1,16 +1,11 @@
-import { Link } from "react-router-dom";
-import { useTheme } from "../hooks/useTheme";
-import { Tooltip } from "./Tooltip";
-import Moon from "../imports/Moon";
-import Sun from "../imports/Sun";
+import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface HeaderProps {
 	activePage?: "home" | "writing" | "favorites" | "photography";
 }
 
 export function Header({ activePage }: HeaderProps = {}) {
-	const { toggleTheme, theme } = useTheme();
-
 	const navLinks = [
 		{ to: "/", label: "Home", key: "home" },
 		{ to: "/writing", label: "Writing", key: "writing" },
@@ -29,7 +24,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 		<div className='flex flex-col gap-4 items-start relative shrink-0 w-full'>
 			{/* Profile Image */}
 			<Link
-				to='/'
+				href='/'
 				className='flex h-10 items-center justify-start relative shrink-0 w-full'
 				aria-label='Go to home'>
 				<img
@@ -42,7 +37,7 @@ export function Header({ activePage }: HeaderProps = {}) {
 
 			{/* Name */}
 			<Link
-				to='/'
+				href='/'
 				className='flex gap-1 h-6 items-center w-full hover:opacity-70 transition-opacity'
 				aria-label='Akash Bhadange home'>
 				<h1 className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-xl text-justify text-nowrap whitespace-pre'>
@@ -59,20 +54,13 @@ export function Header({ activePage }: HeaderProps = {}) {
 				{navLinks.map(({ to, label, key }) => (
 					<Link
 						key={key}
-						to={to}
+						href={to}
 						className={navLinkClass(key)}
 						aria-current={activePage === key ? "page" : undefined}>
 						{label}
 					</Link>
 				))}
-				<Tooltip content={theme === "dark" ? "Delight" : "Go Dark"} className='ml-auto'>
-					<button
-						onClick={toggleTheme}
-						className='group relative cursor-pointer bg-transparent border-none px-2 py-1 -mx-2 -my-1 transition-all text-olive-500 hover:text-olive-800 dark:text-olive-400 dark:hover:text-olive-50 flex items-center'
-						aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}>
-						<div className='size-4'>{theme === "dark" ? <Sun /> : <Moon />}</div>
-					</button>
-				</Tooltip>
+				<ThemeToggle />
 			</nav>
 		</div>
 	);

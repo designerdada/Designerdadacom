@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, ReactNode } from "react";
 import { WORKER_API_URL } from "../../data/cloudflare-config";
 

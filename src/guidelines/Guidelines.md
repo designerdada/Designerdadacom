@@ -8,11 +8,7 @@
 
 ## Content Management
 
-* Articles are stored as MDX files in `/content/writing/`
-* The build script (`scripts/generate-mdx-index.js`) automatically processes MDX files
-* Never manually edit `/content/writing/index.ts` - it's auto-generated
-* To add new articles: create the `.mdx` file and add entry to `/data/articles.ts`
-* Run `npm run generate-mdx` to rebuild the content index
+* Articles are written in the editor at `/admin` and stored in Convex (see `CLAUDE.md`)
 
 ## Documentation
 
