@@ -1,21 +1,5 @@
 import { projects } from "../data/projects";
-
-function getFaviconUrl(url: string) {
-	try {
-		const domain = new URL(url).hostname;
-		return `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
-	} catch {
-		return "";
-	}
-}
-
-function getDomain(url: string) {
-	try {
-		return new URL(url).hostname.replace("www.", "");
-	} catch {
-		return url;
-	}
-}
+import { getFaviconUrl } from "@/lib/favicon";
 
 export function ProjectsSection() {
 	return (
@@ -35,6 +19,8 @@ export function ProjectsSection() {
 									alt={`${project.name} favicon`}
 									className='absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full'
 									src={getFaviconUrl(project.url)}
+									width={20}
+									height={20}
 								/>
 							</div>
 							<div className='basis-0 flex gap-2 grow items-center min-h-px min-w-px relative shrink-0'>

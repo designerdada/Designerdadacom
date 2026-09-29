@@ -3,6 +3,8 @@ import { FavoritesBrowser } from "@/components/FavoritesBrowser";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { siteConfig } from "@/config/site";
+import { favorites } from "@/data/favorites";
+import { getLinkPreviews } from "@/lib/linkPreviews";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
@@ -13,7 +15,9 @@ export const metadata = pageMetadata({
 	ogImage: siteConfig.images.ogFavorites,
 });
 
-export default function Favorites() {
+export default async function Favorites() {
+	const previews = await getLinkPreviews(favorites.map((favorite) => favorite.url));
+
 	return (
 		<div className='bg-olive-50 dark:bg-olive-950 relative size-full min-h-screen'>
 			<div className='flex flex-col gap-6 items-center mx-auto px-4 py-10 w-full max-w-xl'>
@@ -26,7 +30,7 @@ export default function Favorites() {
 					the internet and in the real world. Everything here has caught my attention and stuck with
 					me for one reason or another.
 				</p>
-				<FavoritesBrowser />
+				<FavoritesBrowser previews={previews} />
 				<div className='animate-in animate-delay-4'>
 					<ColorDots />
 				</div>

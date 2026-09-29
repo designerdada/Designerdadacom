@@ -1,45 +1,10 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import { useState, useMemo, useRef, useEffect, type PointerEvent } from "react";
 import { favorites, Favorite } from "../data/favorites";
 import { ChevronDown } from "lucide-react";
-
-// Cache for OG images to avoid refetching
-const ogImageCache: Record<string, { image: string | null; loading: boolean }> = {};
-
-// Prefetch OG image for a URL
-async function prefetchOgImage(url: string): Promise<string | null> {
-	if (ogImageCache[url]) {
-		return ogImageCache[url].image;
-	}
-
-	ogImageCache[url] = { image: null, loading: true };
-
-	try {
-		const response = await fetch(`https://api.microlink.io/?url=${encodeURIComponent(url)}`);
-		const data = await response.json();
-		const imageUrl = data?.data?.image?.url || data?.data?.logo?.url || null;
-		ogImageCache[url] = { image: imageUrl, loading: false };
-		return imageUrl;
-	} catch {
-		ogImageCache[url] = { image: null, loading: false };
-		return null;
-	}
-}
-
-// Prefetch all favorites' OG images in background
-let prefetchStarted = false;
-function prefetchAllOgImages() {
-	if (prefetchStarted) return;
-	prefetchStarted = true;
-
-	// Stagger requests to avoid rate limiting (50ms between each)
-	favorites.forEach((fav, index) => {
-		setTimeout(() => {
-			prefetchOgImage(fav.url);
-		}, index * 50);
-	});
-}
+import { getDomain, getFaviconUrl } from "@/lib/favicon";
+import { LinkPreviewCard, useLinkPreview } from "./LinkPreviewCard";
 
 type Category = "All" | "Products" | "People" | "Sites" | "Fonts" | "Movies";
 
@@ -169,91 +134,32 @@ function SearchAndFilters({
 
 function FavoriteItem({
 	favorite,
-	getDomain,
-	getFaviconUrl,
+	isActive,
+	onPointerEnter,
 }: {
 	favorite: Favorite;
-	getDomain: (url: string) => string;
-	getFaviconUrl: (url: string) => string;
+	isActive: boolean;
+	onPointerEnter: (url: string, event: PointerEvent) => void;
 }) {
-	const [isHovered, setIsHovered] = useState(false);
-	const [ogImage, setOgImage] = useState<string | null>(() => {
-		// Initialize from cache if available
-		const cached = ogImageCache[favorite.url];
-		return cached && !cached.loading ? cached.image : null;
-	});
-	const [isLoading, setIsLoading] = useState(false);
-	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-	const handleMouseEnter = useCallback(() => {
-		// Shorter delay since images are likely prefetched
-		hoverTimeoutRef.current = setTimeout(async () => {
-			setIsHovered(true);
-
-			// Check cache first
-			const cached = ogImageCache[favorite.url];
-			if (cached && !cached.loading) {
-				setOgImage(cached.image);
-				return;
-			}
-
-			// If not in cache or still loading, fetch it
-			setIsLoading(true);
-			const image = await prefetchOgImage(favorite.url);
-			setOgImage(image);
-			setIsLoading(false);
-		}, 100);
-	}, [favorite.url]);
-
-	const handleMouseLeave = useCallback(() => {
-		if (hoverTimeoutRef.current) {
-			clearTimeout(hoverTimeoutRef.current);
-		}
-		setIsHovered(false);
-	}, []);
-
-	useEffect(() => {
-		return () => {
-			if (hoverTimeoutRef.current) {
-				clearTimeout(hoverTimeoutRef.current);
-			}
-		};
-	}, []);
-
 	return (
 		<div className='relative w-full'>
-			{/* OG Image Preview - outside the anchor to avoid opacity inheritance */}
-			<div
-				className={`absolute right-full mr-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none transition-all duration-200 ease-out ${
-					isHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
-				}`}
-				style={{ height: "120px" }}>
-				{isLoading ? (
-					<div className='h-30 w-40 bg-olive-100 dark:bg-olive-800 rounded-lg animate-pulse flex items-center justify-center'>
-						<div className='size-6 border-2 border-olive-300 dark:border-olive-600 border-t-transparent rounded-full animate-spin' />
-					</div>
-				) : ogImage ? (
-					<img
-						src={ogImage}
-						alt={`${favorite.name} preview`}
-						className='h-30 w-auto max-w-60 object-contain rounded-xl border border-olive-200 dark:border-olive-700 bg-olive-50 dark:bg-olive-950'
-					/>
-				) : null}
-			</div>
-
 			<a
 				href={favorite.url}
 				target='_blank'
 				rel={`noopener noreferrer${favorite.nofollow === false ? "" : " nofollow"}`}
-				className='flex gap-4 items-center relative shrink-0 w-full group'
-				onMouseEnter={handleMouseEnter}
-				onMouseLeave={handleMouseLeave}>
+				data-preview-url={favorite.url}
+				data-active={isActive ? "" : undefined}
+				className='flex gap-4 items-center relative shrink-0 w-full group transition-opacity duration-200 group-data-hovering/list:opacity-45 data-active:opacity-100!'
+				onPointerEnter={(event) => onPointerEnter(favorite.url, event)}>
 				<div className='basis-0 flex gap-4 grow items-center min-h-px min-w-px relative shrink-0'>
 					<div className='relative shrink-0 size-5'>
 						<img
 							alt={`${favorite.name} favicon`}
 							className='absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full'
 							src={getFaviconUrl(favorite.url)}
+							width={20}
+							height={20}
+							loading='lazy'
 						/>
 					</div>
 					<div className='basis-0 flex gap-2 grow items-center min-h-px min-w-px relative shrink-0'>
@@ -279,16 +185,13 @@ function FavoriteItem({
 function FavoritesList({
 	searchQuery,
 	selectedCategory,
+	previews,
 }: {
 	searchQuery: string;
 	selectedCategory: Category;
+	previews: Record<string, string>;
 }) {
-	// Prefetch all OG images on mount
-	useEffect(() => {
-		// Small delay to not block initial render
-		const timer = setTimeout(prefetchAllOgImages, 100);
-		return () => clearTimeout(timer);
-	}, []);
+	const preview = useLinkPreview(previews);
 
 	const filteredFavorites = useMemo(() => {
 		let filtered = favorites;
@@ -322,25 +225,6 @@ function FavoritesList({
 		return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
 	}, [searchQuery, selectedCategory]);
 
-	const getDomain = (url: string) => {
-		try {
-			const urlObj = new URL(url);
-			return urlObj.hostname.replace("www.", "");
-		} catch {
-			return url;
-		}
-	};
-
-	const getFaviconUrl = (url: string) => {
-		try {
-			const urlObj = new URL(url);
-			const domain = urlObj.hostname;
-			return `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
-		} catch {
-			return "";
-		}
-	};
-
 	if (filteredFavorites.length === 0) {
 		return (
 			<div className='flex items-center justify-center py-8 w-full'>
@@ -350,21 +234,27 @@ function FavoritesList({
 	}
 
 	return (
-		<div className='flex flex-col gap-3 items-start relative shrink-0 w-full isolate'>
+		<div
+			ref={preview.listRef}
+			className='group/list flex flex-col gap-3 items-start relative shrink-0 w-full isolate'
+			data-hovering={preview.hovered ? "" : undefined}
+			onPointerMove={preview.onListMove}
+			onPointerLeave={preview.onListLeave}>
 			{filteredFavorites.map((favorite) => (
 				<FavoriteItem
 					key={favorite.id}
 					favorite={favorite}
-					getDomain={getDomain}
-					getFaviconUrl={getFaviconUrl}
+					isActive={preview.hovered === favorite.url}
+					onPointerEnter={preview.onRowEnter}
 				/>
 			))}
+			<LinkPreviewCard previews={previews} preview={preview} />
 		</div>
 	);
 }
 
-/** Search, category filter, and the favorites list. */
-export function FavoritesBrowser() {
+/** Search, category filter, and the favorites list. `previews` maps a favorite's URL to its preview image. */
+export function FavoritesBrowser({ previews }: { previews: Record<string, string> }) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState<Category>("All");
 
@@ -379,7 +269,7 @@ export function FavoritesBrowser() {
 				/>
 			</div>
 			<div className='animate-in animate-delay-3 w-full relative z-10'>
-				<FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} />
+				<FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} previews={previews} />
 			</div>
 		</>
 	);

@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently --kill-others-on-fail -n convex,next \"convex dev\" \"next dev --port 3000\"",
+		"dev": "concurrently --kill-others-on-fail -n convex,next \"convex dev\" \"node src/scripts/wait-for-convex.js && next dev --port 3000\"",
 		"dev:next": "next dev --port 3000",
 		"build": "next build",
 		"start": "next start",
