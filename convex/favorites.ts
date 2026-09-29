@@ -135,31 +135,42 @@ export const refreshPreview = mutation({
 export const fetchPreview = internalAction({
 	args: { id: v.id("favorites") },
 	handler: async (ctx, { id }) => {
-		const url = await ctx.runQuery(internal.favorites.getUrl, { id });
-		if (!url) return;
-		const image = await findPreviewImage(url);
-		await ctx.runMutation(internal.favorites.setPreview, { id, url, image: image ?? undefined });
+		const doc = await ctx.runQuery(internal.favorites.getForPreview, { id });
+		if (!doc) return;
+		const image = await findPreviewImage(doc.url);
+		// A failed lookup (site down, timeout) keeps whatever preview is there now.
+		if (!image) return;
+		await ctx.runMutation(internal.favorites.setPreview, {
+			id,
+			url: doc.url,
+			previous: doc.previewImageUrl,
+			image,
+		});
 	},
 });
 
-export const getUrl = internalQuery({
+export const getForPreview = internalQuery({
 	args: { id: v.id("favorites") },
-	handler: async (ctx, { id }) => (await ctx.db.get(id))?.url ?? null,
+	handler: async (ctx, { id }) => {
+		const doc = await ctx.db.get(id);
+		return doc && { url: doc.url, previewImageUrl: doc.previewImageUrl };
+	},
 });
 
 export const setPreview = internalMutation({
-	args: { id: v.id("favorites"), url: v.string(), image: v.optional(v.string()) },
-	handler: async (ctx, { id, url, image }) => {
+	args: { id: v.id("favorites"), url: v.string(), previous: v.optional(v.string()), image: v.string() },
+	handler: async (ctx, { id, url, previous, image }) => {
 		const doc = await ctx.db.get(id);
-		// Skip if the link was deleted or changed while we were fetching.
-		if (!doc || doc.url !== url || doc.previewImageUrl === image) return;
+		// Skip if the link was deleted, its URL changed, or a preview was set by hand while we were
+		// fetching: an edit made in the meantime always wins over the lookup.
+		if (!doc || doc.url !== url || doc.previewImageUrl !== previous || previous === image) return;
 		await ctx.db.patch(id, { previewImageUrl: image });
 		await scheduleRevalidate(ctx, [FAVORITES_TAG]);
 	},
 });
 
 /**
- * One-off import of the old hard-coded list (src/scripts/import-favorites.ts). Links that already
+ * One-off import of the old hard-coded list (src/scripts/import-favorites.js). Links that already
  * exist are skipped, so it is safe to run again.
  */
 export const importMany = internalMutation({
