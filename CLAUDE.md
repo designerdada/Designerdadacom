@@ -55,7 +55,8 @@ npm test             # vitest (editor Markdown round-trip)
 - **Revalidation**: publish/unpublish/remove schedule `convex/revalidate.ts`, which POSTs cache tags to `/api/revalidate`. Tags: `articles` (lists, sitemap, RSS, llms) and `article:<slug>`.
 - **Scheduling**: `ctx.scheduler.runAt` + a 10-minute safety sweep in `convex/crons.ts`.
 - **Slug changes** create `slugRedirects` rows; old URLs return 308.
-- **Data access in Next.js** goes only through `src/lib/content/articles.ts` (`'use cache'` + `cacheTag`).
+- **Data access in Next.js** goes only through `src/lib/content/` (`'use cache'` + `cacheTag`).
+- **Favorites** live in the Convex `favorites` table, edited at `/admin/favorites`. Adding a link (or changing its URL) runs `favorites.fetchPreview`, which stores the page's `og:image` as `previewImageUrl` (can be overridden by hand). Changes revalidate the `favorites` tag.
 - **Auth**: Convex Auth email magic link (sent via AutoSend, `convex/lib/magicLink.ts`), restricted to `ADMIN_EMAIL`. On localhost without `AUTOSEND_API_KEY`, the link is printed to the Convex logs. Every admin function calls `requireAdmin` (`convex/lib/admin.ts`). Auth providers are mounted only in `src/app/admin/layout.tsx` so public pages stay static.
 
 ### Markdown dialect (one pipeline everywhere)
@@ -68,7 +69,7 @@ npm test             # vitest (editor Markdown round-trip)
 ### Routing Structure
 
 - `/`, `/writing`, `/writing/[slug]`, `/favorites`, `/photography` - public pages in `src/app/(site)/`
-- `/admin`, `/admin/articles/[id]`, `/admin/login`, `/admin/photos` - writing desk
+- `/admin`, `/admin/articles/[id]`, `/admin/favorites`, `/admin/login`, `/admin/photos` - writing desk
 - `/rss.xml`, `/sitemap.xml`, `/llms-full.txt`, `/og/[slug]` (generated OG image) - route handlers
 - `/api/subscribe`, `/api/confirm` (newsletter), `/api/revalidate` (called by Convex)
 
@@ -78,7 +79,7 @@ npm test             # vitest (editor Markdown round-trip)
 - `src/components/` - site components; `components/admin/` - dashboard and editor
 - `src/lib/` - content access, Markdown pipeline, editor extensions, SEO helpers
 - `src/config/site.ts` - site configuration
-- `src/data/` - static data (favorites, projects)
+- `src/data/` - static data (projects)
 - `convex/` - backend (schema, queries/mutations, auth, crons)
 
 ### Styling System

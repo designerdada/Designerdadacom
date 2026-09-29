@@ -6,6 +6,9 @@ export function articleTags(slug: string): string[] {
 	return ["articles", `article:${slug}`];
 }
 
+/** The favorites page and anything else that lists favorite links. */
+export const FAVORITES_TAG = "favorites";
+
 /** Runs after the mutation commits, so the site never re-fetches stale data. */
 export async function scheduleRevalidate(ctx: MutationCtx, tags: string[]) {
 	await ctx.scheduler.runAfter(0, internal.revalidate.run, { tags, attempt: 0 });

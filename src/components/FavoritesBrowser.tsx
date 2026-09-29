@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect, type PointerEvent } from "react";
-import { favorites, Favorite } from "../data/favorites";
+import type { Favorite } from "@/lib/content/favorites";
 import { ChevronDown } from "lucide-react";
 import { getDomain, getFaviconUrl } from "@/lib/favicon";
 import { LinkPreviewCard, useLinkPreview } from "./LinkPreviewCard";
@@ -146,7 +146,7 @@ function FavoriteItem({
 			<a
 				href={favorite.url}
 				target='_blank'
-				rel={`noopener noreferrer${favorite.nofollow === false ? "" : " nofollow"}`}
+				rel={`noopener noreferrer${favorite.nofollow ? " nofollow" : ""}`}
 				data-preview-url={favorite.url}
 				data-active={isActive ? "" : undefined}
 				className='flex gap-4 items-center relative shrink-0 w-full group transition-opacity duration-200 group-data-hovering/list:opacity-45 data-active:opacity-100!'
@@ -183,14 +183,21 @@ function FavoriteItem({
 }
 
 function FavoritesList({
+	favorites,
 	searchQuery,
 	selectedCategory,
-	previews,
 }: {
+	favorites: Favorite[];
 	searchQuery: string;
 	selectedCategory: Category;
-	previews: Record<string, string>;
 }) {
+	const previews = useMemo(
+		() =>
+			Object.fromEntries(
+				favorites.flatMap(({ url, previewImageUrl }) => (previewImageUrl ? [[url, previewImageUrl]] : [])),
+			) as Record<string, string>,
+		[favorites],
+	);
 	const preview = useLinkPreview(previews);
 
 	const filteredFavorites = useMemo(() => {
@@ -221,9 +228,8 @@ function FavoritesList({
 			);
 		}
 
-		// Sort alphabetically by name
-		return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
-	}, [searchQuery, selectedCategory]);
+		return filtered; // already sorted by name
+	}, [favorites, searchQuery, selectedCategory]);
 
 	if (filteredFavorites.length === 0) {
 		return (
@@ -242,7 +248,7 @@ function FavoritesList({
 			onPointerLeave={preview.onListLeave}>
 			{filteredFavorites.map((favorite) => (
 				<FavoriteItem
-					key={favorite.id}
+					key={favorite._id}
 					favorite={favorite}
 					isActive={preview.hovered === favorite.url}
 					onPointerEnter={preview.onRowEnter}
@@ -253,8 +259,8 @@ function FavoritesList({
 	);
 }
 
-/** Search, category filter, and the favorites list. `previews` maps a favorite's URL to its preview image. */
-export function FavoritesBrowser({ previews }: { previews: Record<string, string> }) {
+/** Search, category filter, and the favorites list. */
+export function FavoritesBrowser({ favorites }: { favorites: Favorite[] }) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState<Category>("All");
 
@@ -269,7 +275,7 @@ export function FavoritesBrowser({ previews }: { previews: Record<string, string
 				/>
 			</div>
 			<div className='animate-in animate-delay-3 w-full relative z-10'>
-				<FavoritesList searchQuery={searchQuery} selectedCategory={selectedCategory} previews={previews} />
+				<FavoritesList favorites={favorites} searchQuery={searchQuery} selectedCategory={selectedCategory} />
 			</div>
 		</>
 	);

@@ -1,5 +1,3 @@
-import { cacheLife } from "next/cache";
-
 const USER_AGENT = "Mozilla/5.0 (compatible; designerdada-preview/1.0)";
 
 /** Reads `og:image` (or `twitter:image`) from a page's HTML. */
@@ -29,20 +27,7 @@ async function fromMicrolink(url: string) {
 	return image && !/\.svg($|\?)/i.test(image) ? image : null;
 }
 
-/**
- * Preview image for each URL, resolved on the server and cached for days, so visitors get the image
- * URLs in the HTML instead of calling an API per link. URLs without a preview are left out.
- */
-export async function getLinkPreviews(urls: string[]): Promise<Record<string, string>> {
-	"use cache";
-	cacheLife("days");
-
-	const entries = await Promise.all(
-		urls.map(async (url) => {
-			const image =
-				(await fromPage(url).catch(() => null)) ?? (await fromMicrolink(url).catch(() => null));
-			return [url, image] as const;
-		}),
-	);
-	return Object.fromEntries(entries.filter((entry): entry is [string, string] => entry[1] !== null));
+/** The page's Open Graph image, or null when it has none we can use. */
+export async function findPreviewImage(url: string) {
+	return (await fromPage(url).catch(() => null)) ?? (await fromMicrolink(url).catch(() => null));
 }

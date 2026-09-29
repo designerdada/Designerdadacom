@@ -11,9 +11,11 @@
 import type * as articles from "../articles.js";
 import type * as auth from "../auth.js";
 import type * as crons from "../crons.js";
+import type * as favorites from "../favorites.js";
 import type * as files from "../files.js";
 import type * as http from "../http.js";
 import type * as lib_admin from "../lib/admin.js";
+import type * as lib_linkPreview from "../lib/linkPreview.js";
 import type * as lib_magicLink from "../lib/magicLink.js";
 import type * as lib_revalidate from "../lib/revalidate.js";
 import type * as revalidate from "../revalidate.js";
@@ -28,9 +30,11 @@ declare const fullApi: ApiFromModules<{
   articles: typeof articles;
   auth: typeof auth;
   crons: typeof crons;
+  favorites: typeof favorites;
   files: typeof files;
   http: typeof http;
   "lib/admin": typeof lib_admin;
+  "lib/linkPreview": typeof lib_linkPreview;
   "lib/magicLink": typeof lib_magicLink;
   "lib/revalidate": typeof lib_revalidate;
   revalidate: typeof revalidate;

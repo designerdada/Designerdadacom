@@ -21,6 +21,24 @@ export const articleContentFields = {
 	author: v.string(),
 };
 
+export const favoriteCategory = v.union(
+	v.literal("Product"),
+	v.literal("People"),
+	v.literal("Site"),
+	v.literal("Font"),
+	v.literal("Movie"),
+);
+
+/** Fields the admin edits on a favorite link. */
+export const favoriteFields = {
+	name: v.string(),
+	description: v.string(),
+	url: v.string(),
+	category: favoriteCategory,
+	nofollow: v.boolean(),
+	previewImageUrl: v.optional(v.string()), // found from the page's og:image, or set by hand
+};
+
 export default defineSchema({
 	...authTables,
 
@@ -55,6 +73,12 @@ export default defineSchema({
 	})
 		.index("by_from", ["from"])
 		.index("by_article", ["articleId"]),
+
+	favorites: defineTable({
+		...favoriteFields,
+		createdAt: v.number(),
+		updatedAt: v.number(),
+	}).index("by_url", ["url"]),
 
 	assets: defineTable({
 		storageId: v.id("_storage"),
