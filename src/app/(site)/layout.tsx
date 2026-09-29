@@ -55,12 +55,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
 				data-website-id='7f8ad883-9255-44a6-8863-a8ce9bac7e8f'
 				strategy='afterInteractive'
 			/>
-			<Script
-				src='https://ghostlyx.com/js/script.min.js'
-				data-domain='designerdada.com'
-				data-site-id='gx_EjWdC5dS0Z0t'
-				strategy='afterInteractive'
-			/>
 			<Analytics />
 		</>
 	);
