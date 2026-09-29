@@ -2,6 +2,7 @@ import { ConvexError, v, type Infer } from "convex/values";
 import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
 import {
+	action,
 	internalAction,
 	internalMutation,
 	internalQuery,
@@ -10,7 +11,7 @@ import {
 	type MutationCtx,
 } from "./_generated/server";
 import { requireAdmin } from "./lib/admin";
-import { findPreviewImage } from "./lib/linkPreview";
+import { findPreviewImage, inspectLink } from "./lib/linkPreview";
 import { FAVORITES_TAG, scheduleRevalidate } from "./lib/revalidate";
 import { favoriteFields } from "./schema";
 
@@ -18,11 +19,7 @@ const favoriteInput = v.object(favoriteFields);
 
 type FavoriteInput = Infer<typeof favoriteInput>;
 
-/** Trims text, checks the URL, and turns an empty preview into "none". */
-function clean(input: FavoriteInput): FavoriteInput {
-	const name = input.name.trim();
-	const url = input.url.trim();
-	if (!name) throw new ConvexError("Add a name.");
+function assertHttpUrl(url: string) {
 	let parsed: URL;
 	try {
 		parsed = new URL(url);
@@ -32,6 +29,14 @@ function clean(input: FavoriteInput): FavoriteInput {
 	if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
 		throw new ConvexError("Only http and https links are allowed.");
 	}
+}
+
+/** Trims text, checks the URL, and turns an empty preview into "none". */
+function clean(input: FavoriteInput): FavoriteInput {
+	const name = input.name.trim();
+	const url = input.url.trim();
+	if (!name) throw new ConvexError("Add a name.");
+	assertHttpUrl(url);
 	return {
 		...input,
 		name,
@@ -125,6 +130,24 @@ export const refreshPreview = mutation({
 	handler: async (ctx, { id }) => {
 		await requireAdmin(ctx);
 		await schedulePreviewFetch(ctx, id);
+	},
+});
+
+/** Fetches a pasted link's name and preview image for the admin form. Nothing is saved. */
+export const inspect = action({
+	args: { url: v.string() },
+	handler: async (ctx, { url }) => {
+		await ctx.runQuery(internal.favorites.assertAdmin, {});
+		assertHttpUrl(url.trim());
+		return inspectLink(url.trim());
+	},
+});
+
+/** Actions can't read the database, so they check access through this query (it runs as the caller). */
+export const assertAdmin = internalQuery({
+	args: {},
+	handler: async (ctx) => {
+		await requireAdmin(ctx);
 	},
 });
 

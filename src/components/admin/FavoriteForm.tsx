@@ -4,7 +4,9 @@ import { api } from "@convex/_generated/api";
 import type { Doc, Id } from "@convex/_generated/dataModel";
 import { useMutation } from "convex/react";
 import { ConvexError } from "convex/values";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import { LinkCheck } from "./LinkCheck";
+import { isHttpUrl, useLinkInspection } from "./useLinkInspection";
 
 export const CATEGORIES = ["Product", "People", "Site", "Font", "Movie"] as const;
 
@@ -16,7 +18,7 @@ type FavoriteDraft = Pick<
 const EMPTY: FavoriteDraft = { name: "", description: "", url: "", category: "Product", nofollow: true };
 
 const inputClass =
-	"w-full rounded-lg border border-olive-300 dark:border-olive-700 bg-transparent px-3 py-2 text-sm placeholder:text-olive-400 focus:border-olive-800 dark:focus:border-olive-200 focus:outline-none";
+	"w-full rounded-lg border border-olive-300 dark:border-olive-700 bg-transparent px-3 py-2 text-sm text-olive-800 dark:text-olive-100 placeholder:text-olive-400 focus:border-olive-800 dark:focus:border-olive-200 focus:outline-none";
 const labelClass = "flex flex-col gap-1.5 text-xs text-olive-500";
 
 /** Adds a favorite, or edits one when `editing` is given. */
@@ -43,9 +45,22 @@ export function FavoriteForm({
 	);
 	const [saving, setSaving] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+	// Fields typed by hand are never overwritten by the link lookup. An existing favorite keeps its name.
+	const touched = useRef({ name: !!editing, previewImageUrl: false });
 
 	const set = <K extends keyof FavoriteDraft>(key: K, value: FavoriteDraft[K]) =>
 		setDraft((current) => ({ ...current, [key]: value }));
+
+	const edit = <K extends "name" | "previewImageUrl">(key: K, value: FavoriteDraft[K]) => {
+		touched.current[key] = true;
+		set(key, value);
+	};
+
+	// Only look a link up once it differs from what's saved, so opening an edit form costs nothing.
+	const inspection = useLinkInspection(draft.url, draft.url.trim() !== (editing?.url ?? ""), (details) => {
+		if (!touched.current.name && details.name) set("name", details.name);
+		if (!touched.current.previewImageUrl) set("previewImageUrl", details.image ?? undefined);
+	});
 
 	const handleSubmit = async (event: FormEvent) => {
 		event.preventDefault();
@@ -78,13 +93,21 @@ export function FavoriteForm({
 					className={inputClass}
 				/>
 			</label>
+			{isHttpUrl(draft.url) && (
+				<LinkCheck
+					url={draft.url.trim()}
+					name={draft.name}
+					image={draft.previewImageUrl}
+					inspection={inspection}
+				/>
+			)}
 			<div className='grid gap-4 sm:grid-cols-[1fr_10rem]'>
 				<label className={labelClass}>
 					Name
 					<input
 						required
 						value={draft.name}
-						onChange={(e) => set("name", e.target.value)}
+						onChange={(e) => edit("name", e.target.value)}
 						className={inputClass}
 					/>
 				</label>
@@ -114,7 +137,7 @@ export function FavoriteForm({
 					type='url'
 					placeholder='Found automatically from the page. Paste an image URL to override.'
 					value={draft.previewImageUrl ?? ""}
-					onChange={(e) => set("previewImageUrl", e.target.value || undefined)}
+					onChange={(e) => edit("previewImageUrl", e.target.value || undefined)}
 					className={inputClass}
 				/>
 			</label>
