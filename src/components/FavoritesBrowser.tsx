@@ -1,12 +1,28 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, type PointerEvent } from "react";
+import { useEffect, useState, useMemo, type PointerEvent } from "react";
 import type { Favorite } from "@/lib/content/favorites";
-import { ChevronDown } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 import { getDomain, getFaviconUrl } from "@/lib/favicon";
 import { LinkPreviewCard, useLinkPreview } from "./LinkPreviewCard";
+import { MenuDropdown } from "./MenuDropdown";
 
 type Category = "All" | "Products" | "People" | "Sites" | "Fonts" | "Movies";
+
+const CATEGORIES = (["All", "Products", "People", "Sites", "Fonts", "Movies"] as const).map((value) => ({
+	value,
+	label: value,
+}));
+
+const SORTS = [
+	{ value: "latest", label: "Latest" },
+	{ value: "alphabetical", label: "A–Z" },
+] as const;
+
+type Sort = (typeof SORTS)[number]["value"];
+
+const SORT_PARAM = "sort";
+const SORT_AZ = "az";
 
 function SearchIcon({ isHovered }: { isHovered: boolean }) {
 	const strokeColor = isHovered ? "currentColor" : "#7c7c67";
@@ -40,34 +56,18 @@ function SearchAndFilters({
 	setSearchQuery,
 	selectedCategory,
 	setSelectedCategory,
+	sort,
+	setSort,
 }: {
 	searchQuery: string;
 	setSearchQuery: (query: string) => void;
 	selectedCategory: Category;
 	setSelectedCategory: (category: Category) => void;
+	sort: Sort;
+	setSort: (sort: Sort) => void;
 }) {
-	const [showDropdown, setShowDropdown] = useState(false);
 	const [isInputHovered, setIsInputHovered] = useState(false);
 	const [isInputFocused, setIsInputFocused] = useState(false);
-	const dropdownRef = useRef<HTMLDivElement>(null);
-	const categories: Category[] = ["All", "Products", "People", "Sites", "Fonts", "Movies"];
-
-	// Close dropdown when clicking outside
-	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-				setShowDropdown(false);
-			}
-		};
-
-		if (showDropdown) {
-			document.addEventListener("mousedown", handleClickOutside);
-		}
-
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
-	}, [showDropdown]);
 
 	return (
 		<div className='flex gap-4 items-center relative shrink-0 w-full' role='search'>
@@ -90,44 +90,19 @@ function SearchAndFilters({
 				/>
 			</div>
 
-			{/* Filter Dropdown */}
-			<div className='relative z-50' ref={dropdownRef}>
-				<button
-					onClick={() => setShowDropdown(!showDropdown)}
-					className='flex gap-0.5 items-center justify-center relative shrink-0 bg-transparent border-none cursor-pointer hover:opacity-70 transition-opacity px-2 py-1 -mx-2 -my-1'
-					aria-label='Filter by category'
-					aria-haspopup='true'
-					aria-expanded={showDropdown}>
-					<p className='font-medium relative shrink-0 text-olive-800 dark:text-olive-100 text-sm text-justify text-nowrap whitespace-pre'>
-						{selectedCategory}
-					</p>
-					<ChevronDown className='size-4 text-olive-800 dark:text-olive-100' strokeWidth={1.5} />
-				</button>
-
-				{showDropdown && (
-					<div
-						className='absolute right-0 top-full mt-2 bg-olive-50 dark:bg-olive-950 border border-olive-200 dark:border-olive-700 rounded-lg shadow-lg py-1 z-50 min-w-32'
-						role='menu'>
-						{categories.map((category) => (
-							<button
-								key={category}
-								onClick={() => {
-									setSelectedCategory(category);
-									setShowDropdown(false);
-								}}
-								className={`w-full text-left px-4 py-2 text-sm cursor-pointer transition-colors ${
-									selectedCategory === category
-										? "font-medium text-olive-800 dark:text-olive-100 bg-olive-100 dark:bg-olive-800"
-										: "text-olive-500 hover:text-olive-800 dark:hover:text-olive-100 hover:bg-olive-100 dark:hover:bg-olive-800/50"
-								}`}
-								role='menuitem'
-								aria-current={selectedCategory === category}>
-								{category}
-							</button>
-						))}
-					</div>
-				)}
-			</div>
+			<MenuDropdown
+				value={sort}
+				options={SORTS}
+				onChange={setSort}
+				label='Sort favorites'
+				icon={<ArrowUpDown className='size-3.5' strokeWidth={1.5} />}
+			/>
+			<MenuDropdown
+				value={selectedCategory}
+				options={CATEGORIES}
+				onChange={setSelectedCategory}
+				label='Filter by category'
+			/>
 		</div>
 	);
 }
@@ -186,10 +161,12 @@ function FavoritesList({
 	favorites,
 	searchQuery,
 	selectedCategory,
+	sort,
 }: {
 	favorites: Favorite[];
 	searchQuery: string;
 	selectedCategory: Category;
+	sort: Sort;
 }) {
 	const previews = useMemo(
 		() =>
@@ -228,8 +205,9 @@ function FavoritesList({
 			);
 		}
 
-		return filtered; // already sorted by name
-	}, [favorites, searchQuery, selectedCategory]);
+		// The query returns them A–Z; "latest" puts the most recently added first.
+		return sort === "latest" ? [...filtered].sort((a, b) => b._creationTime - a._creationTime) : filtered;
+	}, [favorites, searchQuery, selectedCategory, sort]);
 
 	if (filteredFavorites.length === 0) {
 		return (
@@ -259,10 +237,25 @@ function FavoritesList({
 	);
 }
 
-/** Search, category filter, and the favorites list. */
+/** Search, sort, category filter, and the favorites list. */
 export function FavoritesBrowser({ favorites }: { favorites: Favorite[] }) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState<Category>("All");
+	const [sort, setSort] = useState<Sort>("latest");
+
+	// Sort lives in the URL (?sort=az) so it survives reloads and can be shared. It's read in the browser
+	// rather than on the server so the page stays static.
+	useEffect(() => {
+		if (new URLSearchParams(window.location.search).get(SORT_PARAM) === SORT_AZ) setSort("alphabetical");
+	}, []);
+
+	const changeSort = (next: Sort) => {
+		setSort(next);
+		const url = new URL(window.location.href);
+		if (next === "alphabetical") url.searchParams.set(SORT_PARAM, SORT_AZ);
+		else url.searchParams.delete(SORT_PARAM);
+		window.history.replaceState(null, "", url);
+	};
 
 	return (
 		<>
@@ -272,10 +265,17 @@ export function FavoritesBrowser({ favorites }: { favorites: Favorite[] }) {
 					setSearchQuery={setSearchQuery}
 					selectedCategory={selectedCategory}
 					setSelectedCategory={setSelectedCategory}
+					sort={sort}
+					setSort={changeSort}
 				/>
 			</div>
 			<div className='animate-in animate-delay-3 w-full relative z-10'>
-				<FavoritesList favorites={favorites} searchQuery={searchQuery} selectedCategory={selectedCategory} />
+				<FavoritesList
+					favorites={favorites}
+					searchQuery={searchQuery}
+					selectedCategory={selectedCategory}
+					sort={sort}
+				/>
 			</div>
 		</>
 	);

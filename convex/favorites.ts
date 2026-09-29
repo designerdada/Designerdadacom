@@ -67,8 +67,9 @@ export const list = query({
 	handler: async (ctx) => {
 		const docs = await ctx.db.query("favorites").collect();
 		return docs
-			.map(({ _id, name, description, url, category, nofollow, previewImageUrl }) => ({
+			.map(({ _id, _creationTime, name, description, url, category, nofollow, previewImageUrl }) => ({
 				_id,
+				_creationTime,
 				name,
 				description,
 				url,
