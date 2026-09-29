@@ -21,10 +21,10 @@ import {
 	publishedSlugParams,
 	type PublishedArticle,
 } from "@/lib/content/articles";
-import { toISO } from "@/lib/dates";
+import { formatDisplayDate, toISO } from "@/lib/dates";
 import { JsonLd } from "@/lib/json-ld";
 import { ArticleBody } from "@/lib/markdown/ArticleBody";
-import { rssAlternate } from "@/lib/metadata";
+import { openGraphDefaults, rssAlternate, twitterDefaults } from "@/lib/metadata";
 
 type Props = PageProps<"/writing/[slug]">;
 
@@ -48,11 +48,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		keywords: article.keywords,
 		alternates: { canonical: url, types: rssAlternate },
 		openGraph: {
+			...openGraphDefaults,
 			type: "article",
 			title,
 			description: article.description,
 			url,
-			siteName: siteConfig.author.name,
 			images: [{ url: ogImage, width: 1200, height: 630 }],
 			publishedTime,
 			modifiedTime,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			tags: article.keywords,
 		},
 		twitter: {
-			card: "summary_large_image",
+			...twitterDefaults,
 			title,
 			description: article.description,
 			images: [ogImage],
@@ -93,6 +93,11 @@ export default async function WritingDetail({ params }: Props) {
 					<h1 className='font-serif italic relative shrink-0 text-olive-800 dark:text-olive-100 text-4xl w-full'>
 						{article.title}
 					</h1>
+					<time
+						dateTime={toISO(article.publishedAt)}
+						className='font-mono text-sm text-olive-500 dark:text-olive-400 uppercase'>
+						{formatDisplayDate(article.publishedAt)}
+					</time>
 				</div>
 
 				<article className='animate-in animate-delay-2 w-full'>
@@ -169,7 +174,12 @@ async function ReadMore({ currentSlug }: { currentSlug: string }) {
 
 function articleJsonLd(article: PublishedArticle) {
 	const url = articleUrl(article);
-	const author = { "@type": "Person", name: article.author, url: siteConfig.url };
+	const person = { "@id": `${siteConfig.url}/#person` };
+	// Guest authors get their own name; the site owner links to the Person node (with sameAs profiles).
+	const author =
+		article.author === siteConfig.author.name
+			? person
+			: { "@type": "Person", name: article.author };
 	return {
 		"@context": "https://schema.org",
 		"@type": "BlogPosting",
@@ -180,9 +190,11 @@ function articleJsonLd(article: PublishedArticle) {
 		datePublished: toISO(article.publishedAt),
 		dateModified: toISO(article.modifiedAt ?? article.publishedAt),
 		author,
-		publisher: { "@type": "Person", "@id": `${siteConfig.url}/#person`, name: siteConfig.author.name },
+		publisher: person,
+		isPartOf: { "@id": `${siteConfig.url}/#website` },
 		mainEntityOfPage: { "@type": "WebPage", "@id": url },
 		keywords: article.keywords.join(", "),
+		wordCount: article.body.split(/\s+/).filter(Boolean).length,
 		inLanguage: siteConfig.locale,
 	};
 }

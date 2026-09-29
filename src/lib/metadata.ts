@@ -6,6 +6,17 @@ export const rssAlternate = {
 	"application/rss+xml": [{ url: "/rss.xml", title: `${siteConfig.author.name} - Writing` }],
 };
 
+/**
+ * Nested `openGraph`/`twitter` objects also replace the root layout's, so pages spread these back in
+ * (otherwise og:locale and twitter:site/creator silently disappear).
+ */
+export const openGraphDefaults = { siteName: siteConfig.name, locale: "en_US" } as const;
+export const twitterDefaults = {
+	card: "summary_large_image",
+	site: siteConfig.author.handle,
+	creator: siteConfig.author.handle,
+} as const;
+
 interface PageMetadataInput {
 	title: string;
 	description: string;
@@ -20,6 +31,7 @@ export function pageMetadata({ title, description, path, ogImage }: PageMetadata
 		description,
 		alternates: { canonical: path, types: rssAlternate },
 		openGraph: {
+			...openGraphDefaults,
 			type: "website",
 			title: `${title} | ${siteConfig.author.name}`,
 			description,
@@ -27,7 +39,7 @@ export function pageMetadata({ title, description, path, ogImage }: PageMetadata
 			images: [{ url: ogImage, width: 1200, height: 630 }],
 		},
 		twitter: {
-			card: "summary_large_image",
+			...twitterDefaults,
 			title: `${title} | ${siteConfig.author.name}`,
 			description,
 			images: [ogImage],

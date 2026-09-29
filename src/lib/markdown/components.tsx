@@ -16,11 +16,11 @@ interface ImageProps {
 	title?: string;
 }
 
-// Headings
+// Headings. The article title is the page's only <h1>, so a `#` heading in the body renders as <h2>.
 export const H1 = ({ children }: ComponentProps) => (
-	<h1 className='font-medium text-olive-800 dark:text-olive-100 text-xl text-justify w-full pb-4 pt-2'>
+	<h2 className='font-medium text-olive-800 dark:text-olive-100 text-xl text-justify w-full pb-4 pt-2'>
 		{children}
-	</h1>
+	</h2>
 );
 
 export const H2 = ({ children }: ComponentProps) => (

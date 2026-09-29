@@ -43,7 +43,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
 	return (
 		<>
 			<JsonLd data={siteJsonLd} />
-			{children}
+			<main>{children}</main>
 
 			{/* GA4 tracks client-side navigations through its enhanced measurement history events */}
 			<Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy='afterInteractive' />

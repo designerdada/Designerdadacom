@@ -70,7 +70,7 @@ npm test             # vitest (editor Markdown round-trip)
 
 - `/`, `/writing`, `/writing/[slug]`, `/favorites`, `/photography` - public pages in `src/app/(site)/`
 - `/admin`, `/admin/articles/[id]`, `/admin/favorites`, `/admin/login`, `/admin/photos` - writing desk
-- `/rss.xml`, `/sitemap.xml`, `/llms-full.txt`, `/og/[slug]` (generated OG image) - route handlers
+- `/rss.xml`, `/sitemap.xml`, `/llms.txt` (index), `/llms-full.txt` (full text), `/og/[slug]` (generated OG image) - route handlers
 - `/api/subscribe`, `/api/confirm` (newsletter), `/api/revalidate` (called by Convex)
 
 ### Component Organization
