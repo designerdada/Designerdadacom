@@ -24,4 +24,10 @@ export const projects: Project[] = [
 		description: "Intercom-style live chat widget for websites",
 		url: "https://foxchat.dev",
 	},
+	{
+		id: "designgiri",
+		name: "Designgiri",
+		description: "A product design cohort",
+		url: "https://designgiri.com",
+	},
 ];
